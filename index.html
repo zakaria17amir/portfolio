@@ -39,6 +39,30 @@
 
     <link rel="stylesheet" href="assets/css/style.css" />
 
+    <noscript>
+      <!--
+        Without JS the hamburger cannot open the mobile nav, so drop the button
+        and let the nav sit in the header as a plain wrapped list instead.
+      -->
+      <style>
+        #nav-toggle {
+          display: none !important;
+        }
+        #site-nav {
+          display: block !important;
+          position: static !important;
+          border: 0 !important;
+          padding: 0 !important;
+          background: none !important;
+        }
+        #site-nav ul {
+          flex-direction: row !important;
+          flex-wrap: wrap !important;
+          gap: 0.25rem 1.25rem !important;
+        }
+      </style>
+    </noscript>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -242,5 +266,7 @@
         </div>
       </div>
     </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>
