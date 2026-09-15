@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zakaria17amir.github.io/portfolio/sitemap.xml
