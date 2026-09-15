@@ -962,13 +962,27 @@ An SVG favicon — no binary tooling needed, and it can be theme-aware.
 
 Ask the repo owner before adding any image-conversion tooling. If no converter is available, ship the SVG only and drop the `og:image` tags rather than referencing a file that does not exist — a broken `og:image` renders worse than none.
 
-- [ ] **Step 3: Copy the CV**
+- [ ] **Step 3: Place the CV**
 
-```bash
-cp "/d/CV/CV_Amir_MSCI_DataScience.pdf" "/d/Portfolio/assets/Amir-Abdullah-Zakaria-CV.pdf"
+**Decided 2026-09-16:** every CV in `/d/CV/` is tailored to a named employer
+("Eager to contribute to MSCI's…", "…to Ericsson's…") and must NOT be published.
+The owner is exporting an employer-neutral version and will place it at:
+
+```
+assets/Amir-Abdullah-Zakaria-CV.pdf
 ```
 
-Confirm with the owner which CV variant should be the public one before committing — the `/d/CV/` folder holds several company-tailored versions, and a file named for a specific employer must not be the public download.
+Do not copy any file from `/d/CV/` into the repo.
+
+Until that file exists, the Download CV button would 404. So:
+
+```bash
+cd /d/Portfolio && [ -f assets/Amir-Abdullah-Zakaria-CV.pdf ] && echo "CV present" || echo "CV MISSING"
+```
+
+If `CV MISSING` at publish time (Task 9), comment out the Download CV button in
+`index.html` and the footer, and note it for the owner — a dead download link on a
+portfolio is worse than no download link. Restore it the moment the file lands.
 
 - [ ] **Step 4: Create `404.html`**
 
