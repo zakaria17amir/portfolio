@@ -9,15 +9,15 @@
 
 export const profile = {
   name: "Amir Abdullah Zakaria",
-  role: "Data Science & AI",
+  role: "Data, AI & Software Engineering",
   title: "Computer Science @ ELTE Budapest",
   graduating: "January 2027",
   location: "Budapest, Hungary",
   availability:
-    "Open to Data Science, AI and Data Engineering internships and 2027 graduate roles",
+    "Open to software engineering, data and AI engineering roles from January 2027",
   // Plain-English summary for the HR screener. No acronyms.
   summary:
-    "I turn messy data into things people can actually rely on — clean pipelines, validated numbers, and dashboards teams use to make decisions.",
+    "I build data and AI systems people actually run on — the BI models behind a global company's reporting, the automation that replaced its manual version, and agent tooling I measure rather than just describe.",
   links: {
     github: "https://github.com/zakaria17amir",
     linkedin: "https://www.linkedin.com/in/amir-abdullah-zakaria",
@@ -29,47 +29,101 @@ export const profile = {
 
 export const experience = [
   {
-    role: "Data Analytics & Automation Intern",
+    role: "Data Analyst Intern",
     org: "The Estée Lauder Companies Inc.",
     type: "Internship",
     start: "Jun 2025",
     end: "Present",
     location: "Budapest, Hungary",
     bullets: [
-      "Designed ETL pipelines and automated 5+ reporting workflows in Python (pandas) and MS Power Automate, cutting processing time from roughly 3–4 hours to under 15 minutes.",
-      "Built Power BI dashboards on structured data models and DAX, replacing manual Excel reporting with reliable, KPI-driven outputs for cross-functional teams.",
-      "Implemented data validation and QA pipelines that resolved field mismatches, duplicates and schema inconsistencies across 500+ records before they reached downstream reports.",
-      "Built automated anomaly detection and notification workflows that flag data quality issues before they reach dashboards.",
-      "Collaborated with global teams across the Americas, Europe and Asia on data pipeline design and reporting alignment.",
+      "Built a vendor-closing and savings-tracking solution from scratch, turning scattered Excel files into a production Power BI star-schema model with vendor, payment-term and fiscal-calendar dimensions.",
+      "Designed Power Query transformations with multi-level fallback matching, and DAX measures that stay stable under slicer filtering, powering a Vendor Group → Tower → Vendor drill-down.",
+      "Automated 16+ reporting and governance processes with Power Automate, Office Scripts and Python, saving over 100 hours a month.",
+      "Cleansed and restructured 100,000+ records in Python, resolving mismatches, duplicates and missing values that had been corrupting reporting.",
+      "Administered Upland PSA for a global user base, triaging 600+ IT tickets and managing Azure AD access groups.",
+      "Partnered with stakeholders across global offices to align data outputs and reporting cadence across time zones.",
     ],
   },
   {
-    role: "Teaching Assistant — Discrete Mathematics",
+    role: "Research Assistant — Numerical Analysis Modeling Lab",
     org: "Eötvös Loránd University",
-    type: "Teaching",
-    start: "Feb 2026",
+    type: "Research",
+    start: "Jun 2026",
     end: "Present",
     location: "Budapest, Hungary",
     bullets: [
-      "Deliver weekly tutorials reinforcing discrete mathematics concepts for undergraduate CS students.",
-      "Design and grade assessments.",
+      "Reproduced ECG baseline wander removal experiments from an EMBC 2025 paper on sparse dictionary learning neural networks, using the PhysioNet Challenge 2020 dataset.",
+      "Benchmarked CNN, Quadratic Programming, FISTA and FISTA-Net under the paper's own evaluation protocol and metrics.",
+      "Reviewed the literature on baseline wander removal across filtering, wavelet, optimisation-based and deep learning approaches.",
+      "Evaluated test-set reconstructions to assess which methods best preserve clinically relevant ECG morphology.",
     ],
   },
   {
-    role: "Teaching Assistant — Linux & Shell Scripting",
+    // Two ELTE courses, taught across overlapping terms; kept as one entry to
+    // match the CV rather than splitting the same job into three rows.
+    role: "Teaching Assistant — Discrete Mathematics & Computer Systems",
     org: "Eötvös Loránd University",
     type: "Teaching",
-    start: "Sep 2024",
-    end: "Jan 2025",
+    start: "Sep 2025",
+    end: "Present",
     location: "Budapest, Hungary",
     bullets: [
-      "Led hands-on Bash and PowerShell labs for 50+ students.",
-      "Developed exam questions and assessments.",
+      "Tutor undergraduates in logic, set theory, combinatorics, graph theory and proof techniques.",
+      "Lead hands-on Linux, Bash and PowerShell labs covering shell environments, file systems, processes and automation.",
+      "Prepare practice exercises, lab materials and assessments.",
     ],
   },
 ];
 
 export const projects = [
+  {
+    slug: "preflight",
+    title: "preflight",
+    tagline: "A tech-lead pass that runs before a coding agent does",
+    award: "2nd place · LaunchLoop hackathon",
+    impact:
+      "Scans a repository for zero tokens, has a cheap model write a short brief, lets the cheap model attempt the fix first, and escalates with a distilled post-mortem when it fails. Benchmarked on five seeded bugs: a $0.01 brief let Haiku match Sonnet at 32% less cost, and the same brief handed to a GPT agent held at 74% less.",
+    tags: ["Python", "LLM orchestration", "Claude Code CLI", "Devin CLI", "pytest", "GitHub Actions"],
+    repo: "https://github.com/zakaria17amir/preflight-agent",
+    demo: "https://preflight-agent.vercel.app",
+    page: "projects/preflight.html",
+    featured: true,
+  },
+  {
+    slug: "tracky",
+    title: "Tracky — Personal Analytics Dashboard",
+    tagline: "A Laravel 13 REST API and a React 19 TypeScript SPA",
+    impact:
+      "You define the metrics and the app adapts around them: one type column drives the logging input, the chart types the widget builder offers and the summary maths. Every record is owner-scoped at three independent server-side layers, covered by 50 PHPUnit feature tests and Cypress specs.",
+    tags: ["Laravel 13", "PHP", "React 19", "TypeScript", "TanStack Query", "Cypress"],
+    repo: "https://github.com/zakaria17amir/Tracky",
+    page: "projects/tracky.html",
+    featured: true,
+  },
+  {
+    slug: "qgate-agent",
+    title: "qgate-agent",
+    tagline: "Human-in-the-loop containment for end-of-line manufacturing tests",
+    status: "In development",
+    impact:
+      "When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, proposes a containment window, and requires a human to approve it before anything is written — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.",
+    tags: ["Python", "LangGraph", "Kafka", "PostgreSQL", "Docker", "C++"],
+    repo: "https://github.com/zakaria17amir/Qgate-Agent",
+    // No writeup page while the repo is a skeleton; the card links straight to code.
+    page: null,
+    featured: true,
+  },
+  {
+    slug: "fintrack",
+    title: "FinTrack — Self-hosted Finance Tracker",
+    tagline: "A Laravel 13 app over a single SQLite file you own",
+    impact:
+      "Accounts, transactions, category budgets and reports, without handing a third party read access to a bank. The interesting constraint is shared household accounts: ownership and view-or-edit permission live on the pivot, and are enforced server-side on every route.",
+    tags: ["Laravel 13", "PHP", "Blade", "Tailwind CSS", "SQLite", "PHPUnit"],
+    repo: "https://github.com/zakaria17amir/Fintrack",
+    page: "projects/fintrack.html",
+    featured: true,
+  },
   {
     slug: "developer-insights",
     title: "Developer Insights Analysis",
@@ -105,17 +159,6 @@ export const projects = [
     page: "projects/powerbi-analysis.html",
     featured: true,
   },
-  {
-    slug: "tracky",
-    title: "Tracky — Habit Tracking Dashboard",
-    tagline: "A full-stack app: Laravel 12 REST API and a React 19 TypeScript SPA",
-    impact:
-      "Designed the schema, built a versioned REST API in Laravel 12, and consumed it from a typed React 19 single-page app built with Vite.",
-    tags: ["Laravel 12", "PHP", "React 19", "TypeScript", "Vite", "REST API"],
-    repo: "https://github.com/zakaria17amir/Tracky",
-    page: "projects/tracky.html",
-    featured: true,
-  },
 ];
 
 export const skills = [
@@ -134,9 +177,9 @@ export const skills = [
       "Machine learning fundamentals",
       "Feature engineering",
       "scikit-learn",
-      "Model evaluation",
-      "LLM fundamentals",
-      "Generative AI concepts",
+      "Model evaluation & benchmarking",
+      "CNNs / signal processing",
+      "LLM agent orchestration (LangGraph)",
     ],
   },
   {
@@ -146,12 +189,16 @@ export const skills = [
       "PySpark / Apache Spark",
       "Databricks",
       "Power BI (DAX, Power Query)",
-      "MS Power Automate",
+      "MS Power Automate / Office Scripts",
     ],
   },
   {
     group: "Programming",
     items: ["Python", "Java", "JavaScript", "TypeScript", "PHP", "C#", "Bash / Shell"],
+  },
+  {
+    group: "Web & APIs",
+    items: ["Laravel 13", "React 19", "REST API design", "Tailwind CSS", "Vite"],
   },
   {
     group: "Databases",
@@ -162,10 +209,11 @@ export const skills = [
     items: [
       "AWS (fundamentals)",
       "Azure (fundamentals)",
-      "Git",
+      "Azure AD administration",
+      "Git / GitHub Actions",
+      "Docker",
+      "pytest / PHPUnit",
       "Jupyter",
-      "VS Code",
-      "IntelliJ",
     ],
   },
 ];

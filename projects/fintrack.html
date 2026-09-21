@@ -4,25 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tracky — Personal Analytics Dashboard — Amir Abdullah Zakaria</title>
+    <title>FinTrack — Self-hosted Finance Tracker — Amir Abdullah Zakaria</title>
     <meta
       name="description"
-      content="A full-stack personal analytics app: a Laravel 13 REST API and a React 19 TypeScript single-page app, where one metric type column drives the whole interface."
+      content="A self-hosted personal finance tracker in Laravel 13 over a single SQLite file, with shared household accounts whose permissions are enforced server-side on every route."
     />
     <link
       rel="canonical"
-      href="https://zakaria17amir.github.io/portfolio/projects/tracky.html"
+      href="https://zakaria17amir.github.io/portfolio/projects/fintrack.html"
     />
 
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Tracky — Personal Analytics Dashboard — Amir Abdullah Zakaria" />
+    <meta property="og:title" content="FinTrack — Self-hosted Finance Tracker — Amir Abdullah Zakaria" />
     <meta
       property="og:description"
-      content="A full-stack personal analytics app: a Laravel 13 REST API and a React 19 TypeScript single-page app, where one metric type column drives the whole interface."
+      content="A self-hosted personal finance tracker in Laravel 13 over a single SQLite file, with shared household accounts whose permissions are enforced server-side on every route."
     />
     <meta
       property="og:url"
-      content="https://zakaria17amir.github.io/portfolio/projects/tracky.html"
+      content="https://zakaria17amir.github.io/portfolio/projects/fintrack.html"
     />
     <meta name="twitter:card" content="summary" />
 
@@ -90,24 +90,24 @@
       </p>
 
       <h1 class="mt-6 text-[clamp(1.875rem,4.5vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em]">
-        Tracky — Personal Analytics Dashboard
+        FinTrack — Self-hosted Finance Tracker
       </h1>
       <p class="measure mt-4 text-lg leading-[1.55] text-muted dark:text-muted-dark">
-        A Laravel 13 REST API and a React 19 TypeScript SPA
+        A Laravel 13 app over a single SQLite file you own
       </p>
 
       <ul class="mt-6 flex flex-wrap gap-1.5">
         <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Laravel 13</li>
         <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PHP</li>
-        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">React 19</li>
-        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">TypeScript</li>
-        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">TanStack Query</li>
-        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Cypress</li>
+        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Blade</li>
+        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Tailwind CSS</li>
+        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">SQLite</li>
+        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PHPUnit</li>
       </ul>
 
       <p class="mt-8 flex flex-wrap gap-3">
         <a
-          href="https://github.com/zakaria17amir/Tracky"
+          href="https://github.com/zakaria17amir/Fintrack"
           target="_blank"
           rel="noopener"
           class="rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent/90 dark:bg-accent-dark dark:text-surface-dark dark:hover:bg-accent-dark/90"
@@ -123,70 +123,65 @@
       <div class="measure mt-14 leading-[1.75]">
         <h2 class="text-lg font-semibold tracking-tight">Overview</h2>
         <p class="mt-3">
-          A personal analytics app built as two independent tiers: a Laravel 13 REST
-          API and a separate React 19 single-page app in TypeScript. You declare the
-          metrics you care about, log them daily, and assemble dashboards out of
-          configurable chart widgets. This is the project on the list that is about
-          building a system rather than analysing a dataset.
+          A personal finance tracker you run yourself: accounts, transactions,
+          per-category budgets, filtered reports, and accounts shared with a partner
+          or housemate. It started as a semester project and I kept building on it
+          because I wanted to actually use it.
         </p>
 
         <h2 class="mt-12 text-lg font-semibold tracking-tight">The problem</h2>
         <p class="mt-3">
-          Most trackers decide for you what is worth measuring, and then bolt on
-          options when that turns out to be wrong. Tracky inverts it: the user
-          defines the metrics and the application adapts around their shape. That is
-          only a good idea if adding a new kind of metric does not mean touching
-          every screen — which is a design constraint, not a feature.
+          Most budgeting apps want bank credentials and a subscription in exchange
+          for a dashboard. FinTrack takes the opposite trade: a small application
+          backed by a single SQLite file you can copy, back up, or delete, with
+          nothing leaving the machine it runs on. The cost of that choice is that
+          every feature a hosted service gives you for free — sharing, permissions,
+          oversight — has to be built and enforced here.
         </p>
 
         <h2 class="mt-12 text-lg font-semibold tracking-tight">The data</h2>
         <p class="mt-3">
-          A metric is declared as <em>numeric</em> (sleep hours, steps),
-          <em>scale</em> (mood 1–10) or <em>boolean</em> (did I exercise?). That
-          single <code>type</code> column then drives three separate things
-          downstream: which input control the logging screen renders, which chart
-          types the widget builder offers, and how streaks and averages are computed.
-          Adding a fourth metric type is a migration plus a renderer, not a rewrite.
-          Entries are unique on the metric and the date they belong to, so a bulk
-          "quick log" of every active metric for a day is one upsert rather than a
-          question about duplicates.
+          Five domain tables on top of Laravel's defaults: accounts, transactions,
+          categories, budgets, and the pivot that joins users to accounts. That pivot
+          is where the interesting part lives. A joint account is not "two users see
+          the same rows" — one person may own it while another is only allowed to
+          look at it, so the permission level is an attribute of the relationship
+          rather than of either side. Balances are maintained as transactions are
+          created, edited and deleted, so the account row and its transaction history
+          never have to be reconciled by hand.
         </p>
 
         <h2 class="mt-12 text-lg font-semibold tracking-tight">Approach</h2>
         <ul class="mt-3 list-disc space-y-2 pl-5 marker:text-muted dark:marker:text-muted-dark">
           <li>
-            Built the API in Laravel 13 with token authentication and typed JSON
-            resources, so the shape of a response is defined in one place.
+            Modelled sharing as a many-to-many with a permission level on the pivot,
+            and made that single fact the source of every authorization decision in
+            the app.
           </li>
           <li>
-            Kept the front end entirely separate: a React 19 SPA in TypeScript that
-            consumes the API over HTTP and shares no runtime with it.
+            Enforced permissions server-side on every route. The interface hides what
+            you cannot do, but hiding is never what stops you — the check runs again
+            on the request.
           </li>
           <li>
-            Enforced owner scoping at three independent server-side layers —
-            middleware, policies, and query scoping. The front-end route guards are
-            user experience only and are never load-bearing.
+            Built reports as composable filters — date range, multiple categories —
+            over spending by category, a six-month income-versus-expense trend, and a
+            breakdown table.
           </li>
           <li>
-            Used optimistic updates for logging and for drag-and-drop widget
-            reordering, with automatic rollback when the server rejects the change,
-            so the interaction feels instant without lying about what was saved.
-          </li>
-          <li>
-            Made the admin view role-gated and deliberately read-only: admins manage
-            accounts, never somebody's data.
+            Gated the admin panel behind role middleware and kept it deliberately
+            narrow: account and category management, and read-only oversight of
+            transactions.
           </li>
         </ul>
 
         <h2 class="mt-12 text-lg font-semibold tracking-tight">Results</h2>
         <p class="mt-3">
-          A feature-complete two-tier application where the API and the SPA can be
-          deployed and versioned independently, and where the client could be
-          replaced without touching the backend. 50 PHPUnit feature tests cover the
-          API contract, Cypress specs drive the real interface, and both run in CI
-          alongside a CodeQL scan on every push. The layout is responsive down to a
-          phone: the desktop sidebar becomes a tab bar and tables reflow into stacked
-          cards.
+          A working self-hosted application with budgets, reports and shared accounts,
+          set up from a clone in about six commands, with PHPUnit tests and a CI
+          workflow running on every push. The authorization model is the part I would
+          defend in an interview: it is the reason the feature set stayed small and
+          the rules stayed in one place.
         </p>
 
         <h2 class="mt-12 text-lg font-semibold tracking-tight">
@@ -194,35 +189,36 @@
         </h2>
         <ul class="mt-3 list-disc space-y-2 pl-5 marker:text-muted dark:marker:text-muted-dark">
           <li>
-            Streaks and summaries are computed on every read. That is the right call
-            for correctness — a stored counter is a second source of truth and it
-            will eventually disagree with the entries — and the wrong one for scale.
-            It wants a cache or a write-time rollup once the entry count grows.
+            Balances are updated imperatively on every transaction write. That is
+            fast to read and easy to get wrong — a missed edge case in one code path
+            leaves the stored balance disagreeing with its own transactions. A
+            derived balance with a cached snapshot would be harder to corrupt.
           </li>
           <li>
-            The API response types are hand-written on the client. Generating them
-            from the backend would remove an entire class of drift, where the server
-            changes a field and the client keeps compiling against the old shape.
+            Recurring transactions are stored as an interval on the transaction, not
+            as a schedule that materialises entries. That works for display and not
+            for forecasting, which is the feature people actually want next.
           </li>
           <li>
-            SQLite is the right choice for a single-user self-hosted app and the
-            wrong one the moment two people write at once. The Eloquent layer makes
-            the swap cheap, but nothing has verified that it is.
+            The seeded demo accounts use a well-known password. That is right for a
+            local demo and exactly the kind of thing that survives into a deployment
+            it should not — it belongs behind a flag, not behind a warning in the
+            README.
           </li>
           <li>
-            The widget configuration is stored as loosely structured JSON. It should
-            be validated against the metric type at write time, not trusted at render
-            time.
+            Tests cover the authorization paths well and the reporting maths thinly.
+            The reports are where a silent wrong number would do the most damage.
           </li>
         </ul>
 
         <h2 class="mt-12 text-lg font-semibold tracking-tight">Tech stack</h2>
         <p class="mt-3">
-          Laravel 13 on PHP 8.4 with Sanctum, Eloquent policies, SQLite and PHPUnit on
-          the API side; React 19, TypeScript in strict mode, TanStack Query, dnd-kit,
-          Recharts, Tailwind CSS and Vite on the client; Cypress and GitHub Actions
-          around both.
+          Laravel 13 on PHP 8.4 with Breeze for authentication, Eloquent policies and
+          role middleware for access control, SQLite for storage, Blade with Tailwind
+          CSS and Alpine.js on the front end, Vite for the build, and PHPUnit under
+          GitHub Actions.
         </p>
+      </div>
     </main>
 
     <footer class="border-t border-line dark:border-line-dark">

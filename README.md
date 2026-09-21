@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio site — Data Science, AI and Data Engineering.
+Personal portfolio site — data, AI and software engineering.
 
 **Live:** https://zakaria17amir.github.io/portfolio
 
