@@ -121,21 +121,22 @@
         >
       </p>
 
-      <figure class="mt-14">
-        <div class="shot">
+      <div class="mt-12 grid gap-3 sm:grid-cols-2">
+        <figure class="shot">
           <img
             src="../assets/img/projects/developer-insights-scatter.jpg"
             width="739"
             height="518"
             loading="lazy"
             decoding="async"
+            class="aspect-[16/10] w-full object-cover object-left-top"
             alt="Scatter plot of yearly compensation against job satisfaction score, showing a dense band near zero at every satisfaction level with a small number of extreme outliers above ten million."
           />
-        </div>
-        <figcaption class="mt-2 text-xs text-muted dark:text-muted-dark">
-          Compensation against reported job satisfaction. The outliers at the top are the reason the cleaning step exists.
-        </figcaption>
-      </figure>
+          <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">
+            Compensation against reported job satisfaction. The outliers at the top are the reason the cleaning step exists.
+          </figcaption>
+        </figure>
+      </div>
 
       <div class="measure mt-12 leading-[1.75]">
         <h2 class="text-lg font-semibold tracking-tight">Overview</h2>

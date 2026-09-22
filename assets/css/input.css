@@ -136,80 +136,13 @@
   }
 
   /*
-   * Code panel. Deliberately dark in both themes: a code sample reads as a
-   * screenshot of an editor, and one token palette that is correct on one
-   * background beats two palettes that are approximately correct on two.
-   * Colours are the GitHub Dark set, all at or above 4.5:1 on --code-bg.
-   */
-  .code {
-    --code-bg: #0d1117;
-    --code-bar: #161b22;
-    --code-line: #30363d;
-    --code-fg: #e6edf3;
-    --code-dim: #9aa4b2;
-
-    overflow: hidden;
-    border: 1px solid var(--code-line);
-    border-radius: 0.5rem;
-    background-color: var(--code-bg);
-  }
-
-  .code-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-    padding: 0.55rem 0.9rem;
-    border-bottom: 1px solid var(--code-line);
-    background-color: var(--code-bar);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--code-dim);
-  }
-
-  .code-bar a {
-    color: var(--code-dim);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-
-  .code-bar a:hover {
-    color: var(--code-fg);
-  }
-
-  .code pre {
-    margin: 0;
-    padding: 1rem 0.9rem 1.1rem;
-    overflow-x: auto;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    line-height: 1.65;
-    color: var(--code-fg);
-    tab-size: 4;
-  }
-
-  @media (min-width: 640px) {
-    .code pre {
-      font-size: 0.8125rem;
-      padding: 1.1rem 1.25rem 1.25rem;
-    }
-  }
-
-  .code .t-kw { color: #ff7b72; }
-  .code .t-str { color: #a5d6ff; }
-  .code .t-com { color: #9aa4b2; font-style: italic; }
-  .code .t-fn { color: #d2a8ff; }
-  .code .t-num,
-  .code .t-cls { color: #79c0ff; }
-  .code .t-dec { color: #ffa657; }
-
-  /*
    * Screenshot frame. Every image on this site is a real capture of the thing
    * it claims to show — none are mockups — so they are framed, never faked up
    * with browser chrome that was not there.
    */
   .shot {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     border: 1px solid var(--color-line);
     border-radius: 0.5rem;
@@ -225,5 +158,10 @@
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  /* Captions sit inside the frame, so a row of tiles has one bottom edge. */
+  .shot figcaption {
+    margin-top: auto;
   }
 }

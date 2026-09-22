@@ -119,7 +119,6 @@
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#approach">How I work</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#experience">Experience</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#projects">Projects</a></li>
-              <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#code">Code</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#skills">Skills</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#education">Education</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#contact">Contact</a></li>
@@ -604,17 +603,32 @@
             <h3 class="mt-10 text-sm font-semibold text-muted dark:text-muted-dark">Featured</h3>
             <ul class="mt-5 space-y-10">
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
-                <figure class="shot">
-                  <img
-                    src="assets/img/projects/preflight-dashboard.jpg"
-                    width="1600"
-                    height="917"
-                    loading="lazy"
-                    decoding="async"
-                    alt="preflight results dashboard: five headline figures along the top — 45 runs, $3.394 total spent, cheapest 100% arm at $0.067, 89% below the sonnet-cold baseline, 5 escalations — above a grouped bar chart of cost per bug for each of the nine arms."
-                  />
-                </figure>
-                <p class="mt-2 text-xs text-muted dark:text-muted-dark">preflight&rsquo;s own results dashboard, rendered from the benchmark data committed in the repository.</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/preflight-dashboard.jpg"
+                      width="1600"
+                      height="917"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="preflight results dashboard: 45 runs, $3.394 total spent, cheapest 100% arm at $0.067, 89% below the sonnet-cold baseline and 5 escalations, above a grouped bar chart of cost per bug for each of the nine arms."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The results dashboard, from the committed benchmark data.</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/preflight-arm-cost.jpg"
+                      width="1600"
+                      height="1000"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="Stacked bar chart of total cost per benchmark arm across the five bugs, all nine arms at 5 out of 5 passed: arm A sonnet-cold at $0.623, the cascade arms between $0.380 and $0.431, the capped-cheap arm E highest at $0.721, and the cross-engine arms at $0.253, $0.067 and $0.082."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Cost per arm. E — starting cheap with a cap — is the tallest.</figcaption>
+                  </figure>
+                </div>
 
                 <div class="measure mt-6">
                   <p class="mb-2">
@@ -640,17 +654,32 @@
                 </p>
               </li>
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
-                <figure class="shot">
-                  <img
-                    src="assets/img/projects/tracky-dashboard.jpg"
-                    width="1440"
-                    height="900"
-                    loading="lazy"
-                    decoding="async"
-                    alt="Tracky dashboard: a sidebar of Dashboard, Metrics, Log Entry, Dashboards and Profile beside a grid of user-built widgets — a sleep-hours line chart, a steps bar chart, a mood stat card and an exercise streak card."
-                  />
-                </figure>
-                <p class="mt-2 text-xs text-muted dark:text-muted-dark">A user-built dashboard in Tracky. Every widget here was configured in the UI, not coded.</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/tracky-dashboard.jpg"
+                      width="1440"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="Tracky dashboard: a sidebar of Dashboard, Metrics, Log Entry, Dashboards and Profile beside a grid of user-built widgets — a sleep-hours line chart, a steps bar chart, a mood stat card and an exercise streak card."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">A user-built dashboard. Every widget was configured in the UI.</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/tracky-widget-configurator.jpg"
+                      width="1440"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="Tracky's widget configurator: a metric picker, a chart-type picker and a live preview of the widget being built."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The widget builder: the metric's type decides the charts offered.</figcaption>
+                  </figure>
+                </div>
 
                 <div class="measure mt-6">
                   <h4 class="text-lg font-semibold tracking-tight">Tracky — Personal Analytics Dashboard</h4>
@@ -672,17 +701,32 @@
                 </p>
               </li>
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
-                <figure class="shot">
-                  <img
-                    src="assets/img/projects/powerbi-datamodel.jpg"
-                    width="1600"
-                    height="812"
-                    loading="lazy"
-                    decoding="async"
-                    alt="The Power BI model view: Sales as the fact table in the centre, related one-to-many to the Purchases, CalendarTable, Countries, Sales in USD and Exchange Data dimension tables."
-                  />
-                </figure>
-                <p class="mt-2 text-xs text-muted dark:text-muted-dark">The model behind the report — a star schema, not a pile of joined sheets.</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/powerbi-datamodel.jpg"
+                      width="1600"
+                      height="812"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The Power BI model view: Sales as the fact table in the centre, related one-to-many to the Purchases, CalendarTable, Countries, Sales in USD and Exchange Data dimension tables."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The model — a star schema, not a pile of joined sheets.</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/powerbi-dashboard.jpg"
+                      width="1600"
+                      height="715"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The published report in the Power BI Service: loyalty points by country, quantity purchased by product, median sales distribution and median sales over time, with stock, quantity, median sales and YTD profit cards down the right."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The published report, refreshed on a schedule.</figcaption>
+                  </figure>
+                </div>
 
                 <div class="measure mt-6">
                   <h4 class="text-lg font-semibold tracking-tight">Power BI Data Analysis &amp; Visualization</h4>
@@ -704,17 +748,32 @@
                 </p>
               </li>
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
-                <figure class="shot">
-                  <img
-                    src="assets/img/projects/sales-dashboard.jpg"
-                    width="1600"
-                    height="800"
-                    loading="lazy"
-                    decoding="async"
-                    alt="The Databricks sales dashboard: yearly, quarterly and monthly sales panels along the top, total sales by country and by order source below, and spend-per-customer and top-ordered-food panels underneath."
-                  />
-                </figure>
-                <p class="mt-2 text-xs text-muted dark:text-muted-dark">The dashboard the Spark aggregations feed, in Databricks.</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/sales-dashboard.jpg"
+                      width="1600"
+                      height="800"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The Databricks sales dashboard: yearly, quarterly and monthly sales panels along the top, total sales by country and by order source below."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The dashboard the Spark aggregations feed, in Databricks.</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/sales-dashboard-2.jpg"
+                      width="1271"
+                      height="834"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="A second page of the Databricks dashboard, with further sales and customer breakdowns."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">A second view of the same dashboard.</figcaption>
+                  </figure>
+                </div>
 
                 <div class="measure mt-6">
                   <h4 class="text-lg font-semibold tracking-tight">Sales &amp; Menu Analysis with PySpark</h4>
@@ -792,217 +851,6 @@
                 </p>
               </li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Code -->
-      <section id="code" class="border-t border-line dark:border-line-dark">
-        <div
-          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
-        >
-          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
-            Code
-          </h2>
-
-          <div>
-            <p class="measure text-lg leading-[1.6]">
-              Five excerpts from the repositories above, one per part of the job I do —
-              <span class="hl">agents, numerics, data engineering, BI modelling and application
-              code</span>. All of it is real, unedited except for trimming, and each panel links
-              to the file it came from.
-            </p>
-
-            <figure class="mt-8">
-              <figcaption class="measure text-sm leading-[1.7]"><strong>AI / agent orchestration.</strong> The escalation loop at the centre of preflight. The point is the tail of the loop: escalating is <span class="hl">not a retry</span> — the cheap model&rsquo;s failed transcript is distilled into a new brief, so the expensive tier starts from what has already been ruled out.</figcaption>
-              <div class="code mt-4">
-                <div class="code-bar">
-                  <span>preflight/cascade.py</span>
-                  <a href="https://github.com/zakaria17amir/preflight-agent/blob/main/preflight/cascade.py" target="_blank" rel="noopener">view on GitHub</a>
-                </div>
-                <pre><code><span class="t-com"># Run the tiers in order. Every tier but the last gets a turn budget, so a</span>
-<span class="t-com"># failed cheap attempt stays cheap.</span>
-<span class="t-kw">for</span> i, tier <span class="t-kw">in</span> <span class="t-cls">enumerate</span>(tiers):
-    is_last = i + <span class="t-num">1</span> == <span class="t-cls">len</span>(tiers)
-    budget = <span class="t-kw">None</span> <span class="t-kw">if</span> is_last <span class="t-kw">else</span> cheap_max_turns
-
-    a = <span class="t-fn">attempt</span>(root, issue, brief=brief_text, model=tier,
-                test_cmd=test_cmd, max_turns=budget)
-    out.attempts.append(a)
-    out.stages.append(<span class="t-fn">Stage</span>(<span class="t-str">f&quot;attempt{i + 1}&quot;</span>, a.cost_usd, a.tokens,
-                            a.seconds, passed=a.passed))
-
-    <span class="t-kw">if</span> a.passed:
-        out.passed = <span class="t-kw">True</span>
-        <span class="t-fn">say</span>(<span class="t-str">f&quot;solved at tier {i + 1}; total so far ${out.cost_usd:.4f}&quot;</span>)
-        <span class="t-kw">break</span>
-    <span class="t-kw">if</span> is_last:
-        <span class="t-kw">break</span>
-
-    <span class="t-com"># The escalation is not a retry: the cheap model&#x27;s failed transcript</span>
-    <span class="t-com"># is distilled into a new brief, so the strong tier starts from what</span>
-    <span class="t-com"># is already ruled out instead of from the original issue.</span>
-    h_text, hres = <span class="t-fn">make_handoff</span>(
-        issue,
-        brief_text <span class="t-kw">or</span> <span class="t-str">&quot;(no brief was given)&quot;</span>,
-        a.transcript_for_handoff(),
-        model=brief_model,
-        scan_text=<span class="t-fn">render</span>(s, max_tree=<span class="t-num">60</span>),
-    )
-    brief_text = h_text</code></pre>
-              </div>
-            </figure>
-            <figure class="mt-8">
-              <figcaption class="measure text-sm leading-[1.7]"><strong>Numerics with a domain behind them.</strong> Measurement-system analysis for a factory test bench, in NumPy, following the <span class="hl">AIAG MSA</span> convention. Before an agent is allowed to propose quarantining vehicles, this decides whether the bench that failed them can be trusted at all.</figcaption>
-              <div class="code mt-4">
-                <div class="code-bar">
-                  <span>services/detect/…/msa.py</span>
-                  <a href="https://github.com/zakaria17amir/Qgate-Agent/blob/main/services/detect/src/qgate_detect/msa.py" target="_blank" rel="noopener">view on GitHub</a>
-                </div>
-                <pre><code><span class="t-kw">def</span> <span class="t-fn">capability</span>(bench_id, repeats, own, peers) -&gt; BenchCapability:
-    <span class="t-com">&quot;&quot;&quot;Judge a bench from its repeat readings (per VIN) and from its
-    readings versus its peer benches.&quot;&quot;&quot;</span>
-    groups = [np.asarray(v) <span class="t-kw">for</span> v <span class="t-kw">in</span> repeats.values() <span class="t-kw">if</span> <span class="t-cls">len</span>(v) &gt;= <span class="t-num">2</span>]
-    grr = sigma_gauge = <span class="t-kw">None</span>
-    <span class="t-kw">if</span> groups:
-        <span class="t-com"># pooled within-vehicle standard deviation: the gauge&#x27;s own</span>
-        <span class="t-com"># scatter, with the part held fixed</span>
-        ss = <span class="t-cls">sum</span>(<span class="t-cls">float</span>(np.<span class="t-cls">sum</span>((g - g.mean()) ** <span class="t-num">2</span>)) <span class="t-kw">for</span> g <span class="t-kw">in</span> groups)
-        dof = <span class="t-cls">sum</span>(<span class="t-cls">len</span>(g) - <span class="t-num">1</span> <span class="t-kw">for</span> g <span class="t-kw">in</span> groups)
-        sigma_gauge = <span class="t-cls">float</span>(np.sqrt(ss / dof))
-        grr = <span class="t-num">6</span> * sigma_gauge / TOLERANCE_WIDTH * <span class="t-num">100</span>   <span class="t-com"># AIAG: &lt; 30 % ok</span>
-
-    <span class="t-com"># Too little evidence is a verdict of its own, not a default of &quot;fine&quot;.</span>
-    <span class="t-kw">if</span> <span class="t-cls">len</span>(own) &lt; MIN_VALUES:
-        <span class="t-kw">return</span> <span class="t-fn">BenchCapability</span>(bench_id, <span class="t-kw">False</span>, grr, sigma_gauge, <span class="t-kw">None</span>,
-                               <span class="t-cls">len</span>(groups), <span class="t-cls">len</span>(own),
-                               method=<span class="t-str">&quot;insufficient-data&quot;</span>)
-
-    <span class="t-com"># A drifting bench keeps its repeatability and moves its bias, which</span>
-    <span class="t-com"># is why %GRR alone is never the answer.</span>
-    bias = <span class="t-cls">float</span>(np.mean(own) - np.mean(peers)) <span class="t-kw">if</span> <span class="t-cls">len</span>(peers) <span class="t-kw">else</span> <span class="t-kw">None</span>
-    repeatable = grr <span class="t-kw">is</span> <span class="t-kw">None</span> <span class="t-kw">or</span> grr &lt; GRR_THRESHOLD_PCT
-    unbiased = bias <span class="t-kw">is</span> <span class="t-kw">None</span> <span class="t-kw">or</span> <span class="t-cls">abs</span>(bias) &lt; BIAS_THRESHOLD
-    <span class="t-kw">return</span> <span class="t-fn">BenchCapability</span>(bench_id, repeatable <span class="t-kw">and</span> unbiased, grr,
-                           sigma_gauge, bias, <span class="t-cls">len</span>(groups), <span class="t-cls">len</span>(own),
-                           method=<span class="t-str">&quot;grr+bias-vs-peers&quot;</span>)</code></pre>
-              </div>
-            <p class="measure mt-3 text-sm leading-[1.7] text-muted dark:text-muted-dark">Note the middle branch: <span class="hl">too little evidence is a verdict of its own</span>, not a quiet default of &ldquo;fine&rdquo;. Most of the cost of a bad automated decision is hidden in cases like that one.</p>
-            </figure>
-            <figure class="mt-8">
-              <figcaption class="measure text-sm leading-[1.7]"><strong>Data engineering.</strong> Distributed ETL in <span class="hl">PySpark</span> on Databricks. The schema is declared rather than inferred, which is the difference between a pipeline that fails loudly and a dashboard that is confidently wrong.</figcaption>
-              <div class="code mt-4">
-                <div class="code-bar">
-                  <span>Restaurant_Sales_Data_Analysis.ipynb</span>
-                  <a href="https://github.com/zakaria17amir/Sales-Menu-Data-Analysis-Using-PySpark-Apache-Spark/blob/main/Restaurant_Sales_Data_Analysis.ipynb" target="_blank" rel="noopener">view on GitHub</a>
-                </div>
-                <pre><code><span class="t-com"># Schema declared up front rather than inferred: a silently re-typed</span>
-<span class="t-com"># column is the cheapest way to get a dashboard that is confidently wrong.</span>
-schema = <span class="t-fn">StructType</span>([
-    <span class="t-fn">StructField</span>(<span class="t-str">&quot;product_id&quot;</span>, <span class="t-fn">IntegerType</span>(), <span class="t-kw">True</span>),
-    <span class="t-fn">StructField</span>(<span class="t-str">&quot;customer_id&quot;</span>, <span class="t-fn">StringType</span>(), <span class="t-kw">True</span>),
-    <span class="t-fn">StructField</span>(<span class="t-str">&quot;order_date&quot;</span>, <span class="t-fn">DateType</span>(), <span class="t-kw">True</span>),
-    <span class="t-fn">StructField</span>(<span class="t-str">&quot;location&quot;</span>, <span class="t-fn">StringType</span>(), <span class="t-kw">True</span>),
-    <span class="t-fn">StructField</span>(<span class="t-str">&quot;source_order&quot;</span>, <span class="t-fn">StringType</span>(), <span class="t-kw">True</span>),
-])
-
-sales_df = (spark.read.format(<span class="t-str">&quot;csv&quot;</span>)
-            .option(<span class="t-str">&quot;inferschema&quot;</span>, <span class="t-str">&quot;true&quot;</span>)
-            .schema(schema)
-            .load(SALES))
-
-sales_df = sales_df.withColumn(<span class="t-str">&quot;order_year&quot;</span>, <span class="t-fn">year</span>(sales_df.order_date))
-sales_df = sales_df.withColumn(<span class="t-str">&quot;order_month&quot;</span>, <span class="t-fn">month</span>(sales_df.order_date))
-sales_df = sales_df.withColumn(<span class="t-str">&quot;order_quarter&quot;</span>, <span class="t-fn">quarter</span>(sales_df.order_date))
-
-most_df = (sales_df.join(menu_df, <span class="t-str">&quot;product_id&quot;</span>)
-           .groupBy(<span class="t-str">&quot;product_id&quot;</span>, <span class="t-str">&quot;product_name&quot;</span>)
-           .agg(<span class="t-fn">count</span>(<span class="t-str">&quot;product_id&quot;</span>).alias(<span class="t-str">&quot;product_count&quot;</span>))
-           .orderBy(<span class="t-str">&quot;product_count&quot;</span>, ascending=<span class="t-num">0</span>)
-           .drop(<span class="t-str">&quot;product_id&quot;</span>))</code></pre>
-              </div>
-            </figure>
-            <figure class="mt-8">
-              <figcaption class="measure text-sm leading-[1.7]"><strong>BI modelling.</strong> The measures behind the report above. Time intelligence like <code class="font-mono text-[0.9em]">TOTALYTD</code> is only valid against a real marked date table — which is why the <span class="hl">model comes before the measure</span>, every time.</figcaption>
-              <div class="code mt-4">
-                <div class="code-bar">
-                  <span>Tailwind Traders — DAX measures</span>
-                  <a href="https://github.com/zakaria17amir/Power-BI-Data-Analysis-Visualization/blob/main/Documentation/DaxCalculations.md" target="_blank" rel="noopener">view on GitHub</a>
-                </div>
-                <pre><code>Yearly Profit Margin =
-<span class="t-kw">DIVIDE</span>(
-    <span class="t-kw">SUM</span>(<span class="t-str">&#x27;Sales in USD&#x27;</span><span class="t-cls">[Gross Revenue USD]</span>),
-    <span class="t-kw">SUM</span>(<span class="t-str">&#x27;Sales in USD&#x27;</span><span class="t-cls">[Net Revenue USD]</span>),
-    <span class="t-num">0</span>  <span class="t-com">// third argument, not an IF: DIVIDE owns the zero-denominator case</span>
-)
-
-YTD Profit =
-<span class="t-kw">TOTALYTD</span>(
-    <span class="t-kw">SUM</span>(<span class="t-str">&#x27;Sales in USD&#x27;</span><span class="t-cls">[Net Revenue USD]</span>),
-    <span class="t-str">&#x27;Calendar&#x27;</span><span class="t-cls">[Date]</span>   <span class="t-com">// a real marked date table, so this is valid</span>
-)
-
-Quarterly Profit =
-<span class="t-kw">CALCULATE</span>(
-    <span class="t-kw">SUM</span>(<span class="t-str">&#x27;Sales in USD&#x27;</span><span class="t-cls">[Net Revenue USD]</span>),
-    <span class="t-kw">DATESQTD</span>(<span class="t-str">&#x27;Calendar&#x27;</span><span class="t-cls">[Date]</span>)
-)</code></pre>
-              </div>
-            </figure>
-            <figure class="mt-8">
-              <figcaption class="measure text-sm leading-[1.7]"><strong>Software engineering.</strong> Tracky&rsquo;s widget layer in TypeScript. A single <span class="hl">type column drives the whole UI</span> — which input you get when logging, which charts the builder offers, and what the summary maths means — so adding a metric type is a data change, not a rewrite.</figcaption>
-              <div class="code mt-4">
-                <div class="code-bar">
-                  <span>frontend/src/lib/widgetData.ts</span>
-                  <a href="https://github.com/zakaria17amir/Tracky/blob/main/frontend/src/lib/widgetData.ts" target="_blank" rel="noopener">view on GitHub</a>
-                </div>
-                <pre><code><span class="t-com">/** Numeric value of an entry for charting (booleans -&gt; 1/0). */</span>
-<span class="t-kw">export</span> <span class="t-kw">function</span> <span class="t-fn">numericValue</span>(entry: Entry): number {
-  <span class="t-kw">if</span> (entry.value_boolean !== <span class="t-kw">null</span>) <span class="t-kw">return</span> entry.value_boolean ? <span class="t-num">1</span> : <span class="t-num">0</span>;
-  <span class="t-kw">if</span> (entry.value_scale !== <span class="t-kw">null</span>) <span class="t-kw">return</span> entry.value_scale;
-  <span class="t-kw">if</span> (entry.value_numeric !== <span class="t-kw">null</span>) <span class="t-kw">return</span> <span class="t-cls">Number</span>(entry.value_numeric);
-  <span class="t-kw">return</span> <span class="t-num">0</span>;
-}
-
-<span class="t-com">/** Default config for a freshly-selected chart type. */</span>
-<span class="t-kw">export</span> <span class="t-kw">function</span> <span class="t-fn">defaultConfig</span>(chartType: string): WidgetConfig {
-  <span class="t-kw">switch</span> (chartType) {
-    <span class="t-kw">case</span> <span class="t-str">&quot;line&quot;</span>:
-      <span class="t-kw">return</span> { range_days: <span class="t-num">14</span>, show_points: <span class="t-kw">true</span>, color: CHART_COLORS[<span class="t-num">0</span>] };
-    <span class="t-kw">case</span> <span class="t-str">&quot;bar&quot;</span>:
-      <span class="t-kw">return</span> { grouping: <span class="t-str">&quot;daily&quot;</span>, color: CHART_COLORS[<span class="t-num">1</span>] };
-    <span class="t-kw">case</span> <span class="t-str">&quot;stat&quot;</span>:
-      <span class="t-kw">return</span> { comparison: <span class="t-str">&quot;average&quot;</span> };
-    <span class="t-kw">case</span> <span class="t-str">&quot;streak&quot;</span>:
-      <span class="t-kw">return</span> { threshold_type: <span class="t-str">&quot;boolean&quot;</span>, threshold_value: <span class="t-num">1</span> };
-    <span class="t-kw">default</span>:
-      <span class="t-kw">return</span> {};
-  }
-}</code></pre>
-              </div>
-            </figure>
-
-            <figure class="mt-12">
-              <figcaption class="measure text-sm leading-[1.7]">
-                <strong>And what it looks like running.</strong> One recorded preflight cascade,
-                end to end: the zero-token scan, the brief the cheap model writes from it, the
-                cheap attempt, the distilled handoff, then the strong tier.
-              </figcaption>
-              <div class="shot mt-4">
-                <img
-                  src="assets/img/projects/preflight-transcript.jpg"
-                  width="1600"
-                  height="658"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Recorded terminal output of one preflight cascade: a scan line reporting 9 files and 0 tokens, a brief line reporting size S, tier cheap at $0.0126, then the generated brief itself with Start here, Conventions, Verify, Risks, Size and Tier sections."
-                />
-              </div>
-              <p class="mt-2 text-xs text-muted dark:text-muted-dark">
-                The $0.01 brief that does the work — file-ranked entry points, conventions to
-                preserve, how to verify, and the risks that make the fix go wrong.
-              </p>
-            </figure>
           </div>
         </div>
       </section>

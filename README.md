@@ -73,27 +73,18 @@ If a project has no real screenshot, it does not get one — it goes in the
 "Also built" grid on the main page instead of the featured list. An empty frame
 or an invented UI is worse than no picture.
 
-Use the `.shot` class for the frame and always set `width`, `height`,
-`loading="lazy"` and a `alt` that describes what is actually on screen.
+Screenshots ship as **pairs in a half-height grid**, not as one full-width
+image per project — two pictures in the vertical space one used to take. Use
+`.shot` for the frame, `aspect-[16/10] object-cover object-left-top` on the
+`<img>` so a row of tiles shares one baseline, and always set `width`,
+`height`, `loading="lazy"` and an `alt` describing what is actually on screen.
 
-## Code panels
+On the main page the second tile of each pair carries `hidden sm:block`: at
+phone width a half-column thumbnail is unreadable, and stacking the pair would
+cost exactly the vertical space the layout exists to save.
 
-The `Code` section on the main page and several project pages carry excerpts of
-real source, marked up as `.code` panels rather than shipped as images: a code
-screenshot cannot be selected, searched, zoomed or read by a screen reader.
-
-The panels are dark in both themes on purpose — a code sample reads as a
-screenshot of an editor, and one token palette that is correct on one background
-beats two that are approximately correct on two.
-
-Two rules when adding one:
-
-1. **Keep every line at 80 columns or fewer.** The article column fits about
-   that; longer lines turn the panel into something nobody scrolls.
-2. **Do not hand-write the `<span>` markup.** It is generated — see the token
-   classes (`t-kw`, `t-str`, `t-com`, `t-fn`, `t-cls`, `t-num`, `t-dec`) in
-   `input.css` — and hand-marked code drifts out of sync with the file it
-   quotes.
+Pick images that survive being 376px wide. A wide strip or a wall of small text
+does not — it crops to nothing and reads as noise.
 
 ## Highlighted keywords
 
@@ -114,9 +105,9 @@ nothing is.
 4. Add a `<url>` entry to `sitemap.xml`.
 5. `npm run build`, commit, push.
 
-A full-width figure or code panel on a project page has to sit *outside* the
-`.measure` column, which caps body copy at 68 characters. Close the `measure`
-div before it and open a new one after, as the existing pages do.
+The screenshot grid on a project page sits *above* the `.measure` column, which
+caps body copy at 68 characters — a full-width element inside it would be
+squeezed to the width of the prose.
 
 ## Deployment
 
@@ -133,8 +124,7 @@ prefixes to `/` when the domain changes.
 ## Conventions
 
 - No third-party scripts, fonts, analytics or cookies.
-- Every screenshot is a real capture; every code excerpt is real source, quoted
-  from a repository that is linked next to it.
+- Every screenshot is a real capture of the running thing — no mockups.
 - No phone number in the site source; it stays on the CV PDF.
 - The public email is assembled in JavaScript rather than sitting in the HTML as
   a scrapeable string. It is duplicated in `content.js` and `main.js` — change
