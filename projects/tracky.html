@@ -120,7 +120,23 @@
         >
       </p>
 
-      <div class="measure mt-14 leading-[1.75]">
+      <figure class="mt-14">
+        <div class="shot">
+          <img
+            src="../assets/img/projects/tracky-dashboard.jpg"
+            width="1440"
+            height="900"
+            loading="lazy"
+            decoding="async"
+            alt="Tracky dashboard: a sidebar of Dashboard, Metrics, Log Entry, Dashboards and Profile beside a grid of user-built widgets — a sleep-hours line chart, a steps bar chart, a mood stat card and an exercise streak card."
+          />
+        </div>
+        <figcaption class="mt-2 text-xs text-muted dark:text-muted-dark">
+          A user-built dashboard. Every widget here was configured in the UI, not coded.
+        </figcaption>
+      </figure>
+
+      <div class="measure mt-12 leading-[1.75]">
         <h2 class="text-lg font-semibold tracking-tight">Overview</h2>
         <p class="mt-3">
           A personal analytics app built as two independent tiers: a Laravel 13 REST
@@ -178,7 +194,75 @@
           </li>
         </ul>
 
-        <h2 class="mt-12 text-lg font-semibold tracking-tight">Results</h2>
+      </div>
+
+      <div class="code mt-12">
+        <div class="code-bar">
+          <span>frontend/src/lib/widgetData.ts</span>
+          <a href="https://github.com/zakaria17amir/Tracky/blob/main/frontend/src/lib/widgetData.ts" target="_blank" rel="noopener">view on GitHub</a>
+        </div>
+        <pre><code>/** Numeric value of an entry for charting (booleans -> 1/0). */
+export function numericValue(entry: Entry): number {
+  if (entry.value_boolean !== null) return entry.value_boolean ? 1 : 0;
+  if (entry.value_scale !== null) return entry.value_scale;
+  if (entry.value_numeric !== null) return Number(entry.value_numeric);
+  return 0;
+}
+
+/** Default config for a freshly-selected chart type. */
+export function defaultConfig(chartType: string): WidgetConfig {
+  switch (chartType) {
+    case "line":
+      return { range_days: 14, show_points: true, color: CHART_COLORS[0] };
+    case "bar":
+      return { grouping: "daily", color: CHART_COLORS[1] };
+    case "stat":
+      return { comparison: "average" };
+    case "streak":
+      return { threshold_type: "boolean", threshold_value: 1 };
+    default:
+      return {};
+  }
+}</code></pre>
+      </div>
+      <p class="measure mt-3 text-sm leading-[1.7] text-muted dark:text-muted-dark">
+        One type column drives the whole UI — which input you get when logging, which charts the builder offers, and what the summary maths means — so adding a metric type is a data change rather than a rewrite.
+      </p>
+
+      <figure class="mt-12">
+        <div class="shot">
+          <img
+            src="../assets/img/projects/tracky-widget-configurator.jpg"
+            width="1440"
+            height="900"
+            loading="lazy"
+            decoding="async"
+            alt="Tracky's widget configurator: a metric picker, a chart-type picker and a live preview of the widget being built."
+          />
+        </div>
+        <figcaption class="mt-2 text-xs text-muted dark:text-muted-dark">
+          The widget configurator the code above drives: pick a metric, and only the chart types that metric supports are offered.
+        </figcaption>
+      </figure>
+
+      <figure class="mt-12">
+        <div class="shot">
+          <img
+            src="../assets/img/projects/tracky-log-entry.jpg"
+            width="1440"
+            height="900"
+            loading="lazy"
+            decoding="async"
+            alt="Tracky's log entry screen, with the input control matching each metric's declared type."
+          />
+        </div>
+        <figcaption class="mt-2 text-xs text-muted dark:text-muted-dark">
+          Logging. The input control is chosen from the metric's type, not hard-coded per screen.
+        </figcaption>
+      </figure>
+
+      <div class="measure mt-12 leading-[1.75]">
+        <h2 class="text-lg font-semibold tracking-tight">Results</h2>
         <p class="mt-3">
           A feature-complete two-tier application where the API and the SPA can be
           deployed and versioned independently, and where the client could be
@@ -223,6 +307,7 @@
           Recharts, Tailwind CSS and Vite on the client; Cypress and GitHub Actions
           around both.
         </p>
+      </div>
     </main>
 
     <footer class="border-t border-line dark:border-line-dark">

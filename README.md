@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio site — data, AI and software engineering.
+Personal portfolio site — software, data, ML and AI engineering.
 
 **Live:** https://zakaria17amir.github.io/portfolio
 
@@ -16,6 +16,7 @@ index.html              the main page — all content as static markup
 projects/               one writeup page per featured project
 assets/css/input.css    Tailwind source and design tokens (edit this)
 assets/css/style.css    BUILT output, committed (never edit by hand)
+assets/img/projects/    project screenshots (see "Screenshots" below)
 assets/js/content.js    all site content as plain data
 assets/js/main.js       theme toggle, mobile nav, email assembly
 404.html                served by Pages for any unmatched URL
@@ -57,15 +58,65 @@ npm run watch
 If you change classes and forget to rebuild, the site ships without those
 styles.
 
+## Screenshots
+
+`assets/img/projects/` holds one or more captures per project, exported as
+progressive JPEG at 1600px wide or less.
+
+**Every image on this site is a real capture of the thing it claims to show.**
+Nothing here is a mockup, a stock photo or a generated impression of a UI. Most
+came out of the project repositories themselves (`Tracky/docs/screenshots/`, the
+Power BI repo's `DashBoards/`); the preflight ones were captured from its own
+dashboard, served locally from the benchmark results committed in that repo.
+
+If a project has no real screenshot, it does not get one — it goes in the
+"Also built" grid on the main page instead of the featured list. An empty frame
+or an invented UI is worse than no picture.
+
+Use the `.shot` class for the frame and always set `width`, `height`,
+`loading="lazy"` and a `alt` that describes what is actually on screen.
+
+## Code panels
+
+The `Code` section on the main page and several project pages carry excerpts of
+real source, marked up as `.code` panels rather than shipped as images: a code
+screenshot cannot be selected, searched, zoomed or read by a screen reader.
+
+The panels are dark in both themes on purpose — a code sample reads as a
+screenshot of an editor, and one token palette that is correct on one background
+beats two that are approximately correct on two.
+
+Two rules when adding one:
+
+1. **Keep every line at 80 columns or fewer.** The article column fits about
+   that; longer lines turn the panel into something nobody scrolls.
+2. **Do not hand-write the `<span>` markup.** It is generated — see the token
+   classes (`t-kw`, `t-str`, `t-com`, `t-fn`, `t-cls`, `t-num`, `t-dec`) in
+   `input.css` — and hand-marked code drifts out of sync with the file it
+   quotes.
+
+## Highlighted keywords
+
+`.hl` marks the phrases a scan should catch: a recruiter reads the page before
+they read it properly. Use it on the claim, not the sentence, and leave most
+paragraphs unmarked — a page where everything is highlighted is a page where
+nothing is.
+
 ## Adding a project
 
-1. Append an object to `projects[]` in `assets/js/content.js`.
+1. Append an object to `projects[]` in `assets/js/content.js`. Add a `shot`
+   key only if you have a real screenshot.
 2. Copy an existing page in `projects/` and rewrite its content. Keep the seven
    sections, including **What I would do differently** — that section is the
    most valuable thing on the page to a technical reader.
-3. Add a card to the projects grid in `index.html`.
+3. Add a card to the projects grid in `index.html` — the featured list if it has
+   a screenshot, the "Also built" grid if it does not.
 4. Add a `<url>` entry to `sitemap.xml`.
 5. `npm run build`, commit, push.
+
+A full-width figure or code panel on a project page has to sit *outside* the
+`.measure` column, which caps body copy at 68 characters. Close the `measure`
+div before it and open a new one after, as the existing pages do.
 
 ## Deployment
 
@@ -82,6 +133,8 @@ prefixes to `/` when the domain changes.
 ## Conventions
 
 - No third-party scripts, fonts, analytics or cookies.
+- Every screenshot is a real capture; every code excerpt is real source, quoted
+  from a repository that is linked next to it.
 - No phone number in the site source; it stays on the CV PDF.
 - The public email is assembled in JavaScript rather than sitting in the HTML as
   a scrapeable string. It is duplicated in `content.js` and `main.js` — change
