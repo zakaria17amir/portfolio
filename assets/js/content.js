@@ -6,9 +6,10 @@
  * edit content here, mirror the change in the corresponding HTML. This file is
  * the record of intent; the HTML is what ships.
  *
- * `shot` on a project points at a REAL capture of that project running.
- * Nothing on this site is a mockup; if there is no real screenshot, there is
- * no `shot` key.
+ * `shot` and `shot2` on a project point at REAL captures of that project
+ * running — the page shows them as a pair of half-height tiles. Nothing on this
+ * site is a mockup; if there is no real screenshot, there is no `shot` key and
+ * the project goes in the "Also built" grid instead of the featured list.
  */
 
 export const profile = {
@@ -154,6 +155,7 @@ export const projects = [
   {
     slug: "preflight",
     shot: { src: "assets/img/projects/preflight-dashboard.jpg", caption: "preflight's own results dashboard, rendered from the benchmark data committed in the repository." },
+    shot2: { src: "assets/img/projects/preflight-arm-cost.jpg", caption: "Total cost per arm across the five bugs." },
     title: "preflight",
     tagline: "A tech-lead pass that runs before a coding agent does",
     award: "2nd place · LaunchLoop hackathon",
@@ -168,6 +170,7 @@ export const projects = [
   {
     slug: "tracky",
     shot: { src: "assets/img/projects/tracky-dashboard.jpg", caption: "A user-built dashboard in Tracky. Every widget here was configured in the UI, not coded." },
+    shot2: { src: "assets/img/projects/tracky-widget-configurator.jpg", caption: "The widget builder: the metric's type decides which charts are offered." },
     title: "Tracky — Personal Analytics Dashboard",
     tagline: "A Laravel 13 REST API and a React 19 TypeScript SPA",
     impact:
@@ -223,6 +226,7 @@ export const projects = [
     repo:
       "https://github.com/zakaria17amir/Sales-Menu-Data-Analysis-Using-PySpark-Apache-Spark",
     shot: { src: "assets/img/projects/sales-dashboard.jpg", caption: "The dashboard the Spark aggregations feed, in Databricks." },
+    shot2: { src: "assets/img/projects/sales-dashboard-2.jpg", caption: "A second view of the same dashboard." },
     page: "projects/sales-menu-pyspark.html",
     featured: true,
   },
@@ -235,6 +239,7 @@ export const projects = [
     tags: ["Power BI", "DAX", "Star Schema", "Power Query", "Python", "ETL"],
     repo: "https://github.com/zakaria17amir/Power-BI-Data-Analysis-Visualization",
     shot: { src: "assets/img/projects/powerbi-datamodel.jpg", caption: "The model behind the report — a star schema, not a pile of joined sheets." },
+    shot2: { src: "assets/img/projects/powerbi-dashboard.jpg", caption: "The published report, refreshed on a schedule." },
     page: "projects/powerbi-analysis.html",
     featured: true,
   },

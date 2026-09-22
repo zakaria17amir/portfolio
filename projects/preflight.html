@@ -131,21 +131,36 @@
         >
       </p>
 
-      <figure class="mt-14">
-        <div class="shot">
+      <div class="mt-12 grid gap-3 sm:grid-cols-2">
+        <figure class="shot">
           <img
             src="../assets/img/projects/preflight-dashboard.jpg"
             width="1600"
             height="917"
             loading="lazy"
             decoding="async"
+            class="aspect-[16/10] w-full object-cover object-left-top"
             alt="preflight results dashboard: 45 runs, $3.394 total spent, cheapest 100% arm at $0.067, 89% below the sonnet-cold baseline and 5 escalations, above a grouped bar chart of cost per bug for each of the nine arms."
           />
-        </div>
-        <figcaption class="mt-2 text-xs text-muted dark:text-muted-dark">
-          The results dashboard, rendered from the benchmark data committed in the repository.
-        </figcaption>
-      </figure>
+          <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">
+            The results dashboard, rendered from the benchmark data committed in the repository.
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img
+            src="../assets/img/projects/preflight-arm-cost.jpg"
+            width="1600"
+            height="1000"
+            loading="lazy"
+            decoding="async"
+            class="aspect-[16/10] w-full object-cover object-left-top"
+            alt="Stacked bar chart of total cost per benchmark arm across the five bugs, all nine arms at 5 out of 5 passed: arm A sonnet-cold at $0.623, the cascade arms between $0.380 and $0.431, the capped-cheap arm E highest at $0.721, and the cross-engine arms at $0.253, $0.067 and $0.082."
+          />
+          <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">
+            Total cost per arm across the five bugs. Every arm fixed 5 of 5, so the only difference is cost — and the capped-cheap arm E is the most expensive of the nine.
+          </figcaption>
+        </figure>
+      </div>
 
       <div class="measure mt-12 leading-[1.75]">
         <h2 class="text-lg font-semibold tracking-tight">Overview</h2>
@@ -209,50 +224,7 @@
           </li>
         </ul>
 
-      </div>
-
-      <div class="code mt-10">
-        <div class="code-bar">
-          <span>preflight/cascade.py</span>
-          <a href="https://github.com/zakaria17amir/preflight-agent/blob/main/preflight/cascade.py" target="_blank" rel="noopener">view on GitHub</a>
-        </div>
-        <pre><code># Run the tiers in order. Every tier but the last gets a turn budget, so a
-# failed cheap attempt stays cheap.
-for i, tier in enumerate(tiers):
-    is_last = i + 1 == len(tiers)
-    budget = None if is_last else cheap_max_turns
-
-    a = attempt(root, issue, brief=brief_text, model=tier,
-                test_cmd=test_cmd, max_turns=budget)
-    out.attempts.append(a)
-    out.stages.append(Stage(f"attempt{i + 1}", a.cost_usd, a.tokens,
-                            a.seconds, passed=a.passed))
-
-    if a.passed:
-        out.passed = True
-        say(f"solved at tier {i + 1}; total so far ${out.cost_usd:.4f}")
-        break
-    if is_last:
-        break
-
-    # The escalation is not a retry: the cheap model's failed transcript
-    # is distilled into a new brief, so the strong tier starts from what
-    # is already ruled out instead of from the original issue.
-    h_text, hres = make_handoff(
-        issue,
-        brief_text or "(no brief was given)",
-        a.transcript_for_handoff(),
-        model=brief_model,
-        scan_text=render(s, max_tree=60),
-    )
-    brief_text = h_text</code></pre>
-      </div>
-      <p class="measure mt-3 text-sm leading-[1.7] text-muted dark:text-muted-dark">
-        The escalation is not a retry: the cheap model&rsquo;s failed transcript is distilled into a new brief, so the strong tier starts from what is already ruled out rather than from the original issue.
-      </p>
-
-      <div class="measure mt-8 leading-[1.75]">
-        <h2 class="text-lg font-semibold tracking-tight">Results</h2>
+        <h2 class="mt-12 text-lg font-semibold tracking-tight">Results</h2>
         <p class="mt-3">
           Over five bugs, one run per cell, all arms fixed 5 out of 5. The
           interesting difference is cost.
@@ -284,42 +256,7 @@ for i, tier in enumerate(tiers):
           breath as the numbers.
         </p>
 
-      </div>
-
-      <figure class="mt-12">
-        <div class="shot">
-          <img
-            src="../assets/img/projects/preflight-transcript.jpg"
-            width="1600"
-            height="658"
-            loading="lazy"
-            decoding="async"
-            alt="Recorded terminal output of one preflight cascade: a scan line reporting 9 files and 0 tokens, a brief line reporting size S and tier cheap at $0.0126, then the generated brief itself with Start here, Conventions, Verify, Risks, Size and Tier sections."
-          />
-        </div>
-        <figcaption class="mt-2 text-xs text-muted dark:text-muted-dark">
-          One recorded cascade: the zero-token scan, then the $0.01 brief the cheap model writes from it.
-        </figcaption>
-      </figure>
-
-      <figure class="mt-10">
-        <div class="shot">
-          <img
-            src="../assets/img/projects/preflight-matrix.jpg"
-            width="1600"
-            height="336"
-            loading="lazy"
-            decoding="async"
-            alt="The run matrix table: one row per seeded bug and one column per arm, each cell showing that arm's cost and pass result for that bug."
-          />
-        </div>
-        <figcaption class="mt-2 text-xs text-muted dark:text-muted-dark">
-          The full run matrix — every bug against every arm, each cell clickable through to that run's brief, handoff and diff.
-        </figcaption>
-      </figure>
-
-      <div class="measure mt-8 leading-[1.75]">
-        <h2 class="text-lg font-semibold tracking-tight">
+        <h2 class="mt-12 text-lg font-semibold tracking-tight">
           What I would do differently
         </h2>
         <ul class="mt-3 list-disc space-y-2 pl-5 marker:text-muted dark:marker:text-muted-dark">
