@@ -149,6 +149,9 @@ export const projects = [
     tagline: "An enterprise Power BI solution across five carriers",
     shot: { src: "assets/img/projects/telecom-executive-overview.jpg", caption: "Executive Overview \u2014 spend, savings and fleet in one page." },
     shot2: { src: "assets/img/projects/telecom-optimization.jpg", caption: "Where the waste is: zero-use lines, stale owners, carrier drift." },
+    // Rendered from the mermaid source in the project README; shown full width
+    // because at half a column its labels disappear.
+    diagram: { src: "assets/img/projects/telecom-semantic-model.jpg", caption: "Five dimensions feeding 22 fact and snapshot tables, single-direction." },
     impact:
       "Mobile spend, device fleet health, cost-saving initiatives, data quality and service-desk performance for a large enterprise's mobility function, in one semantic model. Six report pages, 150+ visuals and 49 KPI cards, with fiscal-year time intelligence and month-over-month variance. Built against a real corporate team's requirements and published on a fully synthetic dataset.",
     tags: ["Power BI", "DAX", "Power Query (M)", "TMDL / PBIP", "Python", "Data modelling"],
@@ -168,6 +171,18 @@ export const projects = [
     repo: "https://github.com/zakaria17amir/preflight-agent",
     demo: "https://preflight-agent.vercel.app",
     page: "projects/preflight.html",
+    featured: true,
+  },
+  {
+    slug: "qgate-agent",
+    title: "qgate-agent",
+    tagline: "Human-in-the-loop containment for end-of-line manufacturing tests",
+    shot: { src: "assets/img/projects/qgate-case.jpg", caption: "The order the agent proposes, with its evidence." },
+    shot2: { src: "assets/img/projects/qgate-decide.jpg", caption: "Nothing is held until a person approves or amends it." },
+    impact:
+      "When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, writes a containment order with its evidence, and requires a person to approve, amend or reject it before anything is held \u2014 every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.",
+    tags: ["Python", "LangGraph", "FastAPI", "Kafka", "PostgreSQL", "Docker"],
+    repo: "https://github.com/zakaria17amir/Qgate-Agent",
     featured: true,
   },
   {

@@ -552,7 +552,7 @@
 
           <div>
             <p class="measure text-muted dark:text-muted-dark">
-              Four projects, one for each kind of work I do:
+              Five projects across
               <span class="hl">data engineering, BI, AI agents and full-stack software</span>.
               These are the ones I can talk through end to end, so they are the ones here rather
               than everything I have built. Each links to the code, and to a writeup where there
@@ -635,6 +635,18 @@
                   </figure>
                 </div>
 
+                <figure class="shot mt-3">
+                  <img
+                    src="assets/img/projects/telecom-semantic-model.jpg"
+                    width="2000"
+                    height="484"
+                    loading="lazy"
+                    decoding="async"
+                    alt="The semantic model: Dim_Calendar, All Carriers, Dim Device Category, the VVIP list and the Exception list each fanning out one-to-many into the fact and snapshot tables — monthly billings, Granite, Tangoe devices and activities, ServiceNow tickets, the savings facts and the data-quality facts."
+                  />
+                  <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The semantic model behind it: five dimensions feeding 22 fact and snapshot tables, single-direction. Full size in the repository.</figcaption>
+                </figure>
+
                 <div class="measure mt-6">
                   <h4 class="text-lg font-semibold tracking-tight">Telecom Expense &amp; Service Management Analytics</h4>
                   <p class="mt-1 text-sm text-muted dark:text-muted-dark">An enterprise Power BI solution across five carriers</p>
@@ -702,6 +714,52 @@
                   <a href="projects/preflight.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
                   <a href="https://preflight-agent.vercel.app" target="_blank" rel="noopener" class="hover:underline">Live dashboard</a>
                   <a href="https://github.com/zakaria17amir/preflight-agent" target="_blank" rel="noopener" class="hover:underline">View code</a>
+                </p>
+              </li>
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/qgate-case.jpg"
+                      width="1224"
+                      height="765"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The qgate case view for station ST-19: a containment order holding 53 vehicles produced between two timestamps, the failure code and evidence summary, marked &quot;Waiting for decision&quot; with a Decide button."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The order the agent proposes, with its evidence.</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/qgate-decide.jpg"
+                      width="1224"
+                      height="765"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The qgate decide view: Approve, Amend and Reject radio buttons with Amend selected, editable window start and end, a free-text reason, and a panel showing the amended window now holds 43 vehicles instead of 53."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Nothing is held until a person approves or amends it.</figcaption>
+                  </figure>
+                </div>
+
+                <div class="measure mt-6">
+                  <h4 class="text-lg font-semibold tracking-tight">qgate-agent</h4>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">Human-in-the-loop containment for end-of-line manufacturing tests</p>
+                  <p class="mt-3 leading-[1.7]">When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against <span class="hl">build genealogy and station drift</span>, writes a containment order with its evidence, and <span class="hl">requires a person to approve, amend or reject it</span> before anything is held — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.</p>
+                </div>
+
+                <ul class="mt-5 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">LangGraph</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">FastAPI</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Kafka</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PostgreSQL</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Docker</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/Qgate-Agent" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
                 </p>
               </li>
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
