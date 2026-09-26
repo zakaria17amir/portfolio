@@ -113,13 +113,18 @@ nothing is.
 
 ## Adding a project
 
+The projects section is deliberately short: **one project per kind of work**
+(data engineering, BI, AI agents, full-stack software), picked for the ones that
+can be talked through end to end. Adding a fifth means either replacing the one
+it competes with or accepting a longer, weaker list.
+
 1. Append an object to `projects[]` in `assets/js/content.js`. Add a `shot`
    key only if you have a real screenshot.
 2. Copy an existing page in `projects/` and rewrite its content. Keep the seven
    sections, including **What I would do differently** — that section is the
    most valuable thing on the page to a technical reader.
-3. Add a card to the projects grid in `index.html` — the featured list if it has
-   a screenshot, the "Also built" grid if it does not.
+3. Add an entry to the projects list in `index.html`. It needs two real
+   screenshots; without them it does not go in.
 4. Add a `<url>` entry to `sitemap.xml`.
 5. `npm run build`, commit, push.
 

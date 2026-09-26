@@ -552,14 +552,14 @@
 
           <div>
             <p class="measure text-muted dark:text-muted-dark">
-              Ten projects I can talk through end to end, across
+              Four projects, one for each kind of work I do:
               <span class="hl">data engineering, BI, AI agents and full-stack software</span>.
-              Each links to the code, and to a writeup where there is one. Every screenshot below
-              is a real capture of the running thing — nothing here is a mockup.
+              These are the ones I can talk through end to end, so they are the ones here rather
+              than everything I have built. Each links to the code, and to a writeup where there
+              is one — and every screenshot is a real capture of the running thing.
             </p>
 
-            <h3 class="mt-10 text-sm font-semibold text-muted dark:text-muted-dark">Featured</h3>
-            <ul class="mt-5 space-y-10">
+            <ul class="mt-10 space-y-12">
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
                 <div class="grid gap-3 sm:grid-cols-2">
                   <figure class="shot">
@@ -753,109 +753,6 @@
               </li>
             </ul>
 
-            <h3 class="mt-14 text-sm font-semibold text-muted dark:text-muted-dark">Also built</h3>
-            <ul class="mt-5 grid gap-5 sm:grid-cols-2">
-              <li class="rounded-lg border border-line p-5 dark:border-line-dark">
-                <h4 class="font-semibold">Store Performance Cockpit</h4>
-                <p class="mt-1 text-sm text-muted dark:text-muted-dark">End-to-end Power BI on Microsoft Fabric</p>
-                <p class="mt-3 text-sm leading-[1.65]"><span class="hl">125M rows</span> of grocery sales feeding a governed star-schema model with <span class="hl">dynamic row-level security</span>, Best Practice Analyzer checks in CI and a Dev &rarr; Test &rarr; Prod deployment pipeline. A Python and DuckDB pipeline builds bronze &rarr; silver &rarr; gold in about two minutes, and the data tests block the upload when they fail.</p>
-                <ul class="mt-4 flex flex-wrap gap-1.5">
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Microsoft Fabric</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power BI</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">TMDL / PBIP</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DAX</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Azure SQL</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DuckDB</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
-                </ul>
-                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                  <a href="https://github.com/zakaria17amir/store-performance-fabric" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
-                </p>
-              </li>
-              <li class="rounded-lg border border-line p-5 dark:border-line-dark">
-                <h4 class="font-semibold">qgate-agent</h4>
-                <p class="mt-1 text-sm text-muted dark:text-muted-dark">Human-in-the-loop containment for end-of-line manufacturing tests</p>
-                <p class="mt-3 text-sm leading-[1.65]">When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, proposes a containment window, and <span class="hl">requires a human to approve it</span> before anything is written — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.</p>
-                <ul class="mt-4 flex flex-wrap gap-1.5">
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">LangGraph</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">FastAPI</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Kafka</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PostgreSQL</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Docker</li>
-                </ul>
-                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                  <a href="https://github.com/zakaria17amir/Qgate-Agent" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
-                </p>
-              </li>
-              <li class="rounded-lg border border-line p-5 dark:border-line-dark">
-                <h4 class="font-semibold">Power BI Data Analysis &amp; Visualization</h4>
-                <p class="mt-1 text-sm text-muted dark:text-muted-dark">An end-to-end BI solution on a star schema model</p>
-                <p class="mt-3 text-sm leading-[1.65]">Modelled the data as a <span class="hl">star schema</span> around a marked date table, wrote custom DAX measures including YTD and QTD rollups, and automated publishing to the Power BI Service with validation built into the refresh.</p>
-                <ul class="mt-4 flex flex-wrap gap-1.5">
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power BI</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DAX</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Star Schema</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power Query</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">ETL</li>
-                </ul>
-                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                  <a href="projects/powerbi-analysis.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
-                  <a href="https://github.com/zakaria17amir/Power-BI-Data-Analysis-Visualization" target="_blank" rel="noopener" class="hover:underline">View code</a>
-                </p>
-              </li>
-              <li class="rounded-lg border border-line p-5 dark:border-line-dark">
-                <h4 class="font-semibold">Sales &amp; Menu Analysis with PySpark</h4>
-                <p class="mt-1 text-sm text-muted dark:text-muted-dark">Scalable ETL and data quality checks on Databricks</p>
-                <p class="mt-3 text-sm leading-[1.65]">Distributed ETL pipelines in Databricks with an explicitly declared schema and <span class="hl">data quality checks at each stage</span>, aggregating customer spend and revenue trends into an analytical dashboard.</p>
-                <ul class="mt-4 flex flex-wrap gap-1.5">
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PySpark</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Apache Spark</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Databricks</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">SQL</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">ETL</li>
-                </ul>
-                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                  <a href="projects/sales-menu-pyspark.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
-                  <a href="https://github.com/zakaria17amir/Sales-Menu-Data-Analysis-Using-PySpark-Apache-Spark" target="_blank" rel="noopener" class="hover:underline">View code</a>
-                </p>
-              </li>
-              <li class="rounded-lg border border-line p-5 dark:border-line-dark">
-                <h4 class="font-semibold">FinTrack — Self-hosted Finance Tracker</h4>
-                <p class="mt-1 text-sm text-muted dark:text-muted-dark">A Laravel 13 app over a single SQLite file you own</p>
-                <p class="mt-3 text-sm leading-[1.65]">Accounts, transactions, category budgets and reports, without handing a third party read access to a bank. The interesting constraint is <span class="hl">shared household accounts</span>: ownership and view-or-edit permission live on the pivot, and are enforced server-side on every route.</p>
-                <ul class="mt-4 flex flex-wrap gap-1.5">
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Laravel 13</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PHP</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Blade</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Tailwind CSS</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">SQLite</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PHPUnit</li>
-                </ul>
-                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                  <a href="projects/fintrack.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
-                  <a href="https://github.com/zakaria17amir/Fintrack" target="_blank" rel="noopener" class="hover:underline">View code</a>
-                </p>
-              </li>
-              <li class="rounded-lg border border-line p-5 dark:border-line-dark">
-                <h4 class="font-semibold">Developer Insights Analysis</h4>
-                <p class="mt-1 text-sm text-muted dark:text-muted-dark">What a global developer survey says about pay, satisfaction and language adoption</p>
-                <p class="mt-3 text-sm leading-[1.65]">Cleaned and validated a large public survey dataset, then used <span class="hl">outlier detection and correlation analysis</span> to surface trends in job satisfaction, salary distribution and language adoption.</p>
-                <ul class="mt-4 flex flex-wrap gap-1.5">
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">pandas</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">NumPy</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Seaborn</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Matplotlib</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">scikit-learn</li>
-                </ul>
-                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                  <a href="projects/developer-insights.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
-                  <a href="https://github.com/zakaria17amir/Developer-Insights-Analysis" target="_blank" rel="noopener" class="hover:underline">View code</a>
-                </p>
-              </li>
-            </ul>
           </div>
         </div>
       </section>

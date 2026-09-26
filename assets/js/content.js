@@ -8,8 +8,11 @@
  *
  * `shot` and `shot2` on a project point at REAL captures of that project
  * running — the page shows them as a pair of half-height tiles. Nothing on this
- * site is a mockup; if there is no real screenshot, there is no `shot` key and
- * the project goes in the "Also built" grid instead of the featured list.
+ * site is a mockup.
+ *
+ * This list is deliberately short: one project per kind of work (data
+ * engineering, BI, AI agents, full-stack software), chosen for the ones that can
+ * be talked through end to end rather than for coverage.
  */
 
 export const profile = {
@@ -153,16 +156,6 @@ export const projects = [
     featured: true,
   },
   {
-    slug: "store-performance-fabric",
-    title: "Store Performance Cockpit",
-    tagline: "End-to-end Power BI on Microsoft Fabric",
-    impact:
-      "125M rows of grocery sales feeding a governed star-schema model with dynamic row-level security, Best Practice Analyzer checks in CI and a Dev \u2192 Test \u2192 Prod deployment pipeline. A Python and DuckDB pipeline builds bronze \u2192 silver \u2192 gold in about two minutes, and the data tests block the upload when they fail.",
-    tags: ["Microsoft Fabric", "Power BI", "TMDL / PBIP", "DAX", "Azure SQL", "DuckDB", "Python"],
-    repo: "https://github.com/zakaria17amir/store-performance-fabric",
-    featured: false,
-  },
-  {
     slug: "preflight",
     shot: { src: "assets/img/projects/preflight-dashboard.jpg", caption: "preflight's own results dashboard, rendered from the benchmark data committed in the repository." },
     shot2: { src: "assets/img/projects/preflight-arm-cost.jpg", caption: "Total cost per arm across the five bugs." },
@@ -189,68 +182,6 @@ export const projects = [
     repo: "https://github.com/zakaria17amir/Tracky",
     page: "projects/tracky.html",
     featured: true,
-  },
-  {
-    slug: "qgate-agent",
-    title: "qgate-agent",
-    tagline: "Human-in-the-loop containment for end-of-line manufacturing tests",
-    impact:
-      "When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, proposes a containment window, and requires a human to approve it before anything is written — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.",
-    tags: ["Python", "LangGraph", "Kafka", "PostgreSQL", "Docker", "C++"],
-    repo: "https://github.com/zakaria17amir/Qgate-Agent",
-    // No writeup page while the repo is a skeleton; the card links straight to code.
-    page: null,
-    featured: false,
-  },
-  {
-    slug: "fintrack",
-    title: "FinTrack — Self-hosted Finance Tracker",
-    tagline: "A Laravel 13 app over a single SQLite file you own",
-    impact:
-      "Accounts, transactions, category budgets and reports, without handing a third party read access to a bank. The interesting constraint is shared household accounts: ownership and view-or-edit permission live on the pivot, and are enforced server-side on every route.",
-    tags: ["Laravel 13", "PHP", "Blade", "Tailwind CSS", "SQLite", "PHPUnit"],
-    repo: "https://github.com/zakaria17amir/Fintrack",
-    page: "projects/fintrack.html",
-    featured: false,
-  },
-  {
-    slug: "developer-insights",
-    title: "Developer Insights Analysis",
-    tagline:
-      "What a global developer survey says about pay, satisfaction and language adoption",
-    impact:
-      "Cleaned and validated a large public survey dataset, then used outlier detection and correlation analysis to surface trends in job satisfaction, salary distribution and language adoption.",
-    tags: ["Python", "pandas", "Seaborn", "Matplotlib", "scikit-learn", "Statistics"],
-    repo: "https://github.com/zakaria17amir/Developer-Insights-Analysis",
-    page: "projects/developer-insights.html",
-    featured: false,
-  },
-  {
-    slug: "sales-menu-pyspark",
-    title: "Sales & Menu Analysis with PySpark",
-    tagline: "Scalable ETL and data quality checks on Databricks",
-    impact:
-      "Built distributed ETL pipelines in Databricks with data quality checks at each stage, aggregating customer spend and revenue trends into an analytical dashboard.",
-    tags: ["PySpark", "Apache Spark", "Databricks", "SQL", "ETL"],
-    repo:
-      "https://github.com/zakaria17amir/Sales-Menu-Data-Analysis-Using-PySpark-Apache-Spark",
-    shot: { src: "assets/img/projects/sales-dashboard.jpg", caption: "The dashboard the Spark aggregations feed, in Databricks." },
-    shot2: { src: "assets/img/projects/sales-dashboard-2.jpg", caption: "A second view of the same dashboard." },
-    page: "projects/sales-menu-pyspark.html",
-    featured: false,
-  },
-  {
-    slug: "powerbi-analysis",
-    title: "Power BI Data Analysis & Visualization",
-    tagline: "An end-to-end BI solution on a star schema model",
-    impact:
-      "Modelled the data as a star schema, wrote custom DAX measures including YTD and QTD rollups, and automated publishing to the Power BI Service with validation built into the refresh.",
-    tags: ["Power BI", "DAX", "Star Schema", "Power Query", "Python", "ETL"],
-    repo: "https://github.com/zakaria17amir/Power-BI-Data-Analysis-Visualization",
-    shot: { src: "assets/img/projects/powerbi-datamodel.jpg", caption: "The model behind the report — a star schema, not a pile of joined sheets." },
-    shot2: { src: "assets/img/projects/powerbi-dashboard.jpg", caption: "The published report, refreshed on a schedule." },
-    page: "projects/powerbi-analysis.html",
-    featured: false,
   },
 ];
 
