@@ -160,8 +160,28 @@
     <main id="main">
       <!-- Hero -->
       <section class="mx-auto max-w-5xl px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-24">
+        <!--
+          Portrait. To use the real photo: save it as
+          assets/img/amir-abdullah-zakaria.jpg (square, 400x400 or larger),
+          then delete the <p> monogram below and uncomment the <img>.
+
+          <img
+            src="assets/img/amir-abdullah-zakaria.jpg"
+            width="400"
+            height="400"
+            class="enter enter-1 h-24 w-24 rounded-full object-cover ring-1 ring-line sm:h-28 sm:w-28 dark:ring-line-dark"
+            alt="Amir Abdullah Zakaria"
+          />
+        -->
         <p
-          class="enter enter-1 font-mono text-xs uppercase tracking-[0.18em] text-muted dark:text-muted-dark"
+          class="enter enter-1 flex h-24 w-24 items-center justify-center rounded-full bg-accent-soft text-2xl font-semibold tracking-tight text-accent ring-1 ring-line sm:h-28 sm:w-28 sm:text-3xl dark:bg-accent-soft-dark dark:text-accent-dark dark:ring-line-dark"
+          aria-hidden="true"
+        >
+          AZ
+        </p>
+
+        <p
+          class="enter enter-1 mt-7 font-mono text-xs uppercase tracking-[0.18em] text-muted dark:text-muted-dark"
         >
           Software engineering · Data · ML &amp; AI
         </p>
@@ -176,8 +196,8 @@
           class="enter enter-2 measure mt-8 text-[clamp(1.25rem,2.2vw,1.625rem)] leading-[1.45]"
         >
           I build <span class="hl">systems people actually run on</span> — the BI model behind a
-          global company&rsquo;s reporting, the <span class="hl">automation that replaced its
-          manual version</span>, a REST API and SPA I own end to end, and
+          global company&rsquo;s reporting, <span class="hl">Spark pipelines over tens of millions
+          of rows</span>, a REST API and SPA I own end to end, and
           <span class="hl">AI agent tooling I benchmark</span> rather than just describe.
         </p>
 
@@ -218,8 +238,8 @@
             <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">reporting &amp; governance processes automated</dd>
           </div>
           <div>
-            <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">100k+</dt>
-            <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">records cleansed and restructured in Python</dd>
+            <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">10M+</dt>
+            <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">records processed across Python and Spark pipelines</dd>
           </div>
           <div>
             <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">600+</dt>
@@ -302,11 +322,21 @@
               the PhysioNet Challenge 2020 dataset.
             </p>
             <p>
-              Outside that I build things end to end and then measure them. <span class="hl">preflight</span>
-              — a briefing layer that runs ahead of a coding agent and routes cheap work to cheap
-              models — took <span class="hl">second place at a hackathon</span> on the strength of
-              a cost benchmark, including the result that argued against my own design. Tracky is
-              a Laravel REST API and a React TypeScript SPA I own on both sides. I also
+              Outside that I build things end to end and then measure them. Most recently that has
+              meant data platforms at real scale: a <span class="hl">PySpark pipeline over 42.8M
+              rows</span> of grocery sales on Databricks, where a negative binomial run test cuts
+              the stock-out false-positive rate from 21.5% to 4.8%; a
+              <span class="hl">125M-row Power BI model on Microsoft Fabric</span> with row-level
+              security and CI quality gates; and a six-page
+              <span class="hl">telecom expense analytics</span> solution for an enterprise mobility
+              team.
+            </p>
+            <p>
+              Before those, <span class="hl">preflight</span> — a briefing layer that runs ahead of
+              a coding agent and routes cheap work to cheap models — took
+              <span class="hl">second place at a hackathon</span> on the strength of a cost
+              benchmark, including the result that argued against my own design. Tracky is a
+              Laravel REST API and a React TypeScript SPA I own on both sides. I also
               <span class="hl">teach Discrete Mathematics and Computer Systems</span> at ELTE,
               which has done more for how I explain technical things than anything else I have
               done.
@@ -362,123 +392,51 @@
 
           <div>
             <p class="measure text-lg leading-[1.6]">
-              Most of what goes wrong on a data or software project goes wrong
+              Most of what goes wrong on a project goes wrong
               <span class="hl">before any code is written</span> — the wrong thing gets built,
-              carefully. So I keep two sides of the job separate, and I do them in that order.
+              carefully. So I do these four in order, every time.
             </p>
 
-            <div class="mt-8 grid gap-5 sm:grid-cols-2">
-              <div class="rounded-lg border border-line p-5 sm:p-6 dark:border-line-dark">
-                <p class="mb-3">
-                  <span class="rounded bg-accent-soft px-2.5 py-1 font-mono text-xs font-medium uppercase tracking-wider text-accent dark:bg-accent-soft-dark dark:text-accent-dark">Executive side</span>
-                </p>
-                <h3 class="font-semibold">Deciding what is worth building</h3>
-                <p class="mt-2 text-sm leading-[1.65] text-muted dark:text-muted-dark">
-                  The half that happens in meetings, in the stakeholder&rsquo;s vocabulary.
-                </p>
-                <ul class="mt-4 list-disc space-y-2.5 pl-4 text-sm leading-[1.65] marker:text-muted dark:marker:text-muted-dark">
-                  <li>
-                    <span class="hl">Frame the problem</span> with the team that owns it —
-                    procurement, demand management, finance — in their words, not in table
-                    names.
-                  </li>
-                  <li>
-                    <span class="hl">Define &ldquo;done&rdquo; as a number</span> before the
-                    first line of code: hours returned per month, closing accuracy, cost per
-                    resolved bug.
-                  </li>
-                  <li>
-                    <span class="hl">Choose scope and sequence</span> — and say plainly what I
-                    am not building, so nobody discovers it at handover.
-                  </li>
-                  <li>
-                    <span class="hl">Report in their language</span>, hours and money and risk,
-                    and keep a written record of the trade-offs I took and what I rejected.
-                  </li>
-                </ul>
-              </div>
-
-              <div class="rounded-lg border border-line p-5 sm:p-6 dark:border-line-dark">
-                <p class="mb-3">
-                  <span class="rounded bg-raised px-2.5 py-1 font-mono text-xs font-medium uppercase tracking-wider text-muted dark:bg-raised-dark dark:text-muted-dark">Operational side</span>
-                </p>
-                <h3 class="font-semibold">Making it real and keeping it running</h3>
-                <p class="mt-2 text-sm leading-[1.65] text-muted dark:text-muted-dark">
-                  The half that happens in an editor, and has to hold up on a Monday morning.
-                </p>
-                <ul class="mt-4 list-disc space-y-2.5 pl-4 text-sm leading-[1.65] marker:text-muted dark:marker:text-muted-dark">
-                  <li>
-                    <span class="hl">Model the data</span> — grain, dimensions, a star schema
-                    and measures that stay correct under slicer filtering.
-                  </li>
-                  <li>
-                    <span class="hl">Build the pipeline</span> — Power Query, Python, PySpark —
-                    with <span class="hl">validation at every stage</span> instead of one check
-                    at the end.
-                  </li>
-                  <li>
-                    <span class="hl">Automate the repeat</span> so the process does not depend
-                    on somebody remembering to run it.
-                  </li>
-                  <li>
-                    <span class="hl">Test, then measure in production</span>: PHPUnit and
-                    Cypress suites, pytest, a benchmark harness — evidence rather than
-                    assurances.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <h3 class="mt-12 text-sm font-semibold">
-              Plan <span class="text-muted dark:text-muted-dark">&rarr;</span> Align
-              <span class="text-muted dark:text-muted-dark">&rarr;</span> Execute
-              <span class="text-muted dark:text-muted-dark">&rarr;</span> Measure
-            </h3>
-
-            <ol class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <ol class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               <li class="border-t-2 border-accent pt-4 dark:border-accent-dark">
                 <p class="font-mono text-xs text-muted dark:text-muted-dark">01</p>
-                <h4 class="mt-1 font-semibold">Plan</h4>
+                <h3 class="mt-1 font-semibold">Plan</h3>
                 <p class="mt-2 text-sm leading-[1.65] text-muted dark:text-muted-dark">
-                  Write the brief before the code: the grain of the data, the success metric,
-                  the risks I can already name, and what I am deliberately leaving out. If I
-                  cannot write it down, I do not understand it yet.
+                  Write the brief first: the success metric, the risks, and what I am
+                  deliberately leaving out.
                 </p>
               </li>
               <li class="border-t-2 border-accent pt-4 dark:border-accent-dark">
                 <p class="font-mono text-xs text-muted dark:text-muted-dark">02</p>
-                <h4 class="mt-1 font-semibold">Align with stakeholders</h4>
+                <h3 class="mt-1 font-semibold">Align with stakeholders</h3>
                 <p class="mt-2 text-sm leading-[1.65] text-muted dark:text-muted-dark">
-                  Take the plan to the people across the global offices who will live with it
-                  and get the disagreement out <em>on the plan</em>, when changing it costs an
-                  afternoon rather than a quarter. Agree the cadence and who signs off.
+                  Get the disagreement out on the plan, when changing it costs an afternoon
+                  rather than a quarter.
                 </p>
               </li>
               <li class="border-t-2 border-accent pt-4 dark:border-accent-dark">
                 <p class="font-mono text-xs text-muted dark:text-muted-dark">03</p>
-                <h4 class="mt-1 font-semibold">Execute</h4>
+                <h3 class="mt-1 font-semibold">Execute</h3>
                 <p class="mt-2 text-sm leading-[1.65] text-muted dark:text-muted-dark">
-                  Build in slices that can each ship on their own, validated as they go, so
-                  there is something usable early and no single big-bang handover at the end.
+                  Build in slices that each ship on their own, validated as they go — no
+                  big-bang handover at the end.
                 </p>
               </li>
               <li class="border-t-2 border-accent pt-4 dark:border-accent-dark">
                 <p class="font-mono text-xs text-muted dark:text-muted-dark">04</p>
-                <h4 class="mt-1 font-semibold">Measure</h4>
+                <h3 class="mt-1 font-semibold">Measure</h3>
                 <p class="mt-2 text-sm leading-[1.65] text-muted dark:text-muted-dark">
-                  Go back afterwards with the number agreed in step one — 100+ hours a month,
-                  32% less cost per bug — and publish it whichever way it comes out.
+                  Go back with the number agreed in step one, and publish it whichever way
+                  it comes out.
                 </p>
               </li>
             </ol>
 
             <p class="measure mt-8 text-sm leading-[1.7] text-muted dark:text-muted-dark">
-              Step four is the one I care about most, including when it goes against me. The
+              Step four is the one I care about most, including when it goes against me: the
               preflight benchmark produced a result that
-              <span class="hl">contradicted my own design</span> — starting cheap with a capped
-              budget came out 16% <em>more</em> expensive than simply using the strong model. It
-              is at the top of that project&rsquo;s README, and on its page here, with the
-              numbers.
+              <span class="hl">contradicted my own design</span>, and it is on that
+              project&rsquo;s page with the numbers.
             </p>
           </div>
         </div>
@@ -594,14 +552,107 @@
 
           <div>
             <p class="measure text-muted dark:text-muted-dark">
-              Seven projects I can talk through end to end, across
-              <span class="hl">AI agents, data engineering, BI and full-stack software</span>.
-              Each links to the code, and to a writeup where there is one. Every screenshot
-              below is a real capture of the running thing — nothing here is a mockup.
+              Ten projects I can talk through end to end, across
+              <span class="hl">data engineering, BI, AI agents and full-stack software</span>.
+              Each links to the code, and to a writeup where there is one. Every screenshot below
+              is a real capture of the running thing — nothing here is a mockup.
             </p>
 
             <h3 class="mt-10 text-sm font-semibold text-muted dark:text-muted-dark">Featured</h3>
             <ul class="mt-5 space-y-10">
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/favorita-promo-payback.jpg"
+                      width="1322"
+                      height="826"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="Dot-and-whisker chart titled &quot;Promotions still pay back in 23 of 29 families&quot;: net lift with 95% bootstrap confidence intervals per product family, from Home and Kitchen at the top down to eggs, poultry and produce, which fall below zero."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Net lift per family, with 95% confidence intervals.</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/favorita-stockout-heatmap.jpg"
+                      width="1280"
+                      height="800"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="Heatmap of the share of item-days inside a flagged zero-sale run, one row per store and one column per week, worst stores first, with Store 27 Daule at the top at 5.0% of item-days."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Stock-out rate per store and week. Store 27 is the worst.</figcaption>
+                  </figure>
+                </div>
+
+                <div class="measure mt-6">
+                  <h4 class="text-lg font-semibold tracking-tight">Favorita stock-out &amp; promo analysis</h4>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">PySpark and Spark SQL on Databricks, bronze → silver → gold</p>
+                  <p class="mt-3 leading-[1.7]">Twelve months of real grocery sales — <span class="hl">54 stores, 42.8M rows</span> — and two questions answered with statistics you can explain in one sentence. A <span class="hl">negative binomial run test</span> with Benjamini&ndash;Hochberg control cuts the stock-out flag rate from Poisson&rsquo;s 21.5% to <span class="hl">4.8%</span>, because 99% of store-items vary more than Poisson allows. Promotions pay back in <span class="hl">23 of 29 families</span> — but not in fresh food, once the week after is counted.</p>
+                </div>
+
+                <ul class="mt-5 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PySpark</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Spark SQL</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Databricks</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Delta Lake</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">pytest</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">GitHub Actions</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/favorita-stockout-promo-databricks" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/telecom-executive-overview.jpg"
+                      width="1128"
+                      height="705"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The Executive Overview page: KPI cards for month-over-month spend change, active lines, roaming charges, total savings and total spend, above a spend trend by carrier, a savings-by-source donut, a carrier spend summary matrix and a device fleet chart."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Executive Overview — spend, savings and fleet in one page.</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/telecom-optimization.jpg"
+                      width="1051"
+                      height="657"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The Cost Optimization and Data Quality page: KPI cards for open unassigned lines, users with three or more devices, carrier discrepancies and zero-use suspension rate, above charts of discrepancies by carrier, annualized savings from inactive-owner lines, and zero-use lines suspended per month."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Where the waste is: zero-use lines, stale owners, carrier drift.</figcaption>
+                  </figure>
+                </div>
+
+                <div class="measure mt-6">
+                  <h4 class="text-lg font-semibold tracking-tight">Telecom Expense &amp; Service Management Analytics</h4>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">An enterprise Power BI solution across five carriers</p>
+                  <p class="mt-3 leading-[1.7]">Mobile spend, device fleet health, cost-saving initiatives, data quality and service-desk performance for a large enterprise&rsquo;s mobility function, in <span class="hl">one semantic model</span>. Six report pages, <span class="hl">150+ visuals and 49 KPI cards</span>, with fiscal-year time intelligence and month-over-month variance. Built against a real corporate team&rsquo;s requirements and published on a <span class="hl">fully synthetic dataset</span> — the model, measures and design are unchanged, the names and numbers are not real.</p>
+                </div>
+
+                <ul class="mt-5 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power BI</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DAX</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power Query (M)</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">TMDL / PBIP</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Data modelling</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/telecom-expense-analytics-powerbi" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
                 <div class="grid gap-3 sm:grid-cols-2">
                   <figure class="shot">
@@ -700,107 +751,28 @@
                   <a href="https://github.com/zakaria17amir/Tracky" target="_blank" rel="noopener" class="hover:underline">View code</a>
                 </p>
               </li>
-              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
-                <div class="grid gap-3 sm:grid-cols-2">
-                  <figure class="shot">
-                    <img
-                      src="assets/img/projects/powerbi-datamodel.jpg"
-                      width="1600"
-                      height="812"
-                      loading="lazy"
-                      decoding="async"
-                      class="aspect-[16/10] w-full object-cover object-left-top"
-                      alt="The Power BI model view: Sales as the fact table in the centre, related one-to-many to the Purchases, CalendarTable, Countries, Sales in USD and Exchange Data dimension tables."
-                    />
-                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The model — a star schema, not a pile of joined sheets.</figcaption>
-                  </figure>
-                  <figure class="shot hidden sm:flex">
-                    <img
-                      src="assets/img/projects/powerbi-dashboard.jpg"
-                      width="1600"
-                      height="715"
-                      loading="lazy"
-                      decoding="async"
-                      class="aspect-[16/10] w-full object-cover object-left-top"
-                      alt="The published report in the Power BI Service: loyalty points by country, quantity purchased by product, median sales distribution and median sales over time, with stock, quantity, median sales and YTD profit cards down the right."
-                    />
-                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The published report, refreshed on a schedule.</figcaption>
-                  </figure>
-                </div>
-
-                <div class="measure mt-6">
-                  <h4 class="text-lg font-semibold tracking-tight">Power BI Data Analysis &amp; Visualization</h4>
-                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">An end-to-end BI solution on a star schema model</p>
-                  <p class="mt-3 leading-[1.7]">Modelled the data as a <span class="hl">star schema</span> around a marked date table, wrote custom <span class="hl">DAX measures including YTD and QTD rollups</span>, and automated publishing to the Power BI Service with <span class="hl">validation built into the refresh</span>.</p>
-                </div>
-
-                <ul class="mt-5 flex flex-wrap gap-1.5">
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power BI</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DAX</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Star Schema</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power Query</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">ETL</li>
-                </ul>
-                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                  <a href="projects/powerbi-analysis.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
-                  <a href="https://github.com/zakaria17amir/Power-BI-Data-Analysis-Visualization" target="_blank" rel="noopener" class="hover:underline">View code</a>
-                </p>
-              </li>
-              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
-                <div class="grid gap-3 sm:grid-cols-2">
-                  <figure class="shot">
-                    <img
-                      src="assets/img/projects/sales-dashboard.jpg"
-                      width="1600"
-                      height="800"
-                      loading="lazy"
-                      decoding="async"
-                      class="aspect-[16/10] w-full object-cover object-left-top"
-                      alt="The Databricks sales dashboard: yearly, quarterly and monthly sales panels along the top, total sales by country and by order source below."
-                    />
-                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The dashboard the Spark aggregations feed, in Databricks.</figcaption>
-                  </figure>
-                  <figure class="shot hidden sm:flex">
-                    <img
-                      src="assets/img/projects/sales-dashboard-2.jpg"
-                      width="1271"
-                      height="834"
-                      loading="lazy"
-                      decoding="async"
-                      class="aspect-[16/10] w-full object-cover object-left-top"
-                      alt="A second page of the Databricks dashboard, with further sales and customer breakdowns."
-                    />
-                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">A second view of the same dashboard.</figcaption>
-                  </figure>
-                </div>
-
-                <div class="measure mt-6">
-                  <h4 class="text-lg font-semibold tracking-tight">Sales &amp; Menu Analysis with PySpark</h4>
-                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">Scalable ETL and data quality checks on Databricks</p>
-                  <p class="mt-3 leading-[1.7]">Built <span class="hl">distributed ETL pipelines</span> in Databricks with an explicitly declared schema and <span class="hl">data quality checks at each stage</span>, aggregating customer spend and revenue trends into an analytical dashboard.</p>
-                </div>
-
-                <ul class="mt-5 flex flex-wrap gap-1.5">
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PySpark</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Apache Spark</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Databricks</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">SQL</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">ETL</li>
-                </ul>
-                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                  <a href="projects/sales-menu-pyspark.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
-                  <a href="https://github.com/zakaria17amir/Sales-Menu-Data-Analysis-Using-PySpark-Apache-Spark" target="_blank" rel="noopener" class="hover:underline">View code</a>
-                </p>
-              </li>
             </ul>
 
             <h3 class="mt-14 text-sm font-semibold text-muted dark:text-muted-dark">Also built</h3>
             <ul class="mt-5 grid gap-5 sm:grid-cols-2">
               <li class="rounded-lg border border-line p-5 dark:border-line-dark">
-                <p class="mb-2">
-                  <span class="rounded bg-raised px-2.5 py-1 text-xs font-medium text-muted dark:bg-raised-dark dark:text-muted-dark">In development</span>
+                <h4 class="font-semibold">Store Performance Cockpit</h4>
+                <p class="mt-1 text-sm text-muted dark:text-muted-dark">End-to-end Power BI on Microsoft Fabric</p>
+                <p class="mt-3 text-sm leading-[1.65]"><span class="hl">125M rows</span> of grocery sales feeding a governed star-schema model with <span class="hl">dynamic row-level security</span>, Best Practice Analyzer checks in CI and a Dev &rarr; Test &rarr; Prod deployment pipeline. A Python and DuckDB pipeline builds bronze &rarr; silver &rarr; gold in about two minutes, and the data tests block the upload when they fail.</p>
+                <ul class="mt-4 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Microsoft Fabric</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power BI</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">TMDL / PBIP</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DAX</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Azure SQL</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DuckDB</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/store-performance-fabric" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
                 </p>
+              </li>
+              <li class="rounded-lg border border-line p-5 dark:border-line-dark">
                 <h4 class="font-semibold">qgate-agent</h4>
                 <p class="mt-1 text-sm text-muted dark:text-muted-dark">Human-in-the-loop containment for end-of-line manufacturing tests</p>
                 <p class="mt-3 text-sm leading-[1.65]">When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, proposes a containment window, and <span class="hl">requires a human to approve it</span> before anything is written — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.</p>
@@ -814,6 +786,39 @@
                 </ul>
                 <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
                   <a href="https://github.com/zakaria17amir/Qgate-Agent" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
+              <li class="rounded-lg border border-line p-5 dark:border-line-dark">
+                <h4 class="font-semibold">Power BI Data Analysis &amp; Visualization</h4>
+                <p class="mt-1 text-sm text-muted dark:text-muted-dark">An end-to-end BI solution on a star schema model</p>
+                <p class="mt-3 text-sm leading-[1.65]">Modelled the data as a <span class="hl">star schema</span> around a marked date table, wrote custom DAX measures including YTD and QTD rollups, and automated publishing to the Power BI Service with validation built into the refresh.</p>
+                <ul class="mt-4 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power BI</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DAX</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Star Schema</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power Query</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">ETL</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="projects/powerbi-analysis.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
+                  <a href="https://github.com/zakaria17amir/Power-BI-Data-Analysis-Visualization" target="_blank" rel="noopener" class="hover:underline">View code</a>
+                </p>
+              </li>
+              <li class="rounded-lg border border-line p-5 dark:border-line-dark">
+                <h4 class="font-semibold">Sales &amp; Menu Analysis with PySpark</h4>
+                <p class="mt-1 text-sm text-muted dark:text-muted-dark">Scalable ETL and data quality checks on Databricks</p>
+                <p class="mt-3 text-sm leading-[1.65]">Distributed ETL pipelines in Databricks with an explicitly declared schema and <span class="hl">data quality checks at each stage</span>, aggregating customer spend and revenue trends into an analytical dashboard.</p>
+                <ul class="mt-4 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PySpark</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Apache Spark</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Databricks</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">SQL</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">ETL</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="projects/sales-menu-pyspark.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
+                  <a href="https://github.com/zakaria17amir/Sales-Menu-Data-Analysis-Using-PySpark-Apache-Spark" target="_blank" rel="noopener" class="hover:underline">View code</a>
                 </p>
               </li>
               <li class="rounded-lg border border-line p-5 dark:border-line-dark">
@@ -900,7 +905,7 @@
               </ul>
             </div>
             <div>
-              <h3 class="text-sm font-semibold">Machine learning</h3>
+              <h3 class="text-sm font-semibold">Machine learning &amp; statistics</h3>
               <ul class="mt-3 flex flex-wrap gap-1.5">
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">scikit-learn</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PyTorch</li>
@@ -910,6 +915,10 @@
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Model evaluation &amp; benchmarking</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">CNNs</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Cross-validation &amp; leakage control</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Negative binomial / overdispersion</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Benjamini&ndash;Hochberg FDR control</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Bootstrap confidence intervals</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Hypothesis testing at scale</li>
               </ul>
             </div>
             <div>
@@ -951,6 +960,12 @@
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Apache Kafka</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Avro / fastavro</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Data quality &amp; validation</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Spark SQL</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Delta Lake</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Microsoft Fabric</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Lakehouse / medallion</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DuckDB</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Incremental &amp; idempotent loads</li>
               </ul>
             </div>
             <div>
@@ -964,6 +979,11 @@
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Office Scripts</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Excel (advanced)</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Upland PSA administration</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">TMDL / PBIP</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Row-level &amp; object-level security</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Calculation groups</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Fabric deployment pipelines</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Best Practice Analyzer in CI</li>
               </ul>
             </div>
             <div>

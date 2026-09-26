@@ -58,6 +58,18 @@ npm run watch
 If you change classes and forget to rebuild, the site ships without those
 styles.
 
+## The portrait
+
+The hero shows an `AZ` monogram as a stand-in. To use the real photo:
+
+1. Save it as `assets/img/amir-abdullah-zakaria.jpg` — square, 400x400 or larger.
+2. In `index.html`, uncomment the `<img>` in the portrait block and delete the
+   `<p>` monogram below it.
+3. `npm run build`, commit, push.
+
+The monogram is there so the layout is finished either way; it is not a
+placeholder image file, so nothing is broken while the photo is missing.
+
 ## Screenshots
 
 `assets/img/projects/` holds one or more captures per project, exported as
@@ -85,6 +97,12 @@ cost exactly the vertical space the layout exists to save.
 
 Pick images that survive being 376px wide. A wide strip or a wall of small text
 does not — it crops to nothing and reads as noise.
+
+Tiles crop from the top left. When the bottom of a chart carries the point (the
+families that *lose* sales, say), pad the file to 16:10 with its own background
+colour before committing it, so `object-cover` has nothing left to cut. Sample
+the dominant border colour rather than a corner pixel — a corner often lands on
+a nav rail and gives you a stray grey bar.
 
 ## Highlighted keywords
 
