@@ -113,10 +113,14 @@ nothing is.
 
 ## Adding a project
 
-The projects section is deliberately short: **one project per kind of work**
-(data engineering, BI, AI agents, full-stack software), picked for the ones that
-can be talked through end to end. Adding a fifth means either replacing the one
-it competes with or accepting a longer, weaker list.
+The projects section is deliberately short — five entries spanning data
+engineering, BI, AI agents and full-stack software, picked for the ones that can
+be talked through end to end. Adding one means either replacing what it competes
+with or accepting a longer, weaker list.
+
+An entry needs **two real screenshots** at 16:10. A diagram that is too wide to
+read at half a column (the telecom semantic model, 3.8:1) goes full width under
+the pair instead of being squeezed into a tile.
 
 1. Append an object to `projects[]` in `assets/js/content.js`. Add a `shot`
    key only if you have a real screenshot.
