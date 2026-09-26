@@ -133,7 +133,7 @@ export const projects = [
     title: "Favorita stock-out & promo analysis",
     tagline: "PySpark and Spark SQL on Databricks, bronze \u2192 silver \u2192 gold",
     shot: { src: "assets/img/projects/favorita-promo-payback.jpg", caption: "Net lift per family, with 95% confidence intervals." },
-    shot2: { src: "assets/img/projects/favorita-stockout-heatmap.jpg", caption: "Stock-out rate per store and week." },
+    shot2: { src: "assets/img/projects/favorita-poisson-check.jpg", caption: "Why the run test is negative binomial, not Poisson." },
     impact:
       "Twelve months of real grocery sales \u2014 54 stores, 42.8M rows \u2014 and two questions answered with statistics you can explain in one sentence. A negative binomial run test with Benjamini\u2013Hochberg control cuts the stock-out flag rate from Poisson's 21.5% to 4.8%, because 99% of store-items vary more than Poisson allows. Promotions pay back in 23 of 29 families \u2014 but not in fresh food, once the week after is counted.",
     tags: ["PySpark", "Spark SQL", "Databricks", "Delta Lake", "Python", "pytest", "GitHub Actions"],
