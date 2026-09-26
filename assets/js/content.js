@@ -22,7 +22,7 @@ export const profile = {
     "Open to software, data, ML and AI engineering roles from January 2027",
   // Plain-English summary for the HR screener. No acronyms.
   summary:
-    "I build systems people actually run on — the BI model behind a global company's reporting, the automation that replaced its manual version, a REST API and SPA I own end to end, and AI agent tooling I benchmark rather than just describe.",
+    "I build systems people actually run on — the BI model behind a global company's reporting, Spark pipelines over tens of millions of rows, a REST API and SPA I own end to end, and AI agent tooling I benchmark rather than just describe.",
   // Deliberately not data-only: the same person does the software and the ML.
   vision: [
     "I want to build systems organisations decide on — not dashboards people admire once and then work around. That means owning a problem the whole way: framing it with the people who carry its cost, designing the model, writing the code, and then coming back with a number that says whether it actually worked.",
@@ -45,47 +45,23 @@ export const profile = {
  */
 export const approach = {
   intro:
-    "Most of what goes wrong on a data or software project goes wrong before any code is written — the wrong thing gets built, carefully. So I keep two sides of the job separate, and I do them in that order.",
-  sides: [
-    {
-      side: "Executive",
-      heading: "Deciding what is worth building",
-      note: "The half that happens in meetings, in the stakeholder's vocabulary.",
-      items: [
-        "Frame the problem with the team that owns it — procurement, demand management, finance — in their words, not in table names.",
-        "Define \"done\" as a number before the first line of code: hours returned per month, closing accuracy, cost per resolved bug.",
-        "Choose scope and sequence — and say plainly what I am not building, so nobody discovers it at handover.",
-        "Report in their language, hours and money and risk, and keep a written record of the trade-offs I took and what I rejected.",
-      ],
-    },
-    {
-      side: "Operational",
-      heading: "Making it real and keeping it running",
-      note: "The half that happens in an editor, and has to hold up on a Monday morning.",
-      items: [
-        "Model the data — grain, dimensions, a star schema and measures that stay correct under slicer filtering.",
-        "Build the pipeline — Power Query, Python, PySpark — with validation at every stage instead of one check at the end.",
-        "Automate the repeat so the process does not depend on somebody remembering to run it.",
-        "Test, then measure in production: PHPUnit and Cypress suites, pytest, a benchmark harness — evidence rather than assurances.",
-      ],
-    },
-  ],
+    "Most of what goes wrong on a project goes wrong before any code is written — the wrong thing gets built, carefully. So I do these four in order, every time.",
   sequence: [
     {
       step: "Plan",
-      body: "Write the brief before the code: the grain of the data, the success metric, the risks I can already name, and what I am deliberately leaving out. If I cannot write it down, I do not understand it yet.",
+      body: "Write the brief first: the success metric, the risks, and what I am deliberately leaving out.",
     },
     {
       step: "Align with stakeholders",
-      body: "Take the plan to the people across the global offices who will live with it and get the disagreement out on the plan, when changing it costs an afternoon rather than a quarter. Agree the cadence and who signs off.",
+      body: "Get the disagreement out on the plan, when changing it costs an afternoon rather than a quarter.",
     },
     {
       step: "Execute",
-      body: "Build in slices that can each ship on their own, validated as they go, so there is something usable early and no single big-bang handover at the end.",
+      body: "Build in slices that each ship on their own, validated as they go — no big-bang handover at the end.",
     },
     {
       step: "Measure",
-      body: "Go back afterwards with the number agreed in step one — 100+ hours a month, 32% less cost per bug — and publish it whichever way it comes out.",
+      body: "Go back with the number agreed in step one, and publish it whichever way it comes out.",
     },
   ],
 };
@@ -97,7 +73,7 @@ export const approach = {
 export const headlineMetrics = [
   { value: "100+", label: "hours a month returned by automation" },
   { value: "16+", label: "reporting & governance processes automated" },
-  { value: "100k+", label: "records cleansed and restructured in Python" },
+  { value: "10M+", label: "records processed across Python and Spark pipelines" },
   { value: "600+", label: "IT tickets triaged for a global user base" },
   { value: "2nd", label: "place, LaunchLoop hackathon (preflight)" },
   { value: "4.58/5.0", label: "CGPA, Stipendium Hungaricum Scholar" },
@@ -153,6 +129,40 @@ export const experience = [
 
 export const projects = [
   {
+    slug: "favorita-stockout-promo",
+    title: "Favorita stock-out & promo analysis",
+    tagline: "PySpark and Spark SQL on Databricks, bronze \u2192 silver \u2192 gold",
+    shot: { src: "assets/img/projects/favorita-promo-payback.jpg", caption: "Net lift per family, with 95% confidence intervals." },
+    shot2: { src: "assets/img/projects/favorita-stockout-heatmap.jpg", caption: "Stock-out rate per store and week." },
+    impact:
+      "Twelve months of real grocery sales \u2014 54 stores, 42.8M rows \u2014 and two questions answered with statistics you can explain in one sentence. A negative binomial run test with Benjamini\u2013Hochberg control cuts the stock-out flag rate from Poisson's 21.5% to 4.8%, because 99% of store-items vary more than Poisson allows. Promotions pay back in 23 of 29 families \u2014 but not in fresh food, once the week after is counted.",
+    tags: ["PySpark", "Spark SQL", "Databricks", "Delta Lake", "Python", "pytest", "GitHub Actions"],
+    repo: "https://github.com/zakaria17amir/favorita-stockout-promo-databricks",
+    featured: true,
+  },
+  {
+    slug: "telecom-expense-analytics",
+    title: "Telecom Expense & Service Management Analytics",
+    tagline: "An enterprise Power BI solution across five carriers",
+    shot: { src: "assets/img/projects/telecom-executive-overview.jpg", caption: "Executive Overview \u2014 spend, savings and fleet in one page." },
+    shot2: { src: "assets/img/projects/telecom-optimization.jpg", caption: "Where the waste is: zero-use lines, stale owners, carrier drift." },
+    impact:
+      "Mobile spend, device fleet health, cost-saving initiatives, data quality and service-desk performance for a large enterprise's mobility function, in one semantic model. Six report pages, 150+ visuals and 49 KPI cards, with fiscal-year time intelligence and month-over-month variance. Built against a real corporate team's requirements and published on a fully synthetic dataset.",
+    tags: ["Power BI", "DAX", "Power Query (M)", "TMDL / PBIP", "Python", "Data modelling"],
+    repo: "https://github.com/zakaria17amir/telecom-expense-analytics-powerbi",
+    featured: true,
+  },
+  {
+    slug: "store-performance-fabric",
+    title: "Store Performance Cockpit",
+    tagline: "End-to-end Power BI on Microsoft Fabric",
+    impact:
+      "125M rows of grocery sales feeding a governed star-schema model with dynamic row-level security, Best Practice Analyzer checks in CI and a Dev \u2192 Test \u2192 Prod deployment pipeline. A Python and DuckDB pipeline builds bronze \u2192 silver \u2192 gold in about two minutes, and the data tests block the upload when they fail.",
+    tags: ["Microsoft Fabric", "Power BI", "TMDL / PBIP", "DAX", "Azure SQL", "DuckDB", "Python"],
+    repo: "https://github.com/zakaria17amir/store-performance-fabric",
+    featured: false,
+  },
+  {
     slug: "preflight",
     shot: { src: "assets/img/projects/preflight-dashboard.jpg", caption: "preflight's own results dashboard, rendered from the benchmark data committed in the repository." },
     shot2: { src: "assets/img/projects/preflight-arm-cost.jpg", caption: "Total cost per arm across the five bugs." },
@@ -184,14 +194,13 @@ export const projects = [
     slug: "qgate-agent",
     title: "qgate-agent",
     tagline: "Human-in-the-loop containment for end-of-line manufacturing tests",
-    status: "In development",
     impact:
       "When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, proposes a containment window, and requires a human to approve it before anything is written — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.",
     tags: ["Python", "LangGraph", "Kafka", "PostgreSQL", "Docker", "C++"],
     repo: "https://github.com/zakaria17amir/Qgate-Agent",
     // No writeup page while the repo is a skeleton; the card links straight to code.
     page: null,
-    featured: true,
+    featured: false,
   },
   {
     slug: "fintrack",
@@ -202,7 +211,7 @@ export const projects = [
     tags: ["Laravel 13", "PHP", "Blade", "Tailwind CSS", "SQLite", "PHPUnit"],
     repo: "https://github.com/zakaria17amir/Fintrack",
     page: "projects/fintrack.html",
-    featured: true,
+    featured: false,
   },
   {
     slug: "developer-insights",
@@ -214,7 +223,7 @@ export const projects = [
     tags: ["Python", "pandas", "Seaborn", "Matplotlib", "scikit-learn", "Statistics"],
     repo: "https://github.com/zakaria17amir/Developer-Insights-Analysis",
     page: "projects/developer-insights.html",
-    featured: true,
+    featured: false,
   },
   {
     slug: "sales-menu-pyspark",
@@ -228,7 +237,7 @@ export const projects = [
     shot: { src: "assets/img/projects/sales-dashboard.jpg", caption: "The dashboard the Spark aggregations feed, in Databricks." },
     shot2: { src: "assets/img/projects/sales-dashboard-2.jpg", caption: "A second view of the same dashboard." },
     page: "projects/sales-menu-pyspark.html",
-    featured: true,
+    featured: false,
   },
   {
     slug: "powerbi-analysis",
@@ -241,7 +250,7 @@ export const projects = [
     shot: { src: "assets/img/projects/powerbi-datamodel.jpg", caption: "The model behind the report — a star schema, not a pile of joined sheets." },
     shot2: { src: "assets/img/projects/powerbi-dashboard.jpg", caption: "The published report, refreshed on a schedule." },
     page: "projects/powerbi-analysis.html",
-    featured: true,
+    featured: false,
   },
 ];
 
