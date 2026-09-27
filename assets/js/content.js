@@ -32,6 +32,7 @@ export const profile = {
     "The engineers I want to be like can hold both halves at once — the executive conversation about what is worth building, and the operational detail that makes it survive production. Most people are good at one. I am deliberately practising both, which is why every project here has a stated decision as well as a stack.",
     "I am not trying to be only a data person. Data engineering, machine learning, AI systems, backend and full-stack software — I have shipped in all of them and I care much less about the label on the role than about whether the thing is real, measured and running. Next I want to go deeper on ML and AI systems in production: evaluation, cost, latency and the unglamorous work of making a model trustworthy enough to act on.",
   ],
+  photo: "assets/img/amir-abdullah-zakaria.jpg",
   links: {
     github: "https://github.com/zakaria17amir",
     linkedin: "https://www.linkedin.com/in/amir-abdullah-zakaria",
@@ -132,6 +133,30 @@ export const experience = [
 
 export const projects = [
   {
+    slug: "store-performance-fabric",
+    title: "Store Performance Cockpit",
+    tagline: "End-to-end Power BI on Microsoft Fabric",
+    shot: { src: "assets/img/projects/fabric-network-overview.jpg", caption: "Head office: is the network on plan, and which region is behind?" },
+    shot2: { src: "assets/img/projects/fabric-fresh-availability.jpg", caption: "Category manager: where fresh sales are being lost, and to what." },
+    impact:
+      "125M rows of real grocery sales through one governed star-schema model, answering a different question for the store manager, the regional manager, the category manager and head office. Dynamic row-level security from an access table and object-level security on cost, tested in the Service for four personas. A Python and DuckDB pipeline builds bronze \u2192 silver \u2192 gold in about two minutes and its data tests block the upload. PBIP and TMDL in Git, Best Practice Analyzer in CI, and a Dev \u2192 Test \u2192 Prod deployment pipeline.",
+    tags: ["Microsoft Fabric", "Power BI", "TMDL / PBIP", "DAX", "Power Query M", "Azure SQL", "DuckDB", "Python", "GitHub Actions"],
+    repo: "https://github.com/zakaria17amir/store-performance-fabric",
+    featured: true,
+  },
+  {
+    slug: "qgate-agent",
+    title: "qgate-agent",
+    tagline: "Human-in-the-loop containment for end-of-line manufacturing tests",
+    shot: { src: "assets/img/projects/qgate-case.jpg", caption: "The order the agent proposes, with its evidence." },
+    shot2: { src: "assets/img/projects/qgate-decide.jpg", caption: "Nothing is held until a person approves or amends it." },
+    impact:
+      "When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, writes a containment order with its evidence, and requires a person to approve, amend or reject it before anything is held \u2014 every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.",
+    tags: ["Python", "LangGraph", "FastAPI", "Kafka", "PostgreSQL", "Docker"],
+    repo: "https://github.com/zakaria17amir/Qgate-Agent",
+    featured: true,
+  },
+  {
     slug: "favorita-stockout-promo",
     title: "Favorita stock-out & promo analysis",
     tagline: "PySpark and Spark SQL on Databricks, bronze \u2192 silver \u2192 gold",
@@ -171,18 +196,6 @@ export const projects = [
     repo: "https://github.com/zakaria17amir/preflight-agent",
     demo: "https://preflight-agent.vercel.app",
     page: "projects/preflight.html",
-    featured: true,
-  },
-  {
-    slug: "qgate-agent",
-    title: "qgate-agent",
-    tagline: "Human-in-the-loop containment for end-of-line manufacturing tests",
-    shot: { src: "assets/img/projects/qgate-case.jpg", caption: "The order the agent proposes, with its evidence." },
-    shot2: { src: "assets/img/projects/qgate-decide.jpg", caption: "Nothing is held until a person approves or amends it." },
-    impact:
-      "When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, writes a containment order with its evidence, and requires a person to approve, amend or reject it before anything is held \u2014 every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.",
-    tags: ["Python", "LangGraph", "FastAPI", "Kafka", "PostgreSQL", "Docker"],
-    repo: "https://github.com/zakaria17amir/Qgate-Agent",
     featured: true,
   },
   {

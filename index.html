@@ -160,25 +160,13 @@
     <main id="main">
       <!-- Hero -->
       <section class="mx-auto max-w-5xl px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-24">
-        <!--
-          Portrait. To use the real photo: save it as
-          assets/img/amir-abdullah-zakaria.jpg (square, 400x400 or larger),
-          then delete the <p> monogram below and uncomment the <img>.
-
-          <img
-            src="assets/img/amir-abdullah-zakaria.jpg"
-            width="400"
-            height="400"
-            class="enter enter-1 h-24 w-24 rounded-full object-cover ring-1 ring-line sm:h-28 sm:w-28 dark:ring-line-dark"
-            alt="Amir Abdullah Zakaria"
-          />
-        -->
-        <p
-          class="enter enter-1 flex h-24 w-24 items-center justify-center rounded-full bg-accent-soft text-2xl font-semibold tracking-tight text-accent ring-1 ring-line sm:h-28 sm:w-28 sm:text-3xl dark:bg-accent-soft-dark dark:text-accent-dark dark:ring-line-dark"
-          aria-hidden="true"
-        >
-          AZ
-        </p>
+        <img
+          src="assets/img/amir-abdullah-zakaria.jpg"
+          width="800"
+          height="800"
+          class="enter enter-1 h-24 w-24 rounded-full object-cover ring-1 ring-line sm:h-28 sm:w-28 dark:ring-line-dark"
+          alt="Amir Abdullah Zakaria"
+        />
 
         <p
           class="enter enter-1 mt-7 font-mono text-xs uppercase tracking-[0.18em] text-muted dark:text-muted-dark"
@@ -552,7 +540,7 @@
 
           <div>
             <p class="measure text-muted dark:text-muted-dark">
-              Five projects across
+              Six projects across
               <span class="hl">data engineering, BI, AI agents and full-stack software</span>.
               These are the ones I can talk through end to end, so they are the ones here rather
               than everything I have built. Each links to the code, and to a writeup where there
@@ -560,6 +548,101 @@
             </p>
 
             <ul class="mt-10 space-y-12">
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/fabric-network-overview.jpg"
+                      width="1600"
+                      height="1000"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The Network overview report page: $4bn sales value, 12.1% above target, 15.3% like-for-like growth, with a sales-vs-target bar chart by region, a this-year against last-year trend line, and a region comparison table."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Head office: is the network on plan, and which region is behind?</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/fabric-fresh-availability.jpg"
+                      width="1600"
+                      height="1000"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The Fresh and availability report page: 30.6% fresh share, 111K stock-out risk items, 21M estimated lost units and $72M estimated lost sales, with lost sales by perishable family, an availability trend, and a table of the items that look out of stock."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Category manager: where fresh sales are being lost, and to what.</figcaption>
+                  </figure>
+                </div>
+
+                <div class="measure mt-6">
+                  <h4 class="text-lg font-semibold tracking-tight">Store Performance Cockpit</h4>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">End-to-end Power BI on Microsoft Fabric</p>
+                  <p class="mt-3 leading-[1.7]"><span class="hl">125M rows</span> of real grocery sales through one governed star-schema model, answering a different question for the store manager, the regional manager, the category manager and head office. <span class="hl">Dynamic row-level security</span> from an access table and object-level security on cost, tested in the Service for four personas. A Python and DuckDB pipeline builds bronze &rarr; silver &rarr; gold in <span class="hl">about two minutes</span> and its data tests block the upload. PBIP and TMDL in Git, <span class="hl">Best Practice Analyzer in CI</span>, and a Dev &rarr; Test &rarr; Prod deployment pipeline.</p>
+                </div>
+
+                <ul class="mt-5 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Microsoft Fabric</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power BI</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">TMDL / PBIP</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DAX</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power Query M</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Azure SQL</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DuckDB</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">GitHub Actions</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/store-performance-fabric" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/qgate-case.jpg"
+                      width="1224"
+                      height="765"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The qgate case view for station ST-19: a containment order holding 53 vehicles produced between two timestamps, the failure code and evidence summary, marked &quot;Waiting for decision&quot; with a Decide button."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The order the agent proposes, with its evidence.</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/qgate-decide.jpg"
+                      width="1224"
+                      height="765"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The qgate decide view: Approve, Amend and Reject radio buttons with Amend selected, editable window start and end, a free-text reason, and a panel showing the amended window now holds 43 vehicles instead of 53."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Nothing is held until a person approves or amends it.</figcaption>
+                  </figure>
+                </div>
+
+                <div class="measure mt-6">
+                  <h4 class="text-lg font-semibold tracking-tight">qgate-agent</h4>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">Human-in-the-loop containment for end-of-line manufacturing tests</p>
+                  <p class="mt-3 leading-[1.7]">When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against <span class="hl">build genealogy and station drift</span>, writes a containment order with its evidence, and <span class="hl">requires a person to approve, amend or reject it</span> before anything is held — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.</p>
+                </div>
+
+                <ul class="mt-5 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">LangGraph</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">FastAPI</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Kafka</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PostgreSQL</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Docker</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/Qgate-Agent" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
                 <div class="grid gap-3 sm:grid-cols-2">
                   <figure class="shot">
@@ -714,52 +797,6 @@
                   <a href="projects/preflight.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
                   <a href="https://preflight-agent.vercel.app" target="_blank" rel="noopener" class="hover:underline">Live dashboard</a>
                   <a href="https://github.com/zakaria17amir/preflight-agent" target="_blank" rel="noopener" class="hover:underline">View code</a>
-                </p>
-              </li>
-              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
-                <div class="grid gap-3 sm:grid-cols-2">
-                  <figure class="shot">
-                    <img
-                      src="assets/img/projects/qgate-case.jpg"
-                      width="1224"
-                      height="765"
-                      loading="lazy"
-                      decoding="async"
-                      class="aspect-[16/10] w-full object-cover object-left-top"
-                      alt="The qgate case view for station ST-19: a containment order holding 53 vehicles produced between two timestamps, the failure code and evidence summary, marked &quot;Waiting for decision&quot; with a Decide button."
-                    />
-                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The order the agent proposes, with its evidence.</figcaption>
-                  </figure>
-                  <figure class="shot hidden sm:flex">
-                    <img
-                      src="assets/img/projects/qgate-decide.jpg"
-                      width="1224"
-                      height="765"
-                      loading="lazy"
-                      decoding="async"
-                      class="aspect-[16/10] w-full object-cover object-left-top"
-                      alt="The qgate decide view: Approve, Amend and Reject radio buttons with Amend selected, editable window start and end, a free-text reason, and a panel showing the amended window now holds 43 vehicles instead of 53."
-                    />
-                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Nothing is held until a person approves or amends it.</figcaption>
-                  </figure>
-                </div>
-
-                <div class="measure mt-6">
-                  <h4 class="text-lg font-semibold tracking-tight">qgate-agent</h4>
-                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">Human-in-the-loop containment for end-of-line manufacturing tests</p>
-                  <p class="mt-3 leading-[1.7]">When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against <span class="hl">build genealogy and station drift</span>, writes a containment order with its evidence, and <span class="hl">requires a person to approve, amend or reject it</span> before anything is held — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.</p>
-                </div>
-
-                <ul class="mt-5 flex flex-wrap gap-1.5">
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">LangGraph</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">FastAPI</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Kafka</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PostgreSQL</li>
-                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Docker</li>
-                </ul>
-                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
-                  <a href="https://github.com/zakaria17amir/Qgate-Agent" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
                 </p>
               </li>
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
