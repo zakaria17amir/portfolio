@@ -60,15 +60,13 @@ styles.
 
 ## The portrait
 
-The hero shows an `AZ` monogram as a stand-in. To use the real photo:
+`assets/img/amir-abdullah-zakaria.jpg` — a square crop, 800x800, shown as a
+circle in the hero at 96px (112px from `sm` up).
 
-1. Save it as `assets/img/amir-abdullah-zakaria.jpg` — square, 400x400 or larger.
-2. In `index.html`, uncomment the `<img>` in the portrait block and delete the
-   `<p>` monogram below it.
-3. `npm run build`, commit, push.
-
-The monogram is there so the layout is finished either way; it is not a
-placeholder image file, so nothing is broken while the photo is missing.
+To replace it, crop square with the eyes at about 40% from the top rather than
+centring the face: a circle clips the corners, and a face centred in the square
+sits too low once it is clipped. Keep the same filename and `npm run build` is
+not needed — no classes change.
 
 ## Screenshots
 

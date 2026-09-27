@@ -32,6 +32,7 @@ export const profile = {
     "The engineers I want to be like can hold both halves at once — the executive conversation about what is worth building, and the operational detail that makes it survive production. Most people are good at one. I am deliberately practising both, which is why every project here has a stated decision as well as a stack.",
     "I am not trying to be only a data person. Data engineering, machine learning, AI systems, backend and full-stack software — I have shipped in all of them and I care much less about the label on the role than about whether the thing is real, measured and running. Next I want to go deeper on ML and AI systems in production: evaluation, cost, latency and the unglamorous work of making a model trustworthy enough to act on.",
   ],
+  photo: "assets/img/amir-abdullah-zakaria.jpg",
   links: {
     github: "https://github.com/zakaria17amir",
     linkedin: "https://www.linkedin.com/in/amir-abdullah-zakaria",
