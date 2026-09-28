@@ -103,6 +103,10 @@
         <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Tailwind CSS</li>
         <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">SQLite</li>
         <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PHPUnit</li>
+        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">React 19</li>
+        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">TypeScript</li>
+        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Recharts</li>
+        <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Docker / GHCR</li>
       </ul>
 
       <p class="mt-8 flex flex-wrap gap-3">
@@ -178,7 +182,7 @@
         <h2 class="mt-12 text-lg font-semibold tracking-tight">Results</h2>
         <p class="mt-3">
           A working self-hosted application with budgets, reports and shared accounts,
-          set up from a clone in about six commands, with PHPUnit tests and a CI
+          set up from a clone in about six commands, with 62 tests and a CI
           workflow running on every push. The authorization model is the part I would
           defend in an interview: it is the reason the feature set stayed small and
           the rules stayed in one place.
@@ -214,9 +218,12 @@
         <h2 class="mt-12 text-lg font-semibold tracking-tight">Tech stack</h2>
         <p class="mt-3">
           Laravel 13 on PHP 8.4 with Breeze for authentication, Eloquent policies and
-          role middleware for access control, SQLite for storage, Blade with Tailwind
-          CSS and Alpine.js on the front end, Vite for the build, and PHPUnit under
-          GitHub Actions.
+          role middleware for access control, SQLite for storage, and Blade with
+          Tailwind CSS and Alpine.js on the front end. The reports page is React 19 and
+          TypeScript in strict mode with Recharts, mounted inside the Blade app and fed
+          by a validated JSON endpoint. Vite 8 for the build; PHPUnit, Vitest and Pint
+          in GitHub Actions, which publishes a Docker image to GHCR on every green
+          push.
         </p>
       </div>
     </main>

@@ -163,7 +163,7 @@ export const projects = [
     shot: { src: "assets/img/projects/favorita-promo-payback.jpg", caption: "Net lift per family, with 95% confidence intervals." },
     shot2: { src: "assets/img/projects/favorita-poisson-check.jpg", caption: "Why the run test is negative binomial, not Poisson." },
     impact:
-      "Twelve months of real grocery sales \u2014 54 stores, 42.8M rows \u2014 and two questions answered with statistics you can explain in one sentence. A negative binomial run test with Benjamini\u2013Hochberg control cuts the stock-out flag rate from Poisson's 21.5% to 4.8%, because 99% of store-items vary more than Poisson allows. Promotions pay back in 23 of 29 families \u2014 but not in fresh food, once the week after is counted.",
+      "Twelve months of real grocery sales \u2014 54 stores, 42.8M rows \u2014 and two questions answered with statistics you can explain in one sentence. A negative binomial run test with Benjamini\u2013Hochberg control cuts the stock-out flag rate from Poisson's 21.5% to 4.8%, because 99% of store-items vary more than Poisson allows. Promotions pay back in 23 of 29 families \u2014 but not in fresh food, once the week after is counted. The full year runs as a Databricks Job deployed by GitHub Actions on every merge, and its gold tables are read live by the Power BI cockpit.",
     tags: ["PySpark", "Spark SQL", "Databricks", "Delta Lake", "Python", "pytest", "GitHub Actions"],
     repo: "https://github.com/zakaria17amir/favorita-stockout-promo-databricks",
     featured: true,
@@ -205,10 +205,23 @@ export const projects = [
     title: "Tracky — Personal Analytics Dashboard",
     tagline: "A Laravel 13 REST API and a React 19 TypeScript SPA",
     impact:
-      "You define the metrics and the app adapts around them: one type column drives the logging input, the chart types the widget builder offers and the summary maths. Every record is owner-scoped at three independent server-side layers, covered by 50 PHPUnit feature tests and Cypress specs.",
-    tags: ["Laravel 13", "PHP", "React 19", "TypeScript", "TanStack Query", "Cypress"],
+      "You define the metrics and the app adapts around them: one type column drives the logging input, the chart types the widget builder offers and the summary maths. Dashboards compose line, bar, stat, streak and D3 calendar heatmap widgets, and load every widget's metric, points and summary in a single GraphQL query rather than one REST call each. Every record is owner-scoped at three independent server-side layers, covered by 95 tests across PHPUnit, Vitest and Cypress.",
+    tags: ["Laravel 13", "PHP", "React 19", "TypeScript", "TanStack Query", "GraphQL", "D3", "Cypress"],
     repo: "https://github.com/zakaria17amir/Tracky",
     page: "projects/tracky.html",
+    featured: true,
+  },
+  {
+    slug: "fintrack",
+    title: "FinTrack — Self-hosted Finance Tracker",
+    tagline: "A Laravel 13 app over a single SQLite file you own",
+    shot: { src: "assets/img/projects/fintrack-reports.jpg", caption: "The reports page \u2014 React and Recharts inside the Blade app." },
+    shot2: { src: "assets/img/projects/fintrack-transactions.jpg", caption: "Transactions, filtered by account, category, type and date." },
+    impact:
+      "Accounts, transactions, category budgets and reports, without handing a third party read access to a bank. The interesting constraint is shared household accounts: ownership and view-or-edit permission live on the pivot and are enforced server-side on every route. The reports page is React 19 and TypeScript inside the Blade app \u2014 filters that update the figures without a reload, backed by an endpoint that computes every one in three grouped SQL queries. 62 tests, and every green push publishes a Docker image to GHCR.",
+    tags: ["Laravel 13", "PHP 8.4", "Blade", "React 19", "TypeScript", "Recharts", "SQLite", "Docker / GHCR", "PHPUnit", "Vitest"],
+    repo: "https://github.com/zakaria17amir/Fintrack",
+    page: "projects/fintrack.html",
     featured: true,
   },
 ];
