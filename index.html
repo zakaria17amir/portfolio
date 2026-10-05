@@ -540,7 +540,7 @@
 
           <div>
             <p class="measure text-muted dark:text-muted-dark">
-              Seven projects across
+              Nine projects across
               <span class="hl">data engineering, BI, AI agents and full-stack software</span>.
               These are the ones I can talk through end to end, so they are the ones here rather
               than everything I have built. Each links to the code, and to a writeup where there
@@ -548,6 +548,46 @@
             </p>
 
             <ul class="mt-10 space-y-12">
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/retail-late-delivery-shap.jpg"
+                      width="1152"
+                      height="720"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="A SHAP summary plot for the late-delivery model over 3,000 test orders: estimated_days dominates, then approve_month, customer_state, seller_avg_delivery_days_90d and distance_km, each feature&rsquo;s points coloured by feature value."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Why the late-delivery model says what it says, over 3,000 test orders.</figcaption>
+                  </figure>
+                </div>
+
+                <div class="measure mt-6">
+                  <h4 class="text-lg font-semibold tracking-tight">Retail Data Platform</h4>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">CDC to lakehouse to dbt to ML to agents, on one laptop</p>
+                  <p class="mt-3 leading-[1.7]">The whole chain on the real Olist dataset: Debezium CDC and a clickstream simulator stream into a <span class="hl">Delta lakehouse</span>, Spark builds typed silver with SCD2 dimensions, dbt and MetricFlow define gold once, and Airflow runs it. <span class="hl">Nothing is dropped silently</span> &mdash; bad payloads land in a quarantine and rule violations in a rejects table behind Great Expectations gates. On top sit a late-delivery model promoted only when it <span class="hl">beats both baselines</span> (test PR-AUC 0.134 against 0.055 and 0.104), a real-time recommender served from Feast, and a <span class="hl">LangGraph analytics agent</span> answering questions over those same metric definitions. The targets it misses are written down too: <code class="font-mono text-[0.95em]">/recommend</code> measures p95 140&nbsp;ms against a 50&nbsp;ms goal.</p>
+                </div>
+
+                <ul class="mt-5 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Apache Spark</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Delta Lake</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Debezium CDC</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Redpanda / Kafka</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">dbt + MetricFlow</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Airflow 3</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">MLflow</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Feast</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">LightGBM</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">LangGraph</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Terraform</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Snowflake</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/retail-data-platform" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
                 <div class="grid gap-3 sm:grid-cols-2">
                   <figure class="shot">
@@ -579,7 +619,7 @@
                 <div class="measure mt-6">
                   <h4 class="text-lg font-semibold tracking-tight">Store Performance Cockpit</h4>
                   <p class="mt-1 text-sm text-muted dark:text-muted-dark">End-to-end Power BI on Microsoft Fabric</p>
-                  <p class="mt-3 leading-[1.7]"><span class="hl">125M rows</span> of real grocery sales through one governed star-schema model, answering a different question for the store manager, the regional manager, the category manager and head office. <span class="hl">Dynamic row-level security</span> from an access table and object-level security on cost, tested in the Service for four personas. A Python and DuckDB pipeline builds bronze &rarr; silver &rarr; gold in <span class="hl">about two minutes</span> and its data tests block the upload. PBIP and TMDL in Git, <span class="hl">Best Practice Analyzer in CI</span>, and a Dev &rarr; Test &rarr; Prod deployment pipeline.</p>
+                  <p class="mt-3 leading-[1.7]"><span class="hl">125M rows</span> of real grocery sales through one governed star-schema model, answering a different question for the store manager, the regional manager, the category manager and head office. <span class="hl">Dynamic row-level security</span> from an access table and object-level security on cost, tested in the Service for four personas. A Python and DuckDB pipeline builds bronze &rarr; silver &rarr; gold in <span class="hl">about two minutes</span> and its data tests block the upload. It pulls four sources together &mdash; Kaggle files, an Azure SQL ERP, a weather API and a <span class="hl">Databricks SQL warehouse</span> for the stock-out and promo deep dive. Import beat Direct Lake on benchmark: all six heaviest page queries run <span class="hl">under 500&nbsp;ms</span> and the full model refreshes in <span class="hl">13 minutes on an F2</span>. Checking against the full data caught two real bugs &mdash; a mid-month final day that turned August like-for-like growth from <span class="hl">&#9650;7.9% into &#9660;46.5%</span>, and a measure that blew F2&rsquo;s 1&nbsp;GB per-query limit. PBIP and TMDL in Git, <span class="hl">Best Practice Analyzer in CI</span>, and a Dev &rarr; Test &rarr; Prod deployment pipeline.</p>
                 </div>
 
                 <ul class="mt-5 flex flex-wrap gap-1.5">
@@ -589,6 +629,7 @@
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DAX</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Power Query M</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Azure SQL</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Databricks SQL</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">DuckDB</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">GitHub Actions</li>
@@ -628,19 +669,72 @@
                 <div class="measure mt-6">
                   <h4 class="text-lg font-semibold tracking-tight">qgate-agent</h4>
                   <p class="mt-1 text-sm text-muted dark:text-muted-dark">Human-in-the-loop containment for end-of-line manufacturing tests</p>
-                  <p class="mt-3 leading-[1.7]">When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against <span class="hl">build genealogy and station drift</span>, writes a containment order with its evidence, and <span class="hl">requires a person to approve, amend or reject it</span> before anything is held — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.</p>
+                  <p class="mt-3 leading-[1.7]">When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against <span class="hl">build genealogy and station drift</span>, writes a containment order with its evidence, and <span class="hl">requires a person to approve, amend or reject it</span> before anything is held — every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing. Now released at <span class="hl">v1.0.0</span> and proved under chaos: every pending decision survived an agent restart, a 20-second MES outage mid-commit still left <span class="hl">exactly one hold</span>, and 138,624 simulated events arrived with <span class="hl">none lost</span>. Proposals are ready in 5.8&nbsp;s p95 against a 30&nbsp;s target.</p>
                 </div>
 
                 <ul class="mt-5 flex flex-wrap gap-1.5">
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">LangGraph</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">C++20</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">React / TypeScript</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">FastAPI</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Kafka</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PostgreSQL</li>
                   <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Docker</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Kubernetes</li>
                 </ul>
                 <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
                   <a href="https://github.com/zakaria17amir/Qgate-Agent" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <figure class="shot">
+                    <img
+                      src="assets/img/projects/yieldlens-desk.jpg"
+                      width="1042"
+                      height="651"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The YieldLens desk panel mid-run: scout and stats nodes done, a fixed advocate and a floating advocate each citing a named statistic, and a risk officer verdict of 85% fixed / 15% floating with its report hash."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Two advocates argue; the risk officer has to answer both.</figcaption>
+                  </figure>
+                  <figure class="shot hidden sm:flex">
+                    <img
+                      src="assets/img/projects/yieldlens-position.jpg"
+                      width="1100"
+                      height="688"
+                      loading="lazy"
+                      decoding="async"
+                      class="aspect-[16/10] w-full object-cover object-left-top"
+                      alt="The YieldLens position panel: 400 USDG split across a fixed and a floating ERC-4626 vault, beside an agent-delegation card showing the on-chain policy &mdash; a 25% cap per move and a one-hour cooldown."
+                    />
+                    <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">The caps the agent moves inside are the user&rsquo;s, and on-chain.</figcaption>
+                  </figure>
+                </div>
+
+                <div class="measure mt-6">
+                  <h4 class="text-lg font-semibold tracking-tight">YieldLens</h4>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">An agent desk that argues a yield decision, then executes it on-chain</p>
+                  <p class="mt-3 leading-[1.7]">Two LLM advocates argue fixed against floating yield, a risk officer has to answer every argument, and deterministic code executes the verdict. The honesty rules live in code rather than prompts: an argument that does not <span class="hl">cite a real field</span> of the market snapshot is rejected, data older than twelve hours <span class="hl">forces a veto</span>, and an expired market forces the fixed allocation to zero. On-chain the agent key can only move between two allow-listed vaults, for users who opted in, inside each user&rsquo;s own cap and cooldown &mdash; there is <span class="hl">no path to withdraw to any other address</span>. Thirty golden cases plus Foundry fuzz and invariant tests, and the recorded replay is reported as it came out: over the ninety days measured the desk landed <span class="hl">between</span> always-fixed and always-floating, not above them.</p>
+                </div>
+
+                <ul class="mt-5 flex flex-wrap gap-1.5">
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Python</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">LangGraph</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Solidity</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Foundry</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">ERC-4626</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">OpenZeppelin</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">FastAPI</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">React</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">wagmi / viem</li>
+                  <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Arbitrum</li>
+                </ul>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/yieldlens" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
                 </p>
               </li>
               <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
@@ -955,6 +1049,9 @@
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">scikit-learn</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PyTorch</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">XGBoost / LightGBM</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">MLflow (registry, champion/challenger)</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Feast feature store</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Evidently drift monitoring</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">statsmodels</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Feature engineering</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Model evaluation &amp; benchmarking</li>
@@ -991,6 +1088,9 @@
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Prompt &amp; context design</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Cost / token benchmarking</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Agent evaluation harnesses</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">LiteLLM gateway</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Hybrid RAG (pgvector)</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Structured / schema-validated output</li>
               </ul>
             </div>
             <div>
@@ -1003,6 +1103,11 @@
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Star-schema modelling</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Prefect</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Apache Kafka</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">dbt + MetricFlow</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Apache Airflow 3</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Debezium CDC</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Great Expectations</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">SCD2 dimensions</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Avro / fastavro</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Data quality &amp; validation</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Spark SQL</li>
@@ -1058,6 +1163,17 @@
               </ul>
             </div>
             <div>
+              <h3 class="text-sm font-semibold">Smart contracts &amp; web3</h3>
+              <ul class="mt-3 flex flex-wrap gap-1.5">
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Solidity</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Foundry (unit, fuzz, invariant)</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">ERC-4626 vaults</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">OpenZeppelin AccessControl</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">wagmi / viem</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Arbitrum</li>
+              </ul>
+            </div>
+            <div>
               <h3 class="text-sm font-semibold">Databases</h3>
               <ul class="mt-3 flex flex-wrap gap-1.5">
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">PostgreSQL</li>
@@ -1076,6 +1192,9 @@
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Azure AD administration</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">AWS (fundamentals)</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">GitHub Actions</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Terraform</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Snowflake</li>
+                <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Grafana</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">OpenTelemetry</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">Prometheus</li>
                 <li class="rounded bg-raised px-2 py-1 font-mono text-xs text-muted dark:bg-raised-dark dark:text-muted-dark">structlog</li>

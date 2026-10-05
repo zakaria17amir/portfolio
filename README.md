@@ -111,22 +111,30 @@ nothing is.
 
 ## Adding a project
 
-The projects section is deliberately short — five entries spanning data
-engineering, BI, AI agents and full-stack software, picked for the ones that can
-be talked through end to end. Adding one means either replacing what it competes
-with or accepting a longer, weaker list.
+The projects section is deliberately short — entries spanning data engineering,
+BI, AI agents and full-stack software, picked for the ones that can be talked
+through end to end. Adding one means either replacing what it competes with or
+accepting a longer, weaker list.
 
-An entry needs **two real screenshots** at 16:10. A diagram that is too wide to
-read at half a column (the telecom semantic model, 3.8:1) goes full width under
-the pair instead of being squeezed into a tile.
+An entry wants **two real screenshots** at 16:10, and never an invented one. A
+project whose repository has only one real capture ships a single tile — it sits
+in the left column of the same grid (Retail Data Platform does this, because its
+Power BI pages are still a manual step in that repo). A diagram that is too wide
+to read at half a column (the telecom semantic model, 3.8:1) goes full width
+under the pair instead of being squeezed into a tile.
+
+Judge every candidate at the size it will actually be shown — render it at
+376×235 and look — not at full size. Things that read fine as a PNG (a pale
+calendar heatmap, a dense architecture diagram) are illegible in a tile, and the
+honest move is to state the feature in the copy instead.
 
 1. Append an object to `projects[]` in `assets/js/content.js`. Add a `shot`
    key only if you have a real screenshot.
 2. Copy an existing page in `projects/` and rewrite its content. Keep the seven
    sections, including **What I would do differently** — that section is the
    most valuable thing on the page to a technical reader.
-3. Add an entry to the projects list in `index.html`. It needs two real
-   screenshots; without them it does not go in.
+3. Add an entry to the projects list in `index.html`. It needs at least one
+   real screenshot; without one it does not go in.
 4. Add a `<url>` entry to `sitemap.xml`.
 5. `npm run build`, commit, push.
 
