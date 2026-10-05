@@ -133,14 +133,25 @@ export const experience = [
 
 export const projects = [
   {
+    slug: "retail-data-platform",
+    title: "Retail Data Platform",
+    tagline: "CDC to lakehouse to dbt to ML to agents, on one laptop",
+    shot: { src: "assets/img/projects/retail-late-delivery-shap.jpg", caption: "Why the late-delivery model says what it says, over 3,000 test orders." },
+    impact:
+      "The whole chain on the real Olist dataset: Debezium CDC and a clickstream simulator stream into a Delta lakehouse, Spark builds typed silver with SCD2 dimensions, dbt and MetricFlow define gold once, and Airflow runs it. Nothing is dropped silently \u2014 bad payloads land in a quarantine and rule violations in a rejects table behind Great Expectations gates. On top sit a late-delivery model promoted only when it beats both baselines (test PR-AUC 0.134 against 0.055 and 0.104), a real-time recommender served from Feast, and a LangGraph analytics agent answering questions over those same metric definitions. The targets it misses are written down too: /recommend measures p95 140 ms against a 50 ms goal.",
+    tags: ["Apache Spark", "Delta Lake", "Debezium CDC", "Redpanda / Kafka", "dbt + MetricFlow", "Airflow 3", "MLflow", "Feast", "LightGBM", "LangGraph", "Terraform", "Snowflake"],
+    repo: "https://github.com/zakaria17amir/retail-data-platform",
+    featured: true,
+  },
+  {
     slug: "store-performance-fabric",
     title: "Store Performance Cockpit",
     tagline: "End-to-end Power BI on Microsoft Fabric",
     shot: { src: "assets/img/projects/fabric-network-overview.jpg", caption: "Head office: is the network on plan, and which region is behind?" },
     shot2: { src: "assets/img/projects/fabric-fresh-availability.jpg", caption: "Category manager: where fresh sales are being lost, and to what." },
     impact:
-      "125M rows of real grocery sales through one governed star-schema model, answering a different question for the store manager, the regional manager, the category manager and head office. Dynamic row-level security from an access table and object-level security on cost, tested in the Service for four personas. A Python and DuckDB pipeline builds bronze \u2192 silver \u2192 gold in about two minutes and its data tests block the upload. PBIP and TMDL in Git, Best Practice Analyzer in CI, and a Dev \u2192 Test \u2192 Prod deployment pipeline.",
-    tags: ["Microsoft Fabric", "Power BI", "TMDL / PBIP", "DAX", "Power Query M", "Azure SQL", "DuckDB", "Python", "GitHub Actions"],
+      "125M rows of real grocery sales through one governed star-schema model, answering a different question for the store manager, the regional manager, the category manager and head office. Dynamic row-level security from an access table and object-level security on cost, tested in the Service for four personas. A Python and DuckDB pipeline builds bronze \u2192 silver \u2192 gold in about two minutes and its data tests block the upload. It pulls four sources together \u2014 Kaggle files, an Azure SQL ERP, a weather API and a Databricks SQL warehouse for the stock-out and promo deep dive. Import beat Direct Lake on benchmark: all six heaviest page queries run under 500 ms and the full model refreshes in 13 minutes on an F2. Checking against the full data caught two real bugs \u2014 a mid-month final day that turned August like-for-like growth from \u25b27.9% into \u25bc46.5%, and a measure that blew F2\u2019s 1 GB per-query limit. PBIP and TMDL in Git, Best Practice Analyzer in CI, and a Dev \u2192 Test \u2192 Prod deployment pipeline.",
+    tags: ["Microsoft Fabric", "Power BI", "TMDL / PBIP", "DAX", "Power Query M", "Azure SQL", "Databricks SQL", "DuckDB", "Python", "GitHub Actions"],
     repo: "https://github.com/zakaria17amir/store-performance-fabric",
     featured: true,
   },
@@ -151,9 +162,21 @@ export const projects = [
     shot: { src: "assets/img/projects/qgate-case.jpg", caption: "The order the agent proposes, with its evidence." },
     shot2: { src: "assets/img/projects/qgate-decide.jpg", caption: "Nothing is held until a person approves or amends it." },
     impact:
-      "When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, writes a containment order with its evidence, and requires a person to approve, amend or reject it before anything is held \u2014 every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing.",
-    tags: ["Python", "LangGraph", "FastAPI", "Kafka", "PostgreSQL", "Docker"],
+      "When a vehicle fails its end-of-line test, someone has to decide in minutes how many to quarantine. qgate correlates the failure against build genealogy and station drift, writes a containment order with its evidence, and requires a person to approve, amend or reject it before anything is held \u2014 every tool read-only except the one that asks. Scored on fifty golden scenarios, including the ones where the right answer is to propose nothing. Now released at v1.0.0 and proved under chaos: every pending decision survived an agent restart, a 20-second MES outage mid-commit still left exactly one hold, and 138,624 simulated events arrived with none lost. Proposals are ready in 5.8 s p95 against a 30 s target.",
+    tags: ["Python", "LangGraph", "C++20", "React / TypeScript", "FastAPI", "Kafka", "PostgreSQL", "Docker", "Kubernetes"],
     repo: "https://github.com/zakaria17amir/Qgate-Agent",
+    featured: true,
+  },
+  {
+    slug: "yieldlens",
+    title: "YieldLens",
+    tagline: "An agent desk that argues a yield decision, then executes it on-chain",
+    shot: { src: "assets/img/projects/yieldlens-desk.jpg", caption: "Two advocates argue; the risk officer has to answer both." },
+    shot2: { src: "assets/img/projects/yieldlens-position.jpg", caption: "The caps the agent moves inside are the user\u2019s, and on-chain." },
+    impact:
+      "Two LLM advocates argue fixed against floating yield, a risk officer has to answer every argument, and deterministic code executes the verdict. The honesty rules live in code rather than prompts: an argument that does not cite a real field of the market snapshot is rejected, data older than twelve hours forces a veto, and an expired market forces the fixed allocation to zero. On-chain the agent key can only move between two allow-listed vaults, for users who opted in, inside each user\u2019s own cap and cooldown \u2014 there is no path to withdraw to any other address. Thirty golden cases plus Foundry fuzz and invariant tests, and the recorded replay is reported as it came out: over the ninety days measured the desk landed between always-fixed and always-floating, not above them.",
+    tags: ["Python", "LangGraph", "Solidity", "Foundry", "ERC-4626", "OpenZeppelin", "FastAPI", "React", "wagmi / viem", "Arbitrum"],
+    repo: "https://github.com/zakaria17amir/yieldlens",
     featured: true,
   },
   {
@@ -260,6 +283,9 @@ export const skills = [
       "scikit-learn",
       "PyTorch",
       "XGBoost / LightGBM",
+      "MLflow (registry, champion/challenger)",
+      "Feast feature store",
+      "Evidently drift monitoring",
       "statsmodels",
       "Feature engineering",
       "Model evaluation & benchmarking",
@@ -292,6 +318,9 @@ export const skills = [
       "Prompt & context design",
       "Cost / token benchmarking",
       "Agent evaluation harnesses",
+      "LiteLLM gateway",
+      "Hybrid RAG (pgvector)",
+      "Structured / schema-validated output",
     ],
   },
   {
@@ -304,6 +333,11 @@ export const skills = [
       "Star-schema modelling",
       "Prefect",
       "Apache Kafka",
+      "dbt + MetricFlow",
+      "Apache Airflow 3",
+      "Debezium CDC",
+      "Great Expectations",
+      "SCD2 dimensions",
       "Avro / fastavro",
       "Data quality & validation",
     ],
@@ -348,6 +382,17 @@ export const skills = [
     ],
   },
   {
+    group: "Smart contracts & web3",
+    items: [
+      "Solidity",
+      "Foundry (unit, fuzz, invariant)",
+      "ERC-4626 vaults",
+      "OpenZeppelin AccessControl",
+      "wagmi / viem",
+      "Arbitrum",
+    ],
+  },
+  {
     group: "Databases",
     items: [
       "PostgreSQL",
@@ -366,6 +411,9 @@ export const skills = [
       "Azure AD administration",
       "AWS (fundamentals)",
       "GitHub Actions",
+      "Terraform",
+      "Snowflake",
+      "Grafana",
       "OpenTelemetry",
       "Prometheus",
       "structlog",
