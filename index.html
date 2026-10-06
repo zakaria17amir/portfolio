@@ -243,7 +243,7 @@
           </div>
         </dl>
 
-        <div class="enter enter-4 mt-10 flex flex-wrap gap-3">
+        <div class="enter enter-4 mt-10 flex flex-wrap gap-3 print:hidden">
           <a
             href="assets/Amir-Abdullah-Zakaria-CV.pdf"
             download
@@ -271,6 +271,18 @@
             >GitHub</a
           >
         </div>
+
+        <!--
+          Print-only contact block. The buttons above say "Email" and "LinkedIn";
+          on paper a label with no address is useless, so these are swapped for
+          the addresses themselves. JS fills the email in; the text before it
+          runs is the readable fallback.
+        -->
+        <p class="mt-8 hidden text-sm leading-[1.7] text-muted print:block dark:text-muted-dark">
+          <a data-email="text" href="#contact">mailtoamir17 [at] gmail [dot] com</a><br />
+          linkedin.com/in/amir-abdullah-zakaria &middot; github.com/zakaria17amir<br />
+          zakaria17amir.github.io/portfolio
+        </p>
 
         <p class="enter enter-4 mt-8 text-sm text-muted dark:text-muted-dark">
           Budapest, Hungary
@@ -1326,12 +1338,13 @@
       <div
         class="mx-auto flex max-w-5xl flex-col gap-4 px-5 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8 dark:text-muted-dark"
       >
-        <p>© 2026 Amir Abdullah Zakaria</p>
-        <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <p>© 2026 Amir Abdullah Zakaria<span class="hidden print:inline"> &middot; zakaria17amir.github.io/portfolio</span></p>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 print:hidden">
           <a data-email href="#contact" class="hover:text-accent dark:hover:text-accent-dark">Email</a>
           <a href="https://www.linkedin.com/in/amir-abdullah-zakaria" target="_blank" rel="noopener" class="hover:text-accent dark:hover:text-accent-dark">LinkedIn</a>
           <a href="https://github.com/zakaria17amir" target="_blank" rel="noopener" class="hover:text-accent dark:hover:text-accent-dark">GitHub</a>
           <a href="https://github.com/zakaria17amir/portfolio" target="_blank" rel="noopener" class="hover:text-accent dark:hover:text-accent-dark">Source</a>
+          <button id="print-page" type="button" class="hidden hover:text-accent dark:hover:text-accent-dark">Print / save as PDF</button>
         </div>
       </div>
     </footer>

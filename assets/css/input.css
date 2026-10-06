@@ -165,3 +165,170 @@
     margin-top: auto;
   }
 }
+
+/*
+ * Print / "Save as PDF".
+ *
+ * Recruiters still print, and some forward a PDF to a hiring manager who never
+ * opens the link. This makes the live page the single source of that document:
+ * Ctrl+P produces it, so it can never drift from the site the way a separately
+ * maintained PDF would.
+ *
+ * Everything here is subtractive — screen chrome off, dark mode off, screen
+ * breathing room tightened. No print-only layout to keep in sync.
+ */
+@media print {
+  /*
+   * Dark mode must never reach paper. Rather than unpick every `dark:` utility,
+   * repoint the dark tokens at their light twins: the utilities still apply,
+   * they just resolve to ink on white. Unlayered, so this beats @theme.
+   */
+  :root,
+  :root.dark {
+    --color-ink-dark: #0f172a;
+    --color-muted-dark: #475569;
+    --color-surface-dark: #ffffff;
+    --color-raised-dark: #f8fafc;
+    --color-line-dark: #e2e8f0;
+    --color-accent-dark: #1a4ba0;
+    --color-accent-soft-dark: #e3ecfb;
+  }
+
+  @page {
+    size: A4;
+    margin: 14mm 13mm 15mm;
+  }
+
+  html {
+    /* Paper reads smaller than a screen; 12px root keeps the whole rhythm. */
+    font-size: 12px;
+    scroll-behavior: auto;
+    /* The keyword highlights are the scan layer — they have to survive. */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  /* Screen-only chrome. */
+  header,
+  #site-nav,
+  #theme-toggle,
+  #nav-toggle,
+  a[href="#main"] {
+    display: none !important;
+  }
+
+  /* The one motion moment is a screen idea. */
+  .enter {
+    animation: none !important;
+  }
+
+  /* @page supplies the side margins, so the page gutters are dead space. */
+  main,
+  main > section,
+  main > section > div {
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  main > section > div {
+    padding-top: 1.35rem !important;
+    padding-bottom: 1.35rem !important;
+  }
+
+  main > section:first-child {
+    padding-top: 0 !important;
+    padding-bottom: 1.35rem !important;
+  }
+
+  footer > div {
+    padding: 0.75rem 0 0 !important;
+  }
+
+  /* Project writeups put their padding on <main> rather than on a section. */
+  main.mx-auto {
+    padding-top: 0 !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /*
+   * The section labels sit in a left column at desktop width; paper is never
+   * that wide, so they stack — and at `text-sm text-muted` they read as a
+   * caption rather than a heading. Give them the weight the layout did.
+   */
+  main > section > div > h2 {
+    margin-bottom: 0.6rem !important;
+    font-size: 1.1rem !important;
+    letter-spacing: -0.01em;
+    color: var(--color-ink) !important;
+  }
+
+  /* Buttons are affordances. On paper they are just links. */
+  a.rounded-md {
+    padding: 0 !important;
+    border: 0 !important;
+    background: none !important;
+    color: var(--color-accent) !important;
+  }
+
+  /*
+   * A printed page cannot be clicked, so every external destination has to be
+   * readable as text. Scoped to <main>: the hero and footer link rows are
+   * already print:hidden, and the prose carries no inline external links.
+   */
+  main a[href^="http"]::after {
+    content: " — " attr(href);
+    font-weight: 400;
+    color: var(--color-muted);
+    word-break: break-all;
+  }
+
+  /*
+   * Pagination. Keeping a whole project entry together sounds right and is
+   * wrong: at nine entries it leaves half a sheet blank before each one. So
+   * only the indivisible things are protected — a screenshot and its caption,
+   * a role, a skill group — and a project is allowed to run over a page break
+   * as long as its screenshots, title and opening lines do not come apart.
+   */
+  figure,
+  .shot,
+  #approach li,
+  #experience li {
+    break-inside: avoid;
+  }
+
+  /*
+   * A skill group is its heading plus its chips. `break-after: avoid` on the
+   * heading is the obvious way to say that and Chrome ignores it — two groups
+   * came apart mid-list before this rule — so the group itself is what gets
+   * protected.
+   */
+  #skills div:has(> h3) {
+    break-inside: avoid;
+  }
+
+  /* Honoured by Firefox and Safari; Chrome, as above, does its own thing. */
+  #projects li > div:first-child,
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid-page;
+  }
+
+  /* An orphaned line of body copy at the foot of a sheet reads as a mistake. */
+  p,
+  li {
+    orphans: 2;
+    widows: 2;
+  }
+
+  /* A link underline is noise once the URL is printed beside it. */
+  a {
+    text-decoration: none !important;
+  }
+}

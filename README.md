@@ -142,6 +142,46 @@ The screenshot grid on a project page sits *above* the `.measure` column, which
 caps body copy at 68 characters — a full-width element inside it would be
 squeezed to the width of the prose.
 
+## Printing
+
+There is no separate PDF to maintain. `Ctrl`/`Cmd`+`P` on the live page is the
+printable version — a print stylesheet at the end of `assets/css/input.css`
+turns the site into a 12-page A4 document, so the handout can never drift from
+the site the way a separately exported file would. The footer carries a
+**Print / save as PDF** button for people who would not think to try.
+
+What the print stylesheet does, and why each part is load-bearing:
+
+- **Forces the light palette.** Rather than unpick every `dark:` utility, it
+  repoints the dark tokens (`--color-*-dark`) at their light twins inside
+  `@media print`. The utilities still apply; they just resolve to ink on white.
+  The block is unlayered, so it beats Tailwind's `@theme`.
+- **Drops screen chrome** — sticky header, nav, theme toggle, skip link — and
+  swaps the hero's button row for a plain block of addresses, since a button
+  labelled "Email" is useless on paper.
+- **Prints the URL after every external link** in `<main>`, for the same reason.
+- **Keeps `print-color-adjust: exact`.** The keyword highlights are the scan
+  layer; without them the printed copy loses the thing a recruiter reads first.
+
+Two things to know before changing the page-break rules:
+
+- **Chrome ignores `break-after: avoid`.** Skill headings came away from their
+  chip lists until the rule moved onto the group itself as `break-inside:
+  avoid` (via `:has(> h3)`). Firefox and Safari do honour `break-after`, so
+  those rules are kept — just never relied on.
+- **Do not put `break-inside: avoid` on a whole project entry.** It reads as
+  the obviously right rule and costs roughly half a sheet of blank paper before
+  every one of the nine. Only indivisible things are protected: a screenshot
+  and its caption, a role, a skill group.
+
+Screenshots are `loading="lazy"`, which is right for a page with nineteen of
+them and a hazard for printing — an image never scrolled into view can reach
+the print layout as an empty frame. Browsers are supposed to force them to load
+and current ones do; `initPrint()` in `main.js` flips them to `eager` on
+`beforeprint` anyway, because the failure mode is a portfolio of blank squares.
+Anything that renders the page headlessly has to do the same thing — see the
+generator note in that function.
+
 ## Deployment
 
 Push to `main`. GitHub Pages serves the repository root. There is no CI step and

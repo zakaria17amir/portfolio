@@ -104,7 +104,38 @@ function initActiveNav() {
   });
 }
 
+/**
+ * Every screenshot is `loading="lazy"`, which is right for a page with nineteen
+ * of them and wrong for printing: an image that was never scrolled into view can
+ * reach the print layout as an empty frame. Browsers are supposed to force these
+ * to load before printing and current ones do, but the failure mode is a
+ * portfolio whose screenshots are blank squares, so this does not rely on it.
+ */
+function initPrint() {
+  // Hidden in the markup: a print button is useless if this file never runs.
+  const button = document.querySelector("#print-page");
+  if (button) {
+    button.classList.remove("hidden");
+    button.addEventListener("click", () => window.print());
+  }
+
+  const eager = () => {
+    document
+      .querySelectorAll('img[loading="lazy"]')
+      .forEach((img) => img.setAttribute("loading", "eager"));
+  };
+
+  window.addEventListener("beforeprint", eager);
+
+  // Safari fires no beforeprint; this is the same hook under a different name.
+  if (window.matchMedia) {
+    const mql = window.matchMedia("print");
+    if (mql.addEventListener) mql.addEventListener("change", (e) => e.matches && eager());
+  }
+}
+
 initTheme();
 initNav();
 initEmail();
 initActiveNav();
+initPrint();
