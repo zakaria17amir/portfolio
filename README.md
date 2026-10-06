@@ -121,7 +121,7 @@ project whose repository has only one real capture ships a single tile — it si
 in the left column of the same grid (Retail Data Platform does this, because its
 Power BI pages are still a manual step in that repo). A diagram that is too wide
 to read at half a column (the telecom semantic model, 3.8:1) goes full width
-under the pair instead of being squeezed into a tile.
+under the pair instead of being squeezed into  tile.
 
 Judge every candidate at the size it will actually be shown — render it at
 376×235 and look — not at full size. Things that read fine as a PNG (a pale
