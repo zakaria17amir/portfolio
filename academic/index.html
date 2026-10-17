@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Amir Abdullah Zakaria — Academic Portfolio</title>
+    <meta
+      name="description"
+      content="Final-year Computer Science student at ELTE Budapest (CGPA 4.58/5.0, Stipendium Hungaricum Scholar, IELTS 7.5) applying for MSc programmes in data science, AI and machine learning. Research assistant in ELTE&#39;s Numerical Analysis Modeling Lab."
+    />
+    <link rel="canonical" href="https://zakaria17amir.github.io/portfolio/academic/" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Amir Abdullah Zakaria — Academic Portfolio" />
+    <meta
+      property="og:description"
+      content="Computer Science at ELTE Budapest, CGPA 4.58/5.0, Stipendium Hungaricum Scholar. Applying for MSc programmes in data science, AI and machine learning."
+    />
+    <meta property="og:url" content="https://zakaria17amir.github.io/portfolio/academic/" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+
+    <script>
+      // Inline and blocking on purpose: prevents a light-theme flash for dark users.
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var dark = stored
+            ? stored === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {
+          /* private mode or blocked storage: fall through to the light default */
+        }
+      })();
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <noscript>
+      <!-- Same fallback as the main page: no JS, no hamburger, nav as a plain list. -->
+      <style>
+        #nav-toggle {
+          display: none !important;
+        }
+        #site-nav {
+          display: block !important;
+          position: static !important;
+          border: 0 !important;
+          padding: 0 !important;
+          background: none !important;
+        }
+        #site-nav ul {
+          flex-direction: row !important;
+          flex-wrap: wrap !important;
+          gap: 0.25rem 1.25rem !important;
+        }
+      </style>
+    </noscript>
+  </head>
+
+  <!--
+    The academic page. Same design as index.html, written for admissions and
+    scholarship committees rather than recruiters: research and grades first,
+    projects framed as question / method / result, industry work kept short.
+    Sections with nothing in them yet (publications, referees, leadership) are
+    left out rather than shown empty.
+  -->
+  <body
+    id="top"
+    class="bg-surface font-sans text-ink antialiased dark:bg-surface-dark dark:text-ink-dark"
+  >
+    <a
+      href="#main"
+      class="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:m-0 focus:h-auto focus:w-auto focus:overflow-visible focus:whitespace-normal focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-white focus:[clip-path:none]"
+      >Skip to content</a
+    >
+
+    <header
+      class="sticky top-0 z-40 border-b border-line bg-surface/85 backdrop-blur dark:border-line-dark dark:bg-surface-dark/85"
+    >
+      <div
+        class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3 sm:px-8"
+      >
+        <a href="#top" class="font-semibold tracking-tight hover:text-accent dark:hover:text-accent-dark"
+          >Amir Abdullah Zakaria</a
+        >
+
+        <div class="flex items-center gap-1">
+          <nav
+            id="site-nav"
+            aria-label="Sections"
+            class="absolute inset-x-0 top-full hidden border-b border-line bg-surface px-5 py-3 dark:border-line-dark dark:bg-surface-dark lg:static lg:block lg:border-0 lg:bg-transparent lg:p-0 dark:lg:bg-transparent"
+          >
+            <ul class="flex flex-col gap-1 text-sm lg:flex-row lg:items-center lg:gap-4">
+              <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#interests">Interests</a></li>
+              <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#research">Research</a></li>
+              <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#education">Education</a></li>
+              <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#awards">Awards</a></li>
+              <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#teaching">Teaching</a></li>
+              <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#projects">Projects</a></li>
+              <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+            class="rounded-md p-2 text-muted hover:bg-raised hover:text-ink dark:text-muted-dark dark:hover:bg-raised-dark dark:hover:text-ink-dark"
+          >
+            <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+            <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+            </svg>
+          </button>
+
+          <button
+            id="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            class="rounded-md p-2 text-muted hover:bg-raised hover:text-ink dark:text-muted-dark dark:hover:bg-raised-dark dark:hover:text-ink-dark lg:hidden"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="mx-auto max-w-5xl px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-24">
+        <img
+          src="../assets/img/amir-abdullah-zakaria.jpg"
+          width="800"
+          height="800"
+          class="enter enter-1 h-24 w-24 rounded-full object-cover ring-1 ring-line sm:h-28 sm:w-28 dark:ring-line-dark"
+          alt="Amir Abdullah Zakaria"
+        />
+
+        <p
+          class="enter enter-1 mt-7 font-mono text-xs uppercase tracking-[0.18em] text-muted dark:text-muted-dark"
+        >
+          Academic portfolio · Data science · Machine learning · AI
+        </p>
+
+        <h1
+          class="enter enter-1 mt-5 text-[clamp(2.75rem,7vw,4.5rem)] font-bold leading-[0.95] tracking-[-0.03em]"
+        >
+          Amir Abdullah Zakaria
+        </h1>
+
+        <p
+          class="enter enter-2 measure mt-8 text-[clamp(1.25rem,2.2vw,1.625rem)] leading-[1.45]"
+        >
+          Final-year <span class="hl">BSc Computer Science</span> student at ELTE Budapest,
+          applying for <span class="hl">MSc programmes in data science, artificial
+          intelligence and machine learning</span>.
+        </p>
+
+        <div class="enter enter-3 measure mt-8 space-y-2 text-muted dark:text-muted-dark">
+          <p>
+            Research assistant in ELTE&rsquo;s <span class="hl">Numerical Analysis Modeling
+            Lab</span>, reproducing a published deep learning method for ECG signal denoising.
+          </p>
+          <p>
+            Teaching assistant for Discrete Mathematics and Computer Systems, and a
+            <span class="hl">Stipendium Hungaricum Scholar</span> graduating in January 2027.
+          </p>
+        </div>
+
+        <dl
+          class="enter enter-4 mt-12 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-line pt-8 sm:grid-cols-4 dark:border-line-dark"
+        >
+          <div>
+            <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">4.58<span class="text-base font-normal text-muted dark:text-muted-dark">/5.0</span></dt>
+            <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">CGPA, BSc Computer Science, ELTE</dd>
+          </div>
+          <div>
+            <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">7.5</dt>
+            <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">IELTS band score</dd>
+          </div>
+          <div>
+            <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">1st</dt>
+            <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">place, INEC 2026 engineering competition</dd>
+          </div>
+          <div>
+            <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">2nd</dt>
+            <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">place, Cognition LaunchLoop hackathon</dd>
+          </div>
+        </dl>
+
+        <div class="enter enter-4 mt-10 flex flex-wrap gap-3">
+          <a
+            href="../assets/Amir-Abdullah-Zakaria-CV.pdf"
+            download
+            class="rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent/90 dark:bg-accent-dark dark:text-surface-dark dark:hover:bg-accent-dark/90"
+            >Download CV</a
+          >
+          <a
+            data-email
+            href="#contact"
+            class="rounded-md border border-line px-4 py-2.5 text-sm font-medium hover:border-accent hover:text-accent dark:border-line-dark dark:hover:border-accent-dark dark:hover:text-accent-dark"
+            >Email</a
+          >
+          <a
+            href="https://www.linkedin.com/in/amir-abdullah-zakaria"
+            target="_blank"
+            rel="noopener"
+            class="rounded-md border border-line px-4 py-2.5 text-sm font-medium hover:border-accent hover:text-accent dark:border-line-dark dark:hover:border-accent-dark dark:hover:text-accent-dark"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/zakaria17amir"
+            target="_blank"
+            rel="noopener"
+            class="rounded-md border border-line px-4 py-2.5 text-sm font-medium hover:border-accent hover:text-accent dark:border-line-dark dark:hover:border-accent-dark dark:hover:text-accent-dark"
+            >GitHub</a
+          >
+        </div>
+
+        <p class="enter enter-4 mt-8 text-sm text-muted dark:text-muted-dark">
+          Budapest, Hungary
+        </p>
+      </section>
+
+      <!-- Research interests. Draft written from the lab work and projects below; edit freely. -->
+      <section id="interests" class="border-t border-line dark:border-line-dark">
+        <div
+          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
+        >
+          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
+            Research interests
+          </h2>
+          <div class="measure space-y-5 leading-[1.7]">
+            <p>
+              I am interested in <span class="hl">machine learning that holds up on real
+              data</span>: models for signals and time series, and evaluation honest enough to
+              say when a method works and when it does not.
+            </p>
+            <p>
+              In ELTE&rsquo;s Numerical Analysis Modeling Lab I am reproducing a published
+              approach to <span class="hl">ECG baseline wander removal</span> &mdash; separating
+              the slow drift caused by breathing and electrode movement from the waveform a
+              clinician actually reads &mdash; and comparing it with classical and
+              optimisation-based methods under the paper&rsquo;s own protocol. Reproducing
+              someone else&rsquo;s result showed me how much a conclusion depends on how it is
+              measured.
+            </p>
+            <p>
+              I bring the same habit to my own projects: a model is only promoted when it
+              <span class="hl">beats its baselines</span>, a statistical test is chosen because
+              the data violates the simpler one&rsquo;s assumptions, and a benchmark reports the
+              result that contradicted its own design.
+            </p>
+            <p>At master&rsquo;s level I want to go deeper into:</p>
+            <ul class="list-disc space-y-2 pl-5 marker:text-muted dark:marker:text-muted-dark">
+              <li>machine learning for signals and time series, including biomedical data;</li>
+              <li>model-based deep learning, where networks are built by unrolling optimisation algorithms such as FISTA;</li>
+              <li>statistics and evaluation methodology for machine learning;</li>
+              <li>reliable AI systems that keep a person in the loop for high-stakes decisions.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research experience -->
+      <section id="research" class="border-t border-line dark:border-line-dark">
+        <div
+          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
+        >
+          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
+            Research
+          </h2>
+
+          <div class="measure">
+            <h3 class="font-semibold">Research Assistant — Numerical Analysis Modeling Lab</h3>
+            <p class="mt-0.5">Eötvös Loránd University (ELTE)</p>
+            <p class="mt-1 text-sm text-muted dark:text-muted-dark">June 2026 – Present, Budapest</p>
+
+            <p class="mt-5 leading-[1.7]">
+              Reproduction of an EMBC 2025 paper on <span class="hl">sparse dictionary learning
+              neural networks</span> for ECG baseline wander removal.
+            </p>
+
+            <dl class="mt-6 space-y-4 text-sm leading-[1.65]">
+              <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                <dt class="font-semibold">Question</dt>
+                <dd class="mt-1 sm:mt-0">
+                  Does the paper&rsquo;s sparse dictionary learning network remove baseline
+                  wander better than classical and optimisation-based methods, when every method
+                  is measured the same way?
+                </dd>
+              </div>
+              <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                <dt class="font-semibold">Data</dt>
+                <dd class="mt-1 sm:mt-0">PhysioNet Challenge 2020 ECG recordings.</dd>
+              </div>
+              <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                <dt class="font-semibold">Methods</dt>
+                <dd class="mt-1 sm:mt-0">
+                  Benchmarked a <span class="hl">CNN, Quadratic Programming, FISTA and
+                  FISTA-Net</span> under the paper&rsquo;s own evaluation protocol and metrics.
+                </dd>
+              </div>
+              <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                <dt class="font-semibold">Evaluation</dt>
+                <dd class="mt-1 sm:mt-0">
+                  Examined test-set reconstructions to judge which methods best preserve
+                  <span class="hl">clinically relevant ECG morphology</span>, not only which
+                  score best.
+                </dd>
+              </div>
+              <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                <dt class="font-semibold">Literature</dt>
+                <dd class="mt-1 sm:mt-0">
+                  Reviewed baseline wander removal across filtering, wavelet,
+                  optimisation-based and deep learning approaches.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="border-t border-line dark:border-line-dark">
+        <div
+          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
+        >
+          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
+            Education
+          </h2>
+
+          <div class="measure">
+            <h3 class="font-semibold">BSc Computer Science</h3>
+            <p class="mt-0.5">Eötvös Loránd University (ELTE), Budapest</p>
+            <p class="mt-1 text-sm text-muted dark:text-muted-dark">
+              September 2023 – Expected January 2027
+            </p>
+
+            <p class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded bg-accent-soft px-2.5 py-1 text-sm font-medium text-accent dark:bg-accent-soft-dark dark:text-accent-dark">CGPA 4.58 / 5.0</span>
+              <span class="rounded bg-accent-soft px-2.5 py-1 text-sm font-medium text-accent dark:bg-accent-soft-dark dark:text-accent-dark">Stipendium Hungaricum Scholar</span>
+            </p>
+
+            <h4 class="mt-6 text-sm font-semibold">Key coursework</h4>
+            <ul class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted dark:text-muted-dark">
+              <li>Machine Learning</li>
+              <li>Numerical Analysis</li>
+              <li>Algorithms &amp; Data Structures</li>
+              <li>Discrete Mathematics</li>
+              <li>Database Systems</li>
+              <li>Operating Systems</li>
+              <li>Computer Networks</li>
+            </ul>
+
+            <h4 class="mt-6 text-sm font-semibold">English</h4>
+            <p class="mt-2 text-sm text-muted dark:text-muted-dark">IELTS 7.5</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards and honours -->
+      <section id="awards" class="border-t border-line dark:border-line-dark">
+        <div
+          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
+        >
+          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
+            Awards &amp; honours
+          </h2>
+
+          <ol class="measure">
+            <li class="border-l border-line pb-10 pl-6 dark:border-line-dark">
+              <h3 class="font-semibold">Stipendium Hungaricum Scholarship</h3>
+              <p class="mt-0.5">Government of Hungary</p>
+              <p class="mt-1 text-sm text-muted dark:text-muted-dark">Awarded 2023, for the BSc at ELTE</p>
+            </li>
+            <li class="border-l border-line pb-10 pl-6 dark:border-line-dark">
+              <h3 class="font-semibold">Champions — INEC 2026</h3>
+              <p class="mt-0.5">Innovative Engineering Competition, BEST Budapest</p>
+              <p class="mt-1 text-sm text-muted dark:text-muted-dark">
+                2026, Budapest University of Technology and Economics · team of three
+              </p>
+              <ul class="mt-4 list-disc space-y-2 pl-4 text-sm leading-[1.65] marker:text-muted dark:marker:text-muted-dark">
+                <li>
+                  <strong class="font-semibold">Ship or Block</strong> — a validation layer
+                  that checks AI-generated legal answers against the version of the law in force
+                  on the date of each question, tuned for precision because a wrong answer cost
+                  far more than a right one earned.
+                </li>
+                <li>
+                  <strong class="font-semibold">EV challenge</strong> — a Simulink model of an
+                  electric vehicle predicting speed, torque, current and battery state of charge,
+                  calibrated on real drive logs and tested on a drive it had never seen.
+                </li>
+                <li>
+                  <strong class="font-semibold">SmartShift</strong> — a scheduling app built in
+                  60 minutes that balances workload across groups by availability.
+                </li>
+              </ul>
+            </li>
+            <li class="border-l border-line pl-6 dark:border-line-dark">
+              <h3 class="font-semibold">2nd place — Cognition LaunchLoop hackathon</h3>
+              <p class="mt-0.5">
+                With <a href="#preflight" class="text-accent hover:underline dark:text-accent-dark">preflight</a>,
+                benchmarked below
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Teaching -->
+      <section id="teaching" class="border-t border-line dark:border-line-dark">
+        <div
+          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
+        >
+          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
+            Teaching
+          </h2>
+
+          <div class="measure">
+            <h3 class="font-semibold">Teaching Assistant — Discrete Mathematics &amp; Computer Systems</h3>
+            <p class="mt-0.5">Eötvös Loránd University (ELTE)</p>
+            <p class="mt-1 text-sm text-muted dark:text-muted-dark">September 2025 – Present, Budapest</p>
+            <ul class="mt-4 list-disc space-y-2 pl-4 text-sm leading-[1.65] marker:text-muted dark:marker:text-muted-dark">
+              <li>
+                Tutor undergraduates in <span class="hl">logic, set theory, combinatorics, graph
+                theory</span> and proof techniques.
+              </li>
+              <li>
+                Lead hands-on Linux, Bash and PowerShell labs covering shell environments, file
+                systems, processes and automation.
+              </li>
+              <li>Prepare practice exercises, lab materials and assessments.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Selected projects, framed as question / method / result -->
+      <section id="projects" class="border-t border-line dark:border-line-dark">
+        <div
+          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
+        >
+          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
+            Selected projects
+          </h2>
+
+          <div>
+            <p class="measure text-muted dark:text-muted-dark">
+              Independent projects where the question and the evaluation matter as much as the
+              build. Each links to its code, and every figure is a real output of it.
+            </p>
+
+            <ul class="mt-10 space-y-12">
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <figure class="shot sm:max-w-[60%]">
+                  <img
+                    src="../assets/img/projects/favorita-poisson-check.jpg"
+                    width="1145"
+                    height="716"
+                    loading="lazy"
+                    decoding="async"
+                    class="aspect-[16/10] w-full object-cover object-left-top"
+                    alt="Histogram titled &quot;99% of store-items vary more than Poisson assumes&quot;: the distribution of variance divided by mean of daily units on a log scale, with almost the whole mass to the right of 1, where a Poisson test over-flags."
+                  />
+                  <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Why the stock-out test is negative binomial, not Poisson.</figcaption>
+                </figure>
+
+                <div class="measure mt-6">
+                  <h3 class="text-lg font-semibold tracking-tight">Favorita stock-out &amp; promotion analysis</h3>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">Statistical testing on 42.8M rows of grocery sales, in PySpark on Databricks</p>
+                  <dl class="mt-5 space-y-4 text-sm leading-[1.65]">
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Question</dt>
+                      <dd class="mt-1 sm:mt-0">Across 54 stores and twelve months, which zero-sales days are genuine stock-outs, and do promotions still pay back once the dip in the following week is counted?</dd>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Method</dt>
+                      <dd class="mt-1 sm:mt-0">99% of store-items were over-dispersed relative to Poisson, so I used a <span class="hl">negative binomial run test with Benjamini&ndash;Hochberg</span> false discovery control, and estimated net promotional lift per product family with 95% bootstrap confidence intervals.</dd>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Result</dt>
+                      <dd class="mt-1 sm:mt-0">The stock-out flag rate fell from 21.5% under Poisson to <span class="hl">4.8%</span>. Promotions pay back in 23 of 29 product families, but not in fresh food.</dd>
+                    </div>
+                  </dl>
+                </div>
+                <p class="mt-5 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/favorita-stockout-promo-databricks" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
+
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <figure class="shot sm:max-w-[60%]">
+                  <img
+                    src="../assets/img/projects/retail-late-delivery-shap.jpg"
+                    width="1152"
+                    height="720"
+                    loading="lazy"
+                    decoding="async"
+                    class="aspect-[16/10] w-full object-cover object-left-top"
+                    alt="A SHAP summary plot for the late-delivery model over 3,000 test orders: estimated_days dominates, then approve_month, customer_state, seller_avg_delivery_days_90d and distance_km, each feature&rsquo;s points coloured by feature value."
+                  />
+                  <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">What drives the late-delivery model, over 3,000 test orders.</figcaption>
+                </figure>
+
+                <div class="measure mt-6">
+                  <h3 class="text-lg font-semibold tracking-tight">Retail Data Platform</h3>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">Late-delivery prediction on the Olist e-commerce dataset, inside an end-to-end data platform</p>
+                  <dl class="mt-5 space-y-4 text-sm leading-[1.65]">
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Question</dt>
+                      <dd class="mt-1 sm:mt-0">Can late deliveries be predicted well enough to beat simple baselines, from features built in a governed lakehouse rather than a one-off notebook?</dd>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Method</dt>
+                      <dd class="mt-1 sm:mt-0">A <span class="hl">LightGBM</span> classifier on features from a Spark and Delta Lake pipeline with data-quality gates, tracked in MLflow and explained with SHAP.</dd>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Result</dt>
+                      <dd class="mt-1 sm:mt-0">The model is promoted only if it <span class="hl">beats both baselines</span>: test PR-AUC 0.134 against 0.055 and 0.104. Targets it misses are reported too.</dd>
+                    </div>
+                  </dl>
+                </div>
+                <p class="mt-5 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/retail-data-platform" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
+
+              <li id="preflight" class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <figure class="shot sm:max-w-[60%]">
+                  <img
+                    src="../assets/img/projects/preflight-arm-cost.jpg"
+                    width="1600"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    class="aspect-[16/10] w-full object-cover object-left-top"
+                    alt="Stacked bar chart of total cost per benchmark arm across the five bugs, all nine arms at 5 out of 5 passed: arm A sonnet-cold at $0.623, the cascade arms between $0.380 and $0.431, the capped-cheap arm E highest at $0.721, and the cross-engine arms at $0.253, $0.067 and $0.082."
+                  />
+                  <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Cost per arm. The capped-cheap arm E, against the design&rsquo;s expectation, is the most expensive.</figcaption>
+                </figure>
+
+                <div class="measure mt-6">
+                  <p class="mb-2">
+                    <span class="rounded bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent dark:bg-accent-soft-dark dark:text-accent-dark">2nd place · Cognition LaunchLoop hackathon</span>
+                  </p>
+                  <h3 class="text-lg font-semibold tracking-tight">preflight</h3>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">A controlled benchmark of cheap-first LLM coding agents</p>
+                  <dl class="mt-5 space-y-4 text-sm leading-[1.65]">
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Question</dt>
+                      <dd class="mt-1 sm:mt-0">Can a one-cent brief written by a small model let a cheap coding agent match an expensive one, and when should it escalate?</dd>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Method</dt>
+                      <dd class="mt-1 sm:mt-0"><span class="hl">45 runs across nine arms</span> on five seeded bugs, with the repository&rsquo;s own tests as the judge and control arms that isolate whether the handoff itself does any work.</dd>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Result</dt>
+                      <dd class="mt-1 sm:mt-0">The brief let the cheap model match the expensive one at <span class="hl">32% less cost</span>, and held across vendors. Starting cheap under a budget cap was 16% <em>more</em> expensive &mdash; the result that contradicted the design, reported first.</dd>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Limits</dt>
+                      <dd class="mt-1 sm:mt-0">Five bugs and one run per cell is directional, not a measurement; repeated runs are the first thing to add.</dd>
+                    </div>
+                  </dl>
+                </div>
+                <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+                  <a href="../projects/preflight.html" class="text-accent hover:underline dark:text-accent-dark">Read the writeup</a>
+                  <a href="https://github.com/zakaria17amir/preflight-agent" target="_blank" rel="noopener" class="hover:underline">View code</a>
+                </p>
+              </li>
+
+              <li class="border-t border-line pt-10 first:border-0 first:pt-0 dark:border-line-dark">
+                <figure class="shot sm:max-w-[60%]">
+                  <img
+                    src="../assets/img/projects/qgate-decide.jpg"
+                    width="1224"
+                    height="765"
+                    loading="lazy"
+                    decoding="async"
+                    class="aspect-[16/10] w-full object-cover object-left-top"
+                    alt="The qgate decide view: Approve, Amend and Reject radio buttons with Amend selected, editable window start and end, a free-text reason, and a panel showing the amended window now holds 43 vehicles instead of 53."
+                  />
+                  <figcaption class="border-t border-line px-3 py-2 text-xs text-muted dark:border-line-dark dark:text-muted-dark">Nothing is held until a person approves or amends it.</figcaption>
+                </figure>
+
+                <div class="measure mt-6">
+                  <h3 class="text-lg font-semibold tracking-tight">qgate-agent</h3>
+                  <p class="mt-1 text-sm text-muted dark:text-muted-dark">A human-in-the-loop AI agent for manufacturing quality decisions</p>
+                  <dl class="mt-5 space-y-4 text-sm leading-[1.65]">
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Question</dt>
+                      <dd class="mt-1 sm:mt-0">When a vehicle fails its end-of-line test, can an agent propose how many vehicles to quarantine without ever being allowed to act alone?</dd>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Method</dt>
+                      <dd class="mt-1 sm:mt-0">The agent correlates the failure with build genealogy and station drift and drafts a containment order with its evidence; every tool is read-only, and <span class="hl">a person must approve, amend or reject</span> before anything is held.</dd>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4">
+                      <dt class="font-semibold">Result</dt>
+                      <dd class="mt-1 sm:mt-0">Scored on <span class="hl">fifty golden scenarios</span>, including those where the right answer is to propose nothing. Under fault injection, a 20-second outage mid-commit still left exactly one hold, and none of 138,624 simulated events were lost.</dd>
+                    </div>
+                  </dl>
+                </div>
+                <p class="mt-5 text-sm font-medium">
+                  <a href="https://github.com/zakaria17amir/Qgate-Agent" target="_blank" rel="noopener" class="text-accent hover:underline dark:text-accent-dark">View code</a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Industry experience, kept short on purpose -->
+      <section id="experience" class="border-t border-line dark:border-line-dark">
+        <div
+          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
+        >
+          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
+            Industry experience
+          </h2>
+
+          <div class="measure">
+            <h3 class="font-semibold">Data Analyst Intern</h3>
+            <p class="mt-0.5">The Estée Lauder Companies Inc.</p>
+            <p class="mt-1 text-sm text-muted dark:text-muted-dark">June 2025 – Present, Budapest</p>
+            <p class="mt-4 text-sm leading-[1.65]">
+              Built a production Power BI star-schema model for vendor closing and savings
+              tracking from scattered spreadsheets, cleaned and restructured 100,000+ records in
+              Python, and automated 16+ reporting and governance processes, saving over
+              <span class="hl">100 hours a month</span>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="border-t border-line dark:border-line-dark">
+        <div
+          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
+        >
+          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
+            Contact
+          </h2>
+
+          <div class="measure">
+            <p class="text-lg leading-[1.6]">
+              I am happy to talk about my research, my projects or a programme. The fastest way
+              to reach me is email.
+            </p>
+
+            <p class="mt-6">
+              <a
+                data-email="text"
+                href="#contact"
+                class="rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent/90 dark:bg-accent-dark dark:text-surface-dark dark:hover:bg-accent-dark/90"
+                >Email me</a
+              >
+            </p>
+
+            <noscript>
+              <p class="mt-4 text-sm text-muted dark:text-muted-dark">
+                Email: mailtoamir17 [at] gmail [dot] com
+              </p>
+            </noscript>
+
+            <p class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium">
+              <a href="https://www.linkedin.com/in/amir-abdullah-zakaria" target="_blank" rel="noopener" class="hover:underline">LinkedIn</a>
+              <a href="https://github.com/zakaria17amir" target="_blank" rel="noopener" class="hover:underline">GitHub</a>
+              <a href="../assets/Amir-Abdullah-Zakaria-CV.pdf" download class="hover:underline">Download CV</a>
+              <a href="../index.html" class="hover:underline">Full portfolio</a>
+            </p>
+
+            <p class="mt-8 text-sm text-muted dark:text-muted-dark">Budapest, Hungary</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line dark:border-line-dark">
+      <div
+        class="mx-auto flex max-w-5xl flex-col gap-4 px-5 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8 dark:text-muted-dark"
+      >
+        <p>© 2026 Amir Abdullah Zakaria</p>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <a href="../index.html" class="hover:text-accent dark:hover:text-accent-dark">Full portfolio</a>
+          <a data-email href="#contact" class="hover:text-accent dark:hover:text-accent-dark">Email</a>
+          <a href="https://www.linkedin.com/in/amir-abdullah-zakaria" target="_blank" rel="noopener" class="hover:text-accent dark:hover:text-accent-dark">LinkedIn</a>
+          <a href="https://github.com/zakaria17amir" target="_blank" rel="noopener" class="hover:text-accent dark:hover:text-accent-dark">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="../assets/js/main.js"></script>
+  </body>
+</html>

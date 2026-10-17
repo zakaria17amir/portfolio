@@ -452,6 +452,7 @@ export const education = {
   end: "Expected Jan 2027",
   gpa: "CGPA 4.58 / 5.0",
   honours: "Stipendium Hungaricum Scholar",
+  english: "IELTS 7.5",
   coursework: [
     "Algorithms & Data Structures",
     "Database Systems",
