@@ -25,7 +25,7 @@ robots.txt sitemap.xml  crawling and indexing
 
 ## Editing content
 
-`assets/js/content.js` is the record of intent — profile, experience, projects,
+`assets/js/content.js` is the record of intent — profile, experience, projects, awards,
 skills, education, certifications. `index.html` and the project pages carry the
 markup that actually ships.
 

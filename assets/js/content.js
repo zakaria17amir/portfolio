@@ -79,7 +79,7 @@ export const headlineMetrics = [
   { value: "16+", label: "reporting & governance processes automated" },
   { value: "10M+", label: "records processed across Python and Spark pipelines" },
   { value: "600+", label: "IT tickets triaged for a global user base" },
-  { value: "2nd", label: "place, LaunchLoop hackathon (preflight)" },
+  { value: "1st", label: "place, INEC 2026 engineering competition; 2nd at Cognition LaunchLoop" },
   { value: "4.58/5.0", label: "CGPA, Stipendium Hungaricum Scholar" },
 ];
 
@@ -212,7 +212,7 @@ export const projects = [
     shot2: { src: "assets/img/projects/preflight-arm-cost.jpg", caption: "Total cost per arm across the five bugs." },
     title: "preflight",
     tagline: "A tech-lead pass that runs before a coding agent does",
-    award: "2nd place · LaunchLoop hackathon",
+    award: "2nd place · Cognition LaunchLoop hackathon",
     impact:
       "Scans a repository for zero tokens, has a cheap model write a short brief, lets the cheap model attempt the fix first, and escalates with a distilled post-mortem when it fails. Benchmarked on five seeded bugs: a $0.01 brief let Haiku match Sonnet at 32% less cost, and the same brief handed to a GPT agent held at 74% less.",
     tags: ["Python", "LLM orchestration", "Claude Code CLI", "Devin CLI", "pytest", "GitHub Actions"],
@@ -462,6 +462,23 @@ export const education = {
     "Computer Networks",
   ],
 };
+
+export const awards = [
+  {
+    title: "Champions — INEC 2026",
+    event: "Innovative Engineering Competition, BEST Budapest",
+    year: "2026",
+    location: "Budapest University of Technology and Economics",
+    detail:
+      "Team of three, three timed challenges: Ship or Block (Azta) — an LLM validation layer that ships or blocks AI-generated legal answers against the version of the law in force on the date asked; an EV challenge — a Simulink model predicting speed, torque, current and battery state of charge, calibrated on real drive logs; SmartShift — a Flask and SQLite scheduler built in 60 minutes.",
+  },
+  {
+    title: "2nd place — Cognition LaunchLoop hackathon",
+    event: "Cognition LaunchLoop hackathon",
+    project: "preflight",
+    page: "projects/preflight.html",
+  },
+];
 
 /**
  * Empty for now. The certifications section in index.html is commented out;

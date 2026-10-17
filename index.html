@@ -119,6 +119,7 @@
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#approach">How I work</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#experience">Experience</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#projects">Projects</a></li>
+              <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#awards">Awards</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#skills">Skills</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#education">Education</a></li>
               <li><a class="block py-1 text-muted hover:text-accent dark:text-muted-dark dark:hover:text-accent-dark" href="#contact">Contact</a></li>
@@ -234,8 +235,8 @@
             <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">IT tickets triaged for a global user base</dd>
           </div>
           <div>
-            <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">2nd</dt>
-            <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">place, LaunchLoop hackathon (preflight)</dd>
+            <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">1st</dt>
+            <dd class="mt-1 text-xs leading-[1.5] text-muted dark:text-muted-dark">place, INEC 2026 engineering competition; 2nd at Cognition LaunchLoop</dd>
           </div>
           <div>
             <dt class="text-2xl font-semibold tracking-tight sm:text-[1.75rem]">4.58<span class="text-base font-normal text-muted dark:text-muted-dark">/5.0</span></dt>
@@ -322,8 +323,11 @@
             <p>
               Before those, <span class="hl">preflight</span> — a briefing layer that runs ahead of
               a coding agent and routes cheap work to cheap models — took
-              <span class="hl">second place at a hackathon</span> on the strength of a cost
-              benchmark, including the result that argued against my own design. Tracky is a
+              <span class="hl">second place at the Cognition LaunchLoop hackathon</span> on the
+              strength of a cost benchmark, including the result that argued against my own
+              design. With two teammates I won <span class="hl">INEC 2026</span>, BEST
+              Budapest&rsquo;s Innovative Engineering Competition, across three timed challenges
+              in legal AI, electric-vehicle modelling and scheduling. Tracky is a
               Laravel REST API and a React TypeScript SPA I own on both sides. I also
               <span class="hl">teach Discrete Mathematics and Computer Systems</span> at ELTE,
               which has done more for how I explain technical things than anything else I have
@@ -872,7 +876,7 @@
 
                 <div class="measure mt-6">
                   <p class="mb-2">
-                    <span class="rounded bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent dark:bg-accent-soft-dark dark:text-accent-dark">2nd place · LaunchLoop hackathon</span>
+                    <span class="rounded bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent dark:bg-accent-soft-dark dark:text-accent-dark">2nd place · Cognition LaunchLoop hackathon</span>
                   </p>
                   <h4 class="text-lg font-semibold tracking-tight">preflight</h4>
                   <p class="mt-1 text-sm text-muted dark:text-muted-dark">A tech-lead pass that runs before a coding agent does</p>
@@ -996,6 +1000,58 @@
             </ul>
 
           </div>
+        </div>
+      </section>
+
+      <!-- Awards -->
+      <section id="awards" class="border-t border-line dark:border-line-dark">
+        <div
+          class="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:grid lg:grid-cols-[9rem_minmax(0,1fr)] lg:gap-12"
+        >
+          <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
+            Awards
+          </h2>
+
+          <ol class="measure">
+            <li class="border-l border-line pb-10 pl-6 dark:border-line-dark">
+              <h3 class="font-semibold">Champions — INEC 2026</h3>
+              <p class="mt-0.5">Innovative Engineering Competition, BEST Budapest</p>
+              <p class="mt-1 text-sm text-muted dark:text-muted-dark">
+                2026, Budapest University of Technology and Economics · team of three
+              </p>
+              <p class="mt-4 text-sm leading-[1.65]">
+                Three challenges, each against a hard deadline:
+              </p>
+              <ul class="mt-2 list-disc space-y-2 pl-4 text-sm leading-[1.65] marker:text-muted dark:marker:text-muted-dark">
+                <li>
+                  <strong class="font-semibold">Ship or Block</strong> (set by Azta) — a
+                  validation layer that reviews AI-generated legal answers before they
+                  reach users. It finds the version of the law in force on the date each
+                  question was asked, resolves cross-references and defined terms, and has
+                  an LLM decide whether to ship or block. A wrong ship cost far more than
+                  a right one earned, so it was tuned for precision.
+                </li>
+                <li>
+                  <strong class="font-semibold">EV challenge</strong> — an end-to-end
+                  Simulink model of an electric vehicle predicting speed, torque, current
+                  and battery state of charge, calibrated against real drive logs with
+                  route elevation profiles, then tested on a drive it had never seen.
+                </li>
+                <li>
+                  <strong class="font-semibold">SmartShift</strong> — a Flask and SQLite
+                  scheduler built in 60 minutes that assigns hosts to groups by
+                  availability, balances workload, and lets managers override.
+                </li>
+              </ul>
+            </li>
+            <li class="border-l border-line pl-6 dark:border-line-dark">
+              <h3 class="font-semibold">2nd place — Cognition LaunchLoop hackathon</h3>
+              <p class="mt-0.5">
+                With <a href="projects/preflight.html" class="text-accent hover:underline dark:text-accent-dark">preflight</a>,
+                a briefing layer that runs ahead of a coding agent
+              </p>
+            </li>
+          </ol>
         </div>
       </section>
 
