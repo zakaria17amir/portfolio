@@ -286,7 +286,11 @@
           <h2 class="mb-6 text-sm font-semibold text-muted dark:text-muted-dark lg:mb-0 lg:pt-1.5">
             About
           </h2>
-          <div class="measure space-y-5 leading-[1.7]">
+          <div>
+            <div
+              id="about-content"
+              class="measure space-y-5 leading-[1.7] line-clamp-5"
+            >
             <p>
               I am a final-year Computer Science student at <span class="hl">ELTE in Budapest</span>,
               graduating in January 2027 with a CGPA of 4.58 out of 5.0 as a
@@ -370,6 +374,16 @@
               </div>
             </div>
           </div>
+          <button
+        id="about-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="about-content"
+        class="mt-4 text-sm font-medium text-accent hover:underline dark:text-accent-dark"
+      >
+        Read more
+      </button>
+        </div>
         </div>
       </section>
 
@@ -1393,5 +1407,18 @@
     </footer>
 
     <script type="module" src="assets/js/main.js"></script>
+      <script>
+  const aboutContent = document.getElementById("about-content");
+  const aboutToggle = document.getElementById("about-toggle");
+
+  aboutToggle.addEventListener("click", () => {
+    const isExpanded =
+      aboutToggle.getAttribute("aria-expanded") === "true";
+
+    aboutContent.classList.toggle("line-clamp-5", isExpanded);
+    aboutToggle.setAttribute("aria-expanded", String(!isExpanded));
+    aboutToggle.textContent = isExpanded ? "Read more" : "Show less";
+  });
+</script>
   </body>
 </html>
