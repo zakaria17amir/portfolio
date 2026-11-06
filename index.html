@@ -290,6 +290,7 @@
             <div
               id="about-content"
               class="measure space-y-5 leading-[1.7] line-clamp-5"
+              style="max-height: 8.5em;"
             >
             <p>
               I am a final-year Computer Science student at <span class="hl">ELTE in Budapest</span>,
@@ -1407,7 +1408,7 @@
     </footer>
 
     <script type="module" src="assets/js/main.js"></script>
-      <script>
+  <script>
   const aboutContent = document.getElementById("about-content");
   const aboutToggle = document.getElementById("about-toggle");
 
@@ -1415,9 +1416,17 @@
     const isExpanded =
       aboutToggle.getAttribute("aria-expanded") === "true";
 
-    aboutContent.classList.toggle("line-clamp-5", isExpanded);
+    if (isExpanded) {
+      aboutContent.style.maxHeight = "8.5em";
+      aboutContent.classList.add("overflow-hidden");
+      aboutToggle.textContent = "Read more";
+    } else {
+      aboutContent.style.maxHeight = "none";
+      aboutContent.classList.remove("overflow-hidden");
+      aboutToggle.textContent = "Show less";
+    }
+
     aboutToggle.setAttribute("aria-expanded", String(!isExpanded));
-    aboutToggle.textContent = isExpanded ? "Read more" : "Show less";
   });
 </script>
   </body>
